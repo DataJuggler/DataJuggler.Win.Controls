@@ -98,6 +98,10 @@ namespace DataJuggler.Win.Controls
                 // Set Default height & width
                 this.LabelWidth = 140;
                 this.Width = 280;
+
+                // Initialize both to zero
+                this.CheckBoxHorizontalOffSet = 0;
+                this.CheckBoxVerticalOffSet = 0;
             }
             #endregion
 
