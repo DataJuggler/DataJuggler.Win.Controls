@@ -24,6 +24,18 @@ namespace DataJuggler.Win.Controls.Enumerations
     }
     #endregion
 
+    #region EditModeEnum
+    /// <summary>
+    /// This mode is used to determine what type of an Edit is taking place.
+    /// </summary>
+    public enum EditModeEnum
+    {
+        Add = 0,
+        Edit = 1,
+        ReadOnly = 2
+    }
+    #endregion
+
     #region ThemeEnum
     /// <summary>
     /// This enumeration is for the type of theme to use.

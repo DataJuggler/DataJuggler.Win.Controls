@@ -78,6 +78,13 @@ namespace DataJuggler.Win.Controls
             /// </summary>
             private void TextBox_TextChanged(object sender, EventArgs e)
             {
+                // if the text starts with default VS named text
+                if (TextBox.Text.StartsWith("labelTextBoxControl"))
+                {
+                    // do not allow default text
+                    TextBox.Text = "";
+                }
+
                 // if the Listener exists
                 if (this.HasOnTextChangedListener)
                 {
@@ -143,9 +150,12 @@ namespace DataJuggler.Win.Controls
                 this.TextBoxDisabledColor = Color.LightGray;
 
                 // create the fonts
-                float fontSize = 14.25f;
+                float fontSize = 12;
                 this.TextBoxFont = new Font("Verdana", fontSize);
                 this.LabelFont = new Font("Verdana", fontSize, FontStyle.Bold);
+
+                // Erase the Text
+                this.TextBox.Text = "";
                 
                 // Default to Editable
                 this.Editable = true;

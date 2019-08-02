@@ -2,6 +2,7 @@
 
 #region using statements
 
+using DataJuggler.Core.UltimateHelper;
 using System;
 using System.Windows.Forms;
 using DataJuggler.Win.Controls.Interfaces;
@@ -21,9 +22,10 @@ namespace DataJuggler.Win.Controls
     
         #region private variables
         private bool doneMode;
-        private Image hiddenImage;
         private bool showSaveAndCloseButton;
         private bool showSaveButton;
+        private bool enableSaveAndCloseButton;
+        private bool enableSaveButton;
         private int saveAndCloseButtonWidth;
         private int saveButtonWidth;
         private int cancelButtonWidth;
@@ -37,17 +39,38 @@ namespace DataJuggler.Win.Controls
         {
             // Create controls
             InitializeComponent();
-
-            // Set the hidden image
-            this.HiddenImage = this.CancelSave.Image;
             
-            // default to not a border style
-            this.BorderStyle = BorderStyle.None;
+            // Perform initializations for this object
+            Init();
+
+          
         }
         #endregion
 
         #region Events
 
+            #region Button_Enter(object sender, EventArgs e)
+            /// <summary>
+            /// event is fired when Button _ Enter
+            /// </summary>
+            private void Button_Enter(object sender, EventArgs e)
+            {
+                // Change the cursor to a hand
+                Cursor = Cursors.Hand;
+            }
+            #endregion
+            
+            #region Button_Leave(object sender, EventArgs e)
+            /// <summary>
+            /// event is fired when Button _ Leave
+            /// </summary>
+            private void Button_Leave(object sender, EventArgs e)
+            {
+                // Change the cursor back to the default pointer
+                Cursor = Cursors.Default;
+            }
+            #endregion
+            
             #region CancelSave_Click(object sender, EventArgs e)
             /// <summary>
             /// The Cancel save button was clicked.
@@ -80,6 +103,35 @@ namespace DataJuggler.Win.Controls
                     this.ParentHost.OnSave(true);
                 }
             } 
+            #endregion
+            
+            #region Button_EnabledChanged(object sender, EventArgs e)
+            /// <summary>
+            /// event is fired when a button becomes enabled or disabled
+            /// </summary>
+            private void Button_EnabledChanged(object sender, EventArgs e)
+            {
+                // cast the sender as a button
+                Button button = sender as Button;
+
+                // If the button object exists
+                if (NullHelper.Exists(button))
+                {
+                    // if enabled
+                    if (button.Enabled)
+                    {
+                        // Use the enabled background image
+                        button.BackgroundImage = Properties.Resources.WoodButtonWidth640;
+                        button.ForeColor = Color.Black;
+                    }
+                    else
+                    {
+                        // Use the enabled background image
+                        button.BackgroundImage = Properties.Resources.WoodButtonWidth640Disabled;
+                        button.ForeColor = Color.DimGray;
+                    }
+                }
+            }
             #endregion
             
             #region SaveButton_Click(object sender, EventArgs e)
@@ -154,6 +206,20 @@ namespace DataJuggler.Win.Controls
             } 
             #endregion
         
+            #region Init()
+            /// <summary>
+            /// This method performs initializations for this object.
+            /// </summary>
+            public void Init()
+            {
+                // default to not a border style
+                this.BorderStyle = BorderStyle.None;
+                this.CancelSave.Enabled = true;
+                this.Dock = DockStyle.Bottom;
+                this.ShowSaveAndCloseButton = false;
+            }
+            #endregion
+            
         #endregion
 
         #region Properties
@@ -203,27 +269,50 @@ namespace DataJuggler.Win.Controls
 
                         // Move to the right for the presence of the image
                         this.CancelSave.TextAlign = ContentAlignment.MiddleRight;
-
-                        // Set the image
-                        this.CancelSave.Image = this.HiddenImage;
                     }
                 }
             } 
             #endregion
             
-            #region HasHiddenImage
+            #region EnableSaveAndCloseButton
             /// <summary>
-            /// This property returns true if this object has a 'HiddenImage'.
+            /// This property gets or sets the value for 'EnableSaveAndCloseButton'.
             /// </summary>
-            public bool HasHiddenImage
+            public bool EnableSaveAndCloseButton
             {
-                get
-                {
-                    // initial value
-                    bool hasHiddenImage = (this.HiddenImage != null);
-                    
-                    // return value
-                    return hasHiddenImage;
+                get { return enableSaveAndCloseButton; }
+                set 
+                { 
+                    // set the value
+                    enableSaveAndCloseButton = value; 
+
+                    // If the SaveAndCloseButton object exists
+                    if (NullHelper.Exists(SaveAndCloseButton))
+                    {
+                        SaveAndCloseButton.Enabled = value;
+                    }
+                }
+            }
+            #endregion
+            
+            #region EnableSaveButton
+            /// <summary>
+            /// This property gets or sets the value for 'EnableSaveButton'.
+            /// </summary>
+            public bool EnableSaveButton
+            {
+                get { return enableSaveButton; }
+                set 
+                { 
+                    // set the value
+                    enableSaveButton = value;
+
+                    // If the SaveButton object exists
+                    if (NullHelper.Exists(SaveButton))
+                    {   
+                        // enable or disable the button
+                        SaveButton.Enabled = value;
+                    }
                 }
             }
             #endregion
@@ -245,25 +334,6 @@ namespace DataJuggler.Win.Controls
             }
             #endregion
 
-            #region HiddenImage
-            /// <summary>
-            /// This property gets or sets the value for 'HiddenImage'.
-            /// </summary>
-            public Image HiddenImage
-            {
-                get { return hiddenImage; }
-                set 
-                { 
-                    // this cannot be set to null
-                    if (value != null)
-                    {
-                        // set the value
-                        hiddenImage = value; 
-                    }
-                }
-            }
-            #endregion
-            
             #region ParentHost
             /// <summary>
             /// The host of this control
@@ -351,8 +421,8 @@ namespace DataJuggler.Win.Controls
                     this.SaveButton.Visible = value;
                 }
             }
-            #endregion
-            
+        #endregion
+
         #endregion
 
     } 
