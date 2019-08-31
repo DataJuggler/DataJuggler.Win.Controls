@@ -3,6 +3,7 @@
 #region using statements
 
 using DataJuggler.Core.UltimateHelper;
+using System.ComponentModel;
 using System;
 using System.Windows.Forms;
 using DataJuggler.Win.Controls.Interfaces;
@@ -20,7 +21,7 @@ namespace DataJuggler.Win.Controls
     public partial class SaveCancelControl : UserControl
     {
     
-        #region private variables
+        #region Private variables
         private bool doneMode;
         private bool showSaveAndCloseButton;
         private bool showSaveButton;
@@ -29,6 +30,8 @@ namespace DataJuggler.Win.Controls
         private int saveAndCloseButtonWidth;
         private int saveButtonWidth;
         private int cancelButtonWidth;
+        private Color disabledForeColor;
+        private ContentAlignment cancelButtonTextAlign;
         #endregion
 
         #region Constructor
@@ -42,12 +45,39 @@ namespace DataJuggler.Win.Controls
             
             // Perform initializations for this object
             Init();
-
-          
         }
         #endregion
 
         #region Events
+
+            #region Button_EnabledChanged(object sender, EventArgs e)
+            /// <summary>
+            /// event is fired when a button becomes enabled or disabled
+            /// </summary>
+            private void Button_EnabledChanged(object sender, EventArgs e)
+            {
+                // cast the sender as a button
+                Button button = sender as Button;
+
+                // If the button object exists
+                if (NullHelper.Exists(button))
+                {
+                    // if enabled
+                    if (button.Enabled)
+                    {
+                        // Use the enabled background image
+                        button.BackgroundImage = Properties.Resources.WoodButtonWidth640;
+                        button.ForeColor = Color.Black;
+                    }
+                    else
+                    {
+                        // Use the enabled background image
+                        button.BackgroundImage = Properties.Resources.WoodButtonWidth640Disabled;
+                        button.ForeColor = DisabledForeColor;
+                    }
+                }
+            }
+            #endregion
 
             #region Button_Enter(object sender, EventArgs e)
             /// <summary>
@@ -103,35 +133,6 @@ namespace DataJuggler.Win.Controls
                     this.ParentHost.OnSave(true);
                 }
             } 
-            #endregion
-            
-            #region Button_EnabledChanged(object sender, EventArgs e)
-            /// <summary>
-            /// event is fired when a button becomes enabled or disabled
-            /// </summary>
-            private void Button_EnabledChanged(object sender, EventArgs e)
-            {
-                // cast the sender as a button
-                Button button = sender as Button;
-
-                // If the button object exists
-                if (NullHelper.Exists(button))
-                {
-                    // if enabled
-                    if (button.Enabled)
-                    {
-                        // Use the enabled background image
-                        button.BackgroundImage = Properties.Resources.WoodButtonWidth640;
-                        button.ForeColor = Color.Black;
-                    }
-                    else
-                    {
-                        // Use the enabled background image
-                        button.BackgroundImage = Properties.Resources.WoodButtonWidth640Disabled;
-                        button.ForeColor = Color.DimGray;
-                    }
-                }
-            }
             #endregion
             
             #region SaveButton_Click(object sender, EventArgs e)
@@ -215,14 +216,115 @@ namespace DataJuggler.Win.Controls
                 // default to not a border style
                 this.BorderStyle = BorderStyle.None;
                 this.CancelSave.Enabled = true;
+                this.CancelSave.TextAlign = ContentAlignment.MiddleCenter;
+                this.DisabledForeColor = Color.DarkGray;
                 this.Dock = DockStyle.Bottom;
                 this.ShowSaveAndCloseButton = false;
+                this.Height = 52;
+                this.SaveAndCloseButton.TextAlign = ContentAlignment.MiddleCenter;
+                this.SaveButton.TextAlign = ContentAlignment.MiddleCenter;
+                this.CancelSave.TextAlign = ContentAlignment.MiddleCenter;
+            }
+            #endregion
+
+            #region SetupSaveButton(string buttonText, int width, bool visible = true, bool enabled = true)
+            /// <summary>
+            /// This method is used to customize the SaveButton
+            /// </summary>
+            /// <param name="buttonText"></param>
+            /// <param name="width"></param>
+            public void SetupSaveButton(string buttonText, int width, bool visible = true, bool enabled = true)
+            {
+                // Setup the SaveButton
+                this.SaveButton.Text = buttonText;
+                this.SaveButton.Width = width;
+                this.SaveButton.Visible = visible;
+                this.SaveButton.Enabled = enabled;
+            }
+            #endregion
+
+            #region SetupCancelButton(string buttonText, int width, bool visible = true, bool enabled = true)
+            /// <summary>
+            /// This method is used to customize the CancelButton
+            /// </summary>
+            /// <param name="buttonText"></param>
+            /// <param name="width"></param>
+            public void SetupCancelButton(string buttonText, int width, bool visible = true, bool enabled = true)
+            {
+                // Setup the CancelButton
+                this.CancelSave.Text = buttonText;
+                this.CancelSave.Width = width;
+                this.CancelSave.Visible = visible;
+                this.CancelSave.Enabled = enabled;
+            }
+            #endregion
+            
+            #region UIEnable()
+            /// <summary>
+            /// This method UI Enable
+            /// </summary>
+            public void UIEnable()
+            {
+                // Call for each button
+                if (ShowSaveAndCloseButton)
+                {
+                    // Set the SaveAndCloseButton
+                    Button_EnabledChanged(SaveAndCloseButton, new EventArgs());
+                }
+
+                // if the value for ShowSaveButton is true
+                if (ShowSaveButton)
+                {
+                    // Setup the SaveButton
+                    Button_EnabledChanged(SaveButton, new EventArgs());
+                }
+
+                // Handle the Cancel / Done Button
+                Button_EnabledChanged(CancelSave, new EventArgs());
             }
             #endregion
             
         #endregion
 
         #region Properties
+            
+            #region CancelButtonTextAlign
+            /// <summary>
+            /// This property gets or sets the value for 'CancelButtonTextAlign'.
+            /// </summary>
+            [Browsable(true)]
+            [DesignerSerializationVisibility(DesignerSerializationVisibility.Hidden)] 
+            public ContentAlignment CancelButtonTextAlign
+            {
+                get 
+                { 
+                    // initial value
+                    ContentAlignment cancelButtonTextAlign = ContentAlignment.MiddleCenter;
+
+                    // if the CancelSave button exists
+                    if (CancelSave != null)
+                    {
+                        // set the return value
+                        cancelButtonTextAlign = CancelSave.TextAlign;
+                    }
+
+                    // return value
+                    return cancelButtonTextAlign;
+                }
+                set 
+                { 
+                    // set the value
+                    cancelButtonTextAlign = value;
+
+                    // verify the button exists
+                    if (CancelSave != null)
+                    {
+                        // Set the value
+                        CancelSave.TextAlign = value;
+                    }
+                }
+            }
+            #endregion
             
             #region CancelButtonWidth
             /// <summary>
@@ -238,6 +340,24 @@ namespace DataJuggler.Win.Controls
 
                     // size the button
                     this.CancelSave.Width = value;
+                }
+            }
+            #endregion
+            
+            #region DisabledForeColor
+            /// <summary>
+            /// This property gets or sets the value for 'DisabledForeColor'.
+            /// </summary>
+            public Color DisabledForeColor
+            {
+                get { return disabledForeColor; }
+                set 
+                { 
+                    // set the value
+                    disabledForeColor = value;
+
+                    // Enable controls
+                    UIEnable();
                 }
             }
             #endregion

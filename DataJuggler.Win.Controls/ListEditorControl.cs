@@ -33,6 +33,12 @@ namespace DataJuggler.Win.Controls
         private IListEditorHost parentListEditorHost;
         private bool sorted;
         private SaveCancelControl saveControl;
+        private bool showSelectedControlPanel;
+        private int listEditorWidth;
+        private int widthFullControl;
+        private int topMargin;
+        private int bottomMargin;
+        private bool showBackgroundImage;
         #endregion
 
         #region Constructor
@@ -131,6 +137,9 @@ namespace DataJuggler.Win.Controls
                     // Delete the selected item 
                     ParentListEditorHost.Delete();
                 }
+
+                // Enable controls
+                UIEnable();
             }
             #endregion
             
@@ -323,6 +332,16 @@ namespace DataJuggler.Win.Controls
                 // Default to sorted
                 Sorted = true;
 
+                // default to not show it
+                ShowSelectedControlPanel = false;
+
+                // Default Widths
+                ListEditorWidth = 320;
+                WidthFullControl = 720;
+
+                // Set the value so the Background (again) so whatever is stored in InitializeComponent isn't permanent
+                this.ShowBackgroundImage = this.ShowBackgroundImage;
+
                 // Enable or disable controls based upon if there is a SelectedItem or not
                 UIEnable();
             }
@@ -484,8 +503,29 @@ namespace DataJuggler.Win.Controls
                 EditButton.Enabled = HasSelectedItem;
                 DeleteButton.Enabled = HasSelectedItem;
 
-                // If we have a SelectedItem, show the SelectedControlPanel
-                SelectedControlPanel.Visible = HasSelectedItem;
+                // If both the property ShowSelectedControlPanel and HasSelectedItem are true
+                SelectedControlPanel.Visible = ((ShowSelectedControlPanel) && (HasSelectedItem));
+
+                // if the SelectedControlPanel is not visible
+                if (!SelectedControlPanel.Visible)
+                {
+                    // Set the Width
+                    this.Width = ListEditorWidth;
+                }
+                else
+                {
+                    this.Width = WidthFullControl;
+                }
+
+                if (ShowSelectedControlPanel)
+                {
+                    // If we have a SelectedItem, show the SelectedControlPanel
+                    SelectedControlPanel.Visible = HasSelectedItem;
+                }
+                else
+                {
+                    SelectedControlPanel.Visible = false;
+                }
 
                 // if the SaveControl exists
                 if (HasSaveControl)
@@ -518,6 +558,105 @@ namespace DataJuggler.Win.Controls
 
         #region Properties
 
+            #region AllItemsLabelColor
+            /// <summary>
+            /// This property gets or sets the value for 'AllItemsLabelColor'.
+            /// </summary>
+            public Color AllItemsLabelColor
+            {
+                get
+                {
+                    // initial value
+                    Color allItemsLabelColor = Color.Black;
+            
+                    // if the control exists
+                    if (AllItemsLabel != null)
+                    {
+                        // set the return value
+                        allItemsLabelColor = (Color) AllItemsLabel.ForeColor;
+                    }
+            
+                    // return value
+                    return allItemsLabelColor;
+                }
+                set
+                {
+                    // if the control exists
+                    if (AllItemsLabel != null)
+                    {        
+                        // set the value
+                        AllItemsLabel.ForeColor = value;
+                    }
+                }
+            }
+            #endregion
+            
+            #region AllItemsLabelText
+            /// <summary>
+            /// This property gets or sets the value for 'AllItemsLabelText'.
+            /// </summary>
+            public string AllItemsLabelText
+            {
+                get
+                {
+                    // initial value
+                    string allItemsLabelText = "";
+            
+                    // if the control exists
+                    if (AllItemsLabel != null)
+                    {
+                        // set the return value
+                        allItemsLabelText = (string) AllItemsLabel.Text;
+                    }
+            
+                    // return value
+                    return allItemsLabelText;
+                }
+                set
+                {
+                    // if the control exists
+                    if (AllItemsLabel != null)
+                    {        
+                        // set the value
+                        AllItemsLabel.Text = value;
+                    }
+                }
+            }
+            #endregion
+
+            #region BottomMargin
+            /// <summary>
+            /// This property gets or sets the value for 'BottomMargin'.
+            /// </summary>
+            public int BottomMargin
+            {
+                get 
+                { 
+                    // if the BottomMarginPanel exists
+                    if (BottomMarginPanel != null)
+                    {
+                        // set the return value
+                        bottomMargin = BottomMarginPanel.Height;
+                    }
+
+                    // return value
+                    return bottomMargin; 
+                }
+                set 
+                { 
+                    // set the value
+                    bottomMargin = value;
+
+                    // if the BottomMarginPanel exists
+                    if (BottomMarginPanel != null)
+                    {
+                        // set the height of the control
+                        BottomMarginPanel.Height = value;
+                    }
+                }
+            }
+            #endregion
+            
             #region CreateParams
             /// <summary>
             /// This property here is what did the trick to reduce the flickering.
@@ -651,6 +790,39 @@ namespace DataJuggler.Win.Controls
             }
             #endregion
             
+            #region LeftMargin
+            /// <summary>
+            /// This property gets or sets the value for 'LeftMargin'.
+            /// </summary>
+            public int LeftMargin
+            {
+                get
+                {
+                    // initial value
+                    int leftMargin = 0;
+
+                    // if the control exists
+                    if (LeftMarginPanel != null)
+                    {
+                        // set the return value
+                        leftMargin = (int) LeftMarginPanel.Width;
+                    }
+
+                    // return value
+                    return leftMargin;
+                }
+                set
+                {
+                    // if the control exists
+                    if (LeftMarginPanel != null)
+                    {        
+                        // set the value
+                        LeftMarginPanel.Width = value;
+                    }
+                }
+            }
+            #endregion
+            
             #region List
             /// <summary>
             /// This property gets or sets the value for 'List'.
@@ -662,6 +834,23 @@ namespace DataJuggler.Win.Controls
             }
             #endregion
             
+            #region ListEditorWidth
+            /// <summary>
+            /// This property gets or sets the value for 'ListEditorWidth'.
+            /// </summary>
+            public int ListEditorWidth
+            {
+                get { return listEditorWidth; }
+                set 
+                { 
+                    listEditorWidth = value;
+
+                    // Enable controls
+                    UIEnable();
+                }
+            }
+            #endregion
+            
             #region ParentListEditorHost
             /// <summary>
             /// This property gets or sets the value for 'ParentListEditorHost'.
@@ -670,6 +859,39 @@ namespace DataJuggler.Win.Controls
             {
                 get { return parentListEditorHost; }
                 set { parentListEditorHost = value; }
+            }
+            #endregion
+            
+            #region RightMargin
+            /// <summary>
+            /// This property gets or sets the value for 'RightMargin'.
+            /// </summary>
+            public int RightMargin
+            {
+                get
+                {
+                    // initial value
+                    int rightMargin = 0;
+
+                    // if the control exists
+                    if (SeperatorPanel != null)
+                    {
+                        // set the return value
+                        rightMargin = (int) SeperatorPanel.Width;
+                    }
+
+                    // return value
+                    return rightMargin;
+                }
+                set
+                {
+                    // if the control exists
+                    if (SeperatorPanel != null)
+                    {        
+                        // set the value
+                        SeperatorPanel.Width = value;
+                    }
+                }
             }
             #endregion
             
@@ -707,6 +929,83 @@ namespace DataJuggler.Win.Controls
                 }            
             }
             #endregion
+
+            #region ShowAllItemsLabel
+            /// <summary>
+            /// This property gets or sets the value for 'ShowAllItemsLabel'.
+            /// </summary>
+            public bool ShowAllItemsLabel
+            {
+                get
+                {
+                    // initial value
+                    bool showAllItemsLabel = true;
+
+                    // if the control exists
+                    if (AllItemsLabel != null)
+                    {
+                        // set the return value
+                        showAllItemsLabel = (bool) AllItemsLabel.Visible;
+                    }
+
+                    // return value
+                    return showAllItemsLabel;
+                }
+                set
+                {
+                    // if the control exists
+                    if (AllItemsLabel != null)
+                    {        
+                        // set the value
+                        AllItemsLabel.Visible = value;
+                    }
+                }
+            }
+            #endregion
+            
+            #region ShowBackgroundImage
+            /// <summary>
+            /// This property gets or sets the value for 'ShowBackgroundImage'.
+            /// </summary>
+            public bool ShowBackgroundImage
+            {
+                get { return showBackgroundImage; }
+                set 
+                { 
+                    // set the value
+                    showBackgroundImage = value;
+
+                    // if the value for showBackgroundImage is FALSE
+                    if (!showBackgroundImage)
+                    {
+                        // erase the BackgroundImage
+                        this.BackgroundImage = null;
+                    }
+                    else
+                    {
+                        // To Do: Add a theme some day
+                        this.BackgroundImage = Properties.Resources.Deep_Black;
+                    }
+                }
+            }
+            #endregion
+            
+            #region ShowSelectedControlPanel
+            /// <summary>
+            /// This property gets or sets the value for 'ShowSelectedControlPanel'.
+            /// </summary>
+            public bool ShowSelectedControlPanel
+            {
+                get { return showSelectedControlPanel; }
+                set 
+                { 
+                    showSelectedControlPanel = value;
+
+                    // Enable controls
+                    UIEnable();
+                }
+            }
+            #endregion
             
             #region Sorted
             /// <summary>
@@ -738,6 +1037,57 @@ namespace DataJuggler.Win.Controls
             }
         #endregion
 
+            #region TopMargin
+            /// <summary>
+            /// This property gets or sets the value for 'TopMargin'.
+            /// </summary>
+            public int TopMargin
+            {
+                get 
+                { 
+                    // if the TopMarginPanel exists
+                    if (TopMarginPanel != null)
+                    {
+                        // set the return value
+                        topMargin = TopMarginPanel.Height;
+                    }
+
+                    // return value
+                    return topMargin; 
+                }
+                set 
+                { 
+                    // set the value
+                    topMargin = value;
+
+                    // if the TopMarginPanel exists
+                    if (TopMarginPanel != null)
+                    {
+                        // set the height of the control
+                        TopMarginPanel.Height = value;
+                    }
+                }
+            }
+            #endregion
+            
+            #region WidthFullControl
+            /// <summary>
+            /// This property gets or sets the value for 'WidthFullControl'.
+            /// </summary>
+            public int WidthFullControl
+            {
+                get { return widthFullControl; }
+                set 
+                { 
+                    // set the width
+                    widthFullControl = value;
+
+                    // Enable or disable controls
+                    UIEnable();
+                }
+            }
+            #endregion
+            
         #endregion
 
     }

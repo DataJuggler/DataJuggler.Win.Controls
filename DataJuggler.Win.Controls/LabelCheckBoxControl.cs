@@ -399,7 +399,7 @@ namespace DataJuggler.Win.Controls
                     // set the value
                     labelTextAlign = value; 
                     
-                    if (this.Label != null)
+                    if ((this.Label != null) && (value != 0))
                     {
                         // set the value
                         this.Label.TextAlign = value;

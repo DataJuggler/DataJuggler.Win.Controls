@@ -4,6 +4,7 @@
 
 using System.Windows.Forms;
 using System.Drawing;
+using DataJuggler.Core.UltimateHelper;
 using DataJuggler.Win.Controls.Interfaces;
 using System.ComponentModel;
 using System;
@@ -24,20 +25,20 @@ namespace DataJuggler.Win.Controls
         private int labelWidth;
         private string labelText;
         private string text;
-        private HorizontalAlignment textAlign;
         private bool passwordMode;
         private bool editable;
         private bool encrypted;
         private bool multiLine;
+        private HorizontalAlignment textAlign;
         private ContentAlignment labelTextAlign;
         private Font labelFont;
         private Font textBoxFont;
+        private Color textBoxEditableColor;
+        private Color textBoxDisabledColor;
         private int labelTopMargin;
         private int labelBottomMargin;
         private int textBoxTopMargin;
         private int textBoxBottomMargin;
-        private Color textBoxEditableColor;
-        private Color textBoxDisabledColor;
         private ITextChanged onTextChangedListener;
         private int bottomMargin;
         #endregion
@@ -154,9 +155,6 @@ namespace DataJuggler.Win.Controls
                 this.TextBoxFont = new Font("Verdana", fontSize);
                 this.LabelFont = new Font("Verdana", fontSize, FontStyle.Bold);
 
-                // Erase the Text
-                this.TextBox.Text = "";
-                
                 // Default to Editable
                 this.Editable = true;
             }
@@ -383,23 +381,16 @@ namespace DataJuggler.Win.Controls
                     // initial value
                     int intValue = 0;
 
-                    // local
-                    int tempValue = 0;
-
                     try
                     {
                         // there must be some text to be able to parse
                         if (this.HasText)
                         {
-                            // try parsing the text as int
-                            bool parsed = Int32.TryParse(this.Text, out tempValue);
+                            // get a local copy and replace out any formatting values
+                            string text = this.Text.Replace("%", "").Replace(",", "").Replace("$", "");
 
-                            // if parsed
-                            if (parsed)
-                            {
-                                // set the return value
-                                intValue = tempValue;
-                            }
+                            // Attempt to parse
+                            intValue = NumericHelper.ParseInteger(text, 0, -1);
                         }
                     }
                     catch
@@ -527,7 +518,7 @@ namespace DataJuggler.Win.Controls
                     // set the value
                     labelTextAlign = value; 
                     
-                    if (this.Label != null)
+                    if ((this.Label != null) && (value != 0))
                     {
                         // set the value
                         this.Label.TextAlign = value;

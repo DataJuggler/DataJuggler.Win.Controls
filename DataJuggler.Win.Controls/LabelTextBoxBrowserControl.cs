@@ -609,7 +609,6 @@ namespace DataJuggler.Win.Controls
             /// <summary>
             /// Set the TextAlign for the label.
             /// </summary>
-            
             [Browsable(true)]
             [DesignerSerializationVisibility(DesignerSerializationVisibility.Hidden)] 
             public ContentAlignment LabelTextAlign
@@ -620,7 +619,7 @@ namespace DataJuggler.Win.Controls
                     // set the value
                     labelTextAlign = value; 
                     
-                    if (this.Label != null)
+                    if ((this.Label != null) && (value != 0))
                     {
                         // set the value
                         this.Label.TextAlign = value;
