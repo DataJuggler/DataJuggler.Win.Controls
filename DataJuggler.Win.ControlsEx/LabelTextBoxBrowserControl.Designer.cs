@@ -1,33 +1,59 @@
-﻿namespace DataJuggler.Win.Controls
+﻿
+
+#region using statements
+
+
+#endregion
+
+namespace DataJuggler.Win.Controls
 {
+
+    #region class LabelTextBoxBrowserControl
+    /// <summary>
+    /// method [Enter Method Description]
+    /// </summary>
     partial class LabelTextBoxBrowserControl
     {
-        /// <summary> 
-        /// Required designer variable.
-        /// </summary>
+        
+        #region Private Variables
         private System.ComponentModel.IContainer components = null;
+        private System.Windows.Forms.Button BrowseButton;
+        private System.Windows.Forms.Panel TextBoxTopMarginPanel;
+        private System.Windows.Forms.Panel TextBoxBottomMarginPanel;
+        private System.Windows.Forms.Panel LeftPanel;
+        private System.Windows.Forms.Panel LabelRightMargin;
+        private System.Windows.Forms.Panel LabelTopMarginPanel;
+        private System.Windows.Forms.Panel LabelBottomMarginPanel;
 
-        /// <summary> 
-        /// Clean up any resources being used.
-        /// </summary>
-        /// <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
-        protected override void Dispose(bool disposing)
-        {
-            if (disposing && (components != null))
+        // exposing the Label and TextBox
+        public System.Windows.Forms.Label Label;
+        public System.Windows.Forms.TextBox TextBox;
+        #endregion
+        
+        #region Methods
+            
+            #region Dispose(bool disposing)
+            /// <summary> 
+            /// Clean up any resources being used.
+            /// </summary>
+            /// <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+            protected override void Dispose(bool disposing)
             {
-                components.Dispose();
+                if (disposing && (components != null))
+                {
+                    components.Dispose();
+                }
+                base.Dispose(disposing);
             }
-            base.Dispose(disposing);
-        }
-
-        #region Component Designer generated code
-
-        /// <summary> 
-        /// Required method for Designer support - do not modify 
-        /// the contents of this method with the code editor.
-        /// </summary>
-        private void InitializeComponent()
-        {
+            #endregion
+            
+            #region InitializeComponent()
+            /// <summary> 
+            /// Required method for Designer support - do not modify 
+            /// the contents of this method with the code editor.
+            /// </summary>
+            private void InitializeComponent()
+            {
             this.BrowseButton = new System.Windows.Forms.Button();
             this.TextBoxTopMarginPanel = new System.Windows.Forms.Panel();
             this.TextBoxBottomMarginPanel = new System.Windows.Forms.Panel();
@@ -151,17 +177,12 @@
             this.ResumeLayout(false);
             this.PerformLayout();
 
-        }
-
+            }
+            #endregion
+            
         #endregion
-        private System.Windows.Forms.Button BrowseButton;
-        private System.Windows.Forms.Panel TextBoxTopMarginPanel;
-        private System.Windows.Forms.Panel TextBoxBottomMarginPanel;
-        private System.Windows.Forms.Panel LeftPanel;
-        private System.Windows.Forms.Label Label;
-        private System.Windows.Forms.Panel LabelRightMargin;
-        private System.Windows.Forms.Panel LabelTopMarginPanel;
-        private System.Windows.Forms.Panel LabelBottomMarginPanel;
-        private System.Windows.Forms.TextBox TextBox;
+        
     }
+    #endregion
+
 }

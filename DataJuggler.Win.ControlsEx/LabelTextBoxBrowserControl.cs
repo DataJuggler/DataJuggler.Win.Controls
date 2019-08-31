@@ -60,6 +60,7 @@ namespace DataJuggler.Win.Controls
         private string selectedPath;
         private string startPath;
         private CustomOpenDelegate openCallback;
+        private ThemeEnum theme;
         #endregion
         
         #region Constructor
@@ -175,9 +176,12 @@ namespace DataJuggler.Win.Controls
                 this.Enabled = true;
                 
                 // Default Colors
-                this.EnabledLabelColor = Color.Black;
-                this.DisabledLabelColor = Color.DarkGray;
+                this.Theme = ThemeEnum.Dark;
+                
                 this.Font = new Font("Verdana", 12);
+                this.LabelFont = new Font("Verdana", 12, FontStyle.Bold);
+                BackColor = Color.Transparent;
+                this.TextBoxFont = this.Font;
                 
                 // Handle which controls are enabled or disabled and change the colors accordingly
                 UIControl(this.Enabled);
@@ -605,6 +609,8 @@ namespace DataJuggler.Win.Controls
             /// <summary>
             /// Set the TextAlign for the label.
             /// </summary>
+            [Browsable(true)]
+            [DesignerSerializationVisibility(DesignerSerializationVisibility.Hidden)] 
             public ContentAlignment LabelTextAlign
             {
                 get { return labelTextAlign; }
@@ -613,7 +619,7 @@ namespace DataJuggler.Win.Controls
                     // set the value
                     labelTextAlign = value; 
                     
-                    if (this.Label != null)
+                    if ((this.Label != null) && (value != 0))
                     {
                         // set the value
                         this.Label.TextAlign = value;
@@ -747,7 +753,7 @@ namespace DataJuggler.Win.Controls
             /// <summary>
             /// The Text for the LabelTextBox
             /// </summary>
-            [EditorBrowsable(EditorBrowsableState.Always), Browsable(true), DesignerSerializationVisibility(DesignerSerializationVisibility.Visible), Bindable(true)]
+            [EditorBrowsable(EditorBrowsableState.Always), Browsable(true), DesignerSerializationVisibility(DesignerSerializationVisibility.Hidden), Bindable(true)]
             public new string Text
             {
                 get 
@@ -781,6 +787,8 @@ namespace DataJuggler.Win.Controls
             /// <summary>
             /// The alignment for the TextAlign.
             /// </summary>
+            [Browsable(false)]
+            [DesignerSerializationVisibility(DesignerSerializationVisibility.Hidden)] 
             public HorizontalAlignment TextAlign
             {
                 get 
@@ -908,6 +916,44 @@ namespace DataJuggler.Win.Controls
                         // set the height
                         this.TextBoxTopMarginPanel.Height = value;
                     }
+                }
+            }
+            #endregion
+            
+            #region Theme
+            /// <summary>
+            /// This property gets or sets the value for 'Theme'.
+            /// </summary>
+            public ThemeEnum Theme
+            {
+                get { return theme; }
+                set 
+                { 
+                    // set the value
+                    theme = value;
+
+                    // if using the Blue Theme
+                    if (theme == ThemeEnum.Blue)
+                    {
+                        // use Dark Theme
+                        this.LabelColor = Color.Black;
+                        this.ButtonImage = Properties.Resources.DarkBlueButton;
+                        this.EnabledLabelColor = Color.Black;
+                        this.DisabledLabelColor = Color.DarkGray;
+                    }
+                    else
+                    {
+                        // use Dark Theme
+                        this.LabelColor = Color.LemonChiffon;
+                        this.ButtonImage = Properties.Resources.DarkButton;
+
+                        // Set the Enable and Disabled colors in case Enabled changes
+                        this.EnabledLabelColor = Color.LemonChiffon;
+                        this.DisabledLabelColor = Color.LightGray;
+                    }
+
+                    // Refresh the UI
+                    this.Refresh();
                 }
             }
             #endregion

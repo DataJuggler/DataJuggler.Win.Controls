@@ -71,14 +71,14 @@ namespace DataJuggler.Win.Controls
             this.CheckBoxLeftMarginPanel.Dock = System.Windows.Forms.DockStyle.Left;
             this.CheckBoxLeftMarginPanel.Location = new System.Drawing.Point(160, 3);
             this.CheckBoxLeftMarginPanel.Name = "CheckBoxLeftMarginPanel";
-            this.CheckBoxLeftMarginPanel.Size = new System.Drawing.Size(3, 25);
+            this.CheckBoxLeftMarginPanel.Size = new System.Drawing.Size(0, 25);
             this.CheckBoxLeftMarginPanel.TabIndex = 3;
             // 
             // CheckBox
             // 
             this.CheckBox.AutoSize = true;
             this.CheckBox.Dock = System.Windows.Forms.DockStyle.Left;
-            this.CheckBox.Location = new System.Drawing.Point(163, 3);
+            this.CheckBox.Location = new System.Drawing.Point(160, 3);
             this.CheckBox.Name = "CheckBox";
             this.CheckBox.Size = new System.Drawing.Size(15, 25);
             this.CheckBox.TabIndex = 4;

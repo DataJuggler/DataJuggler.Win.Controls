@@ -3,6 +3,7 @@
 #region using statements
 
 using System.Windows.Forms;
+using System.ComponentModel;
 using System.Drawing;
 using DataJuggler.Win.Controls.Interfaces;
 
@@ -91,12 +92,16 @@ namespace DataJuggler.Win.Controls
             /// </summary>
             private void Init()
             {
-                // set the LabelTextAlign
+                // set the LabelTextAligna
                 this.LabelTextAlign = ContentAlignment.MiddleRight;
 
                 // Set Default height & width
                 this.LabelWidth = 140;
                 this.Width = 280;
+
+                // Initialize both to zero
+                this.CheckBoxHorizontalOffSet = 0;
+                this.CheckBoxVerticalOffSet = 0;
             }
             #endregion
 
@@ -384,6 +389,8 @@ namespace DataJuggler.Win.Controls
             /// <summary>
             /// Set the TextAlign for the label.
             /// </summary>
+            [Browsable(true)]
+            [DesignerSerializationVisibility(DesignerSerializationVisibility.Hidden)] 
             public ContentAlignment LabelTextAlign
             {
                 get { return labelTextAlign; }
@@ -392,7 +399,7 @@ namespace DataJuggler.Win.Controls
                     // set the value
                     labelTextAlign = value; 
                     
-                    if (this.Label != null)
+                    if ((this.Label != null) && (value != 0))
                     {
                         // set the value
                         this.Label.TextAlign = value;

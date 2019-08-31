@@ -5,8 +5,8 @@ using System.Runtime.InteropServices;
 // General Information about an assembly is controlled through the following 
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
-[assembly: AssemblyTitle("DataJuggler.Win.Controls")]
-[assembly: AssemblyDescription("A collection of controls for Windows Forms development.")]
+[assembly: AssemblyTitle("DataJuggler.Win.ControlsEx")]
+[assembly: AssemblyDescription("A collection of controls for Windows Forms development that are strongly typed.")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("Data Juggler")]
 [assembly: AssemblyProduct("DataJuggler.Win.Controls")]

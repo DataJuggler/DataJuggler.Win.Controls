@@ -4,6 +4,7 @@
 
 using System.Windows.Forms;
 using System.Drawing;
+using DataJuggler.Core.UltimateHelper;
 using DataJuggler.Win.Controls.Interfaces;
 using System.ComponentModel;
 using System;
@@ -24,20 +25,20 @@ namespace DataJuggler.Win.Controls
         private int labelWidth;
         private string labelText;
         private string text;
-        private HorizontalAlignment textAlign;
         private bool passwordMode;
         private bool editable;
         private bool encrypted;
         private bool multiLine;
+        private HorizontalAlignment textAlign;
         private ContentAlignment labelTextAlign;
         private Font labelFont;
         private Font textBoxFont;
+        private Color textBoxEditableColor;
+        private Color textBoxDisabledColor;
         private int labelTopMargin;
         private int labelBottomMargin;
         private int textBoxTopMargin;
         private int textBoxBottomMargin;
-        private Color textBoxEditableColor;
-        private Color textBoxDisabledColor;
         private ITextChanged onTextChangedListener;
         private int bottomMargin;
         #endregion
@@ -78,6 +79,13 @@ namespace DataJuggler.Win.Controls
             /// </summary>
             private void TextBox_TextChanged(object sender, EventArgs e)
             {
+                // if the text starts with default VS named text
+                if (TextBox.Text.StartsWith("labelTextBoxControl"))
+                {
+                    // do not allow default text
+                    TextBox.Text = "";
+                }
+
                 // if the Listener exists
                 if (this.HasOnTextChangedListener)
                 {
@@ -143,10 +151,10 @@ namespace DataJuggler.Win.Controls
                 this.TextBoxDisabledColor = Color.LightGray;
 
                 // create the fonts
-                float fontSize = 14.25f;
+                float fontSize = 12;
                 this.TextBoxFont = new Font("Verdana", fontSize);
                 this.LabelFont = new Font("Verdana", fontSize, FontStyle.Bold);
-                
+
                 // Default to Editable
                 this.Editable = true;
             }
@@ -373,23 +381,16 @@ namespace DataJuggler.Win.Controls
                     // initial value
                     int intValue = 0;
 
-                    // local
-                    int tempValue = 0;
-
                     try
                     {
                         // there must be some text to be able to parse
                         if (this.HasText)
                         {
-                            // try parsing the text as int
-                            bool parsed = Int32.TryParse(this.Text, out tempValue);
+                            // get a local copy and replace out any formatting values
+                            string text = this.Text.Replace("%", "").Replace(",", "").Replace("$", "");
 
-                            // if parsed
-                            if (parsed)
-                            {
-                                // set the return value
-                                intValue = tempValue;
-                            }
+                            // Attempt to parse
+                            intValue = NumericHelper.ParseInteger(text, 0, -1);
                         }
                     }
                     catch
@@ -507,6 +508,8 @@ namespace DataJuggler.Win.Controls
             /// <summary>
             /// Set the TextAlign for the label.
             /// </summary>
+            [Browsable(true)]
+            [DesignerSerializationVisibility(DesignerSerializationVisibility.Hidden)] 
             public ContentAlignment LabelTextAlign
             {
                 get { return labelTextAlign; }
@@ -515,7 +518,7 @@ namespace DataJuggler.Win.Controls
                     // set the value
                     labelTextAlign = value; 
                     
-                    if (this.Label != null)
+                    if ((this.Label != null) && (value != 0))
                     {
                         // set the value
                         this.Label.TextAlign = value;
@@ -671,6 +674,8 @@ namespace DataJuggler.Win.Controls
             /// <summary>
             /// The alignment for the TextAlign.
             /// </summary>
+            [Browsable(false)]
+            [DesignerSerializationVisibility(DesignerSerializationVisibility.Hidden)] 
             public HorizontalAlignment TextAlign
             {
                 get 
@@ -704,7 +709,7 @@ namespace DataJuggler.Win.Controls
             /// <summary>
             /// The Text for the LabelTextBox
             /// </summary>
-            [EditorBrowsable(EditorBrowsableState.Always), Browsable(true), DesignerSerializationVisibility(DesignerSerializationVisibility.Visible), Bindable(true)]
+            [EditorBrowsable(EditorBrowsableState.Always), Browsable(true), DesignerSerializationVisibility(DesignerSerializationVisibility.Hidden), Bindable(true)]
             public new string Text
             {
                 get 
