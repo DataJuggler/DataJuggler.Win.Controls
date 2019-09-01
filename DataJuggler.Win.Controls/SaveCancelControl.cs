@@ -147,7 +147,7 @@ namespace DataJuggler.Win.Controls
                 if (this.HasParentHost)
                 {
                     // notify the parent hoste to save
-                    this.ParentHost.OnSave(true);
+                    this.ParentHost.OnSave(false);
                 }
             }
             #endregion
