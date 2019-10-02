@@ -241,11 +241,15 @@ namespace DataJuggler.Win.Controls
             /// </summary>
             public void DisplayList()
             {
-                // Iterate the collection of object objects
-                foreach (object item in List)
+                // If the List collection exists and has one or more items
+                if (ListHelper.HasOneOrMoreItems(List))
                 {
-                    // add this item
-                    ListBox.Items.Add(item);
+                    // Iterate the collection of object objects
+                    foreach (object item in List)
+                    {
+                        // add this item
+                        ListBox.Items.Add(item);
+                    }
                 }
             }
             #endregion
@@ -379,17 +383,21 @@ namespace DataJuggler.Win.Controls
                     DisplayList();
                 }
 
-                // find the index
-                index = FindItemIndex(name);
-
-                // Set the SelectedIndex
-                ListBox.SelectedIndex = index;
-
-                // if the SelectedIndex was found
-                if (ListBox.SelectedIndex >= 0)
+                // If the name string exists
+                if (TextHelper.Exists(name))
                 {
-                    // Set Focus to the ListBox so the selected item highlights (trying)
-                    ListBox.Focus();
+                    // find the index
+                    index = FindItemIndex(name);
+
+                    // Set the SelectedIndex
+                    ListBox.SelectedIndex = index;
+
+                    // if the SelectedIndex was found
+                    if (ListBox.SelectedIndex >= 0)
+                    {
+                        // Set Focus to the ListBox so the selected item highlights (trying)
+                        ListBox.Focus();
+                    }
                 }
             }
             #endregion
@@ -1016,10 +1024,13 @@ namespace DataJuggler.Win.Controls
             {
                 get 
                 { 
-                    // return value
-                    if (sorted != ListBox.Sorted)
+                    // set the value for sorted
+                    sorted = false;
+                    
+                    // if the ListBox exists
+                    if (ListBox != null)
                     {
-                        // set the value for sorted
+                        // return the value
                         sorted = ListBox.Sorted;
                     }
                     
@@ -1031,8 +1042,12 @@ namespace DataJuggler.Win.Controls
                     // set the value
                     sorted = value;
 
-                    // set  the value for sorted
-                    ListBox.Sorted = sorted;
+                    // if the ListBox exists
+                    if (ListBox != null)
+                    {
+                        // set  the value for sorted
+                        ListBox.Sorted = sorted;
+                    }
                 }
             }
         #endregion

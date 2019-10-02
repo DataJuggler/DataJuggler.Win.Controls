@@ -89,7 +89,7 @@ namespace DataJuggler.Win.Controls
                 if (BrowseType == BrowseTypeEnum.File)
                 {
                     // Browse for a file
-                    DialogHelper.ChooseFile(this.TextBox, this.Filter, this.SelectedPath);
+                    DialogHelper.ChooseFile(this.TextBox, this.Filter, this.StartPath);
                 }
                 // If browsing for a directory
                 else if (BrowseType == BrowseTypeEnum.Folder)
@@ -185,6 +185,17 @@ namespace DataJuggler.Win.Controls
                 
                 // Handle which controls are enabled or disabled and change the colors accordingly
                 UIControl(this.Enabled);
+            }
+            #endregion
+
+            #region SetFocusToTextBox()
+            /// <summary>
+            /// This method Set Focus To Text Box
+            /// </summary>
+            public void SetFocusToTextBox()
+            {
+                // Set Focus
+                this.TextBox.Focus();
             }
             #endregion
             

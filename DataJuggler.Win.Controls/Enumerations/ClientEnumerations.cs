@@ -30,9 +30,9 @@ namespace DataJuggler.Win.Controls.Enumerations
     /// </summary>
     public enum EditModeEnum
     {
-        Add = 0,
-        Edit = 1,
-        ReadOnly = 2
+        ReadOnly = 0,
+        Add = 1,
+        Edit = 2
     }
     #endregion
 

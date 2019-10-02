@@ -31,6 +31,8 @@ namespace DataJuggler.Win.Controls
         private int saveButtonWidth;
         private int cancelButtonWidth;
         private Color disabledForeColor;
+        private ContentAlignment saveButtonTextAlign;
+        private ContentAlignment saveAndCloseButtonTextAlign;
         private ContentAlignment cancelButtonTextAlign;
         #endregion
 
@@ -240,6 +242,9 @@ namespace DataJuggler.Win.Controls
                 this.SaveButton.Width = width;
                 this.SaveButton.Visible = visible;
                 this.SaveButton.Enabled = enabled;
+
+                // Enable controls now that these properties have been set
+                UIEnable();
             }
             #endregion
 
@@ -256,6 +261,9 @@ namespace DataJuggler.Win.Controls
                 this.CancelSave.Width = width;
                 this.CancelSave.Visible = visible;
                 this.CancelSave.Enabled = enabled;
+
+                // Enable controls now that these properties have been set
+                UIEnable();
             }
             #endregion
             
@@ -471,6 +479,44 @@ namespace DataJuggler.Win.Controls
             }
             #endregion
 
+            #region SaveAndcloseButtonTextAlign
+            /// <summary>
+            /// This property gets or sets the value for 'SaveAndcloseButtonTextAlign'.
+            /// </summary>
+            [Browsable(true)]
+            [DesignerSerializationVisibility(DesignerSerializationVisibility.Hidden)] 
+            public ContentAlignment SaveAndcloseButtonTextAlign
+            {
+                get 
+                { 
+                    // initial value
+                    ContentAlignment saveAndcloseButtonTextAlign = ContentAlignment.MiddleCenter;
+
+                    // if the SaveAndCloseButton exists
+                    if (SaveAndCloseButton != null)
+                    {
+                        // set the return value
+                        saveAndcloseButtonTextAlign = SaveAndCloseButton.TextAlign;
+                    }
+
+                    // return value
+                    return saveAndcloseButtonTextAlign;
+                }
+                set 
+                { 
+                    // set the value
+                    saveAndCloseButtonTextAlign = value;
+
+                    // verify the button exists
+                    if (SaveAndCloseButton != null)
+                    {
+                        // Set the value
+                        SaveAndCloseButton.TextAlign = value;
+                    }
+                }
+            }
+            #endregion
+
             #region SaveAndCloseButtonWidth
             /// <summary>
             /// This property gets or sets the value for 'SaveAndCloseButtonWidth'.
@@ -485,6 +531,44 @@ namespace DataJuggler.Win.Controls
 
                     // size the butotn
                     this.SaveAndCloseButton.Width = value;
+                }
+            }
+            #endregion
+
+            #region SaveButtonTextAlign
+            /// <summary>
+            /// This property gets or sets the value for 'SaveButtonTextAlign'.
+            /// </summary>
+            [Browsable(true)]
+            [DesignerSerializationVisibility(DesignerSerializationVisibility.Hidden)] 
+            public ContentAlignment SaveButtonTextAlign
+            {
+                get 
+                { 
+                    // initial value
+                    ContentAlignment saveButtonTextAlign = ContentAlignment.MiddleCenter;
+
+                    // if the SaveButton exists
+                    if (SaveButton != null)
+                    {
+                        // set the return value
+                        saveButtonTextAlign = SaveButton.TextAlign;
+                    }
+
+                    // return value
+                    return saveButtonTextAlign;
+                }
+                set 
+                { 
+                    // set the value
+                    saveButtonTextAlign = value;
+
+                    // verify the button exists
+                    if (SaveButton != null)
+                    {
+                        // Set the value
+                        SaveButton.TextAlign = value;
+                    }
                 }
             }
             #endregion

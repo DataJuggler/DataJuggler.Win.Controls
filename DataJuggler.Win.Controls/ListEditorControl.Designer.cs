@@ -37,7 +37,6 @@
             this.DeleteButton = new System.Windows.Forms.Button();
             this.EditButton = new System.Windows.Forms.Button();
             this.AddButton = new System.Windows.Forms.Button();
-            this.ListBox = new System.Windows.Forms.ListBox();
             this.AllItemsLabel = new System.Windows.Forms.Label();
             this.SeperatorPanel = new DataJuggler.Win.Controls.Objects.PanelExtender();
             this.SelectedControlPanel = new DataJuggler.Win.Controls.Objects.PanelExtender();
@@ -45,6 +44,7 @@
             this.SelectedItemLabel = new System.Windows.Forms.Label();
             this.SavePanel = new DataJuggler.Win.Controls.Objects.PanelExtender();
             this.RightMarginPanel = new DataJuggler.Win.Controls.Objects.PanelExtender();
+            this.ListBox = new System.Windows.Forms.ListBox();
             this.ListEditorPanel.SuspendLayout();
             this.ButtonPanel.SuspendLayout();
             this.SelectedControlPanel.SuspendLayout();
@@ -80,8 +80,8 @@
             // ListEditorPanel
             // 
             this.ListEditorPanel.BackColor = System.Drawing.Color.Transparent;
-            this.ListEditorPanel.Controls.Add(this.ButtonPanel);
             this.ListEditorPanel.Controls.Add(this.ListBox);
+            this.ListEditorPanel.Controls.Add(this.ButtonPanel);
             this.ListEditorPanel.Controls.Add(this.AllItemsLabel);
             this.ListEditorPanel.Dock = System.Windows.Forms.DockStyle.Left;
             this.ListEditorPanel.Location = new System.Drawing.Point(16, 16);
@@ -164,17 +164,6 @@
             this.AddButton.MouseEnter += new System.EventHandler(this.Button_Enter);
             this.AddButton.MouseLeave += new System.EventHandler(this.Button_Leave);
             // 
-            // ListBox
-            // 
-            this.ListBox.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.ListBox.FormattingEnabled = true;
-            this.ListBox.ItemHeight = 18;
-            this.ListBox.Location = new System.Drawing.Point(0, 20);
-            this.ListBox.Name = "ListBox";
-            this.ListBox.Size = new System.Drawing.Size(286, 268);
-            this.ListBox.TabIndex = 19;
-            this.ListBox.SelectedValueChanged += new System.EventHandler(this.ListBox_SelectedIndexChanged);
-            // 
             // AllItemsLabel
             // 
             this.AllItemsLabel.BackColor = System.Drawing.Color.Transparent;
@@ -248,6 +237,17 @@
             this.RightMarginPanel.Size = new System.Drawing.Size(16, 288);
             this.RightMarginPanel.TabIndex = 3;
             // 
+            // ListBox
+            // 
+            this.ListBox.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.ListBox.FormattingEnabled = true;
+            this.ListBox.ItemHeight = 18;
+            this.ListBox.Location = new System.Drawing.Point(0, 20);
+            this.ListBox.Name = "ListBox";
+            this.ListBox.Size = new System.Drawing.Size(286, 218);
+            this.ListBox.TabIndex = 20;
+            this.ListBox.SelectedIndexChanged += new System.EventHandler(this.ListBox_SelectedIndexChanged);
+            // 
             // ListEditorControl
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
@@ -275,7 +275,6 @@
         private Objects.PanelExtender BottomMarginPanel;
         private Objects.PanelExtender LeftMarginPanel;
         private Objects.PanelExtender ListEditorPanel;
-        private System.Windows.Forms.ListBox ListBox;
         private System.Windows.Forms.Label AllItemsLabel;
         private Objects.PanelExtender ButtonPanel;
         private System.Windows.Forms.Button DeleteButton;
@@ -287,5 +286,6 @@
         private System.Windows.Forms.Label SelectedItemLabel;
         private Objects.PanelExtender SavePanel;
         private Objects.PanelExtender RightMarginPanel;
+        private System.Windows.Forms.ListBox ListBox;
     }
 }
