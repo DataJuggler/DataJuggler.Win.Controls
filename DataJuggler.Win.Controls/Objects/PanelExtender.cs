@@ -10,7 +10,7 @@ namespace DataJuggler.Win.Controls.Objects
 
     #region class PanelExtender : Panel
     /// <summary>
-    /// This class inherits from Panel; this is intended to stop the flickering on the panels
+    /// This class inherits from Panel; this is intended to stop the flickering on panels
     /// </summary>
     public class PanelExtender : Panel
     {
@@ -22,7 +22,7 @@ namespace DataJuggler.Win.Controls.Objects
         public PanelExtender()
         {
             // Set Style to stop flickering
-            this.SetStyle(System.Windows.Forms.ControlStyles.UserPaint | System.Windows.Forms.ControlStyles.AllPaintingInWmPaint | System.Windows.Forms.ControlStyles.OptimizedDoubleBuffer, true);
+            this.SetStyle(System.Windows.Forms.ControlStyles.UserPaint | System.Windows.Forms.ControlStyles.AllPaintingInWmPaint | System.Windows.Forms.ControlStyles.OptimizedDoubleBuffer, true);          
         }
         #endregion
 
