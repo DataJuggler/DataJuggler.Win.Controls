@@ -14,6 +14,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using DataJuggler.Win.Controls.Enumerations;
 using DataJuggler.UltimateHelper;
+using DataJuggler.Win.Controls.Util;
 
 #endregion
 
@@ -61,6 +62,7 @@ namespace DataJuggler.Win.Controls
         private string startPath;
         private CustomOpenDelegate openCallback;
         private ThemeEnum theme;
+        private bool darkMode;
         #endregion
         
         #region Constructor
@@ -89,13 +91,13 @@ namespace DataJuggler.Win.Controls
                 if (BrowseType == BrowseTypeEnum.File)
                 {
                     // Browse for a file
-                    // DialogHelper.ChooseFile(this.TextBox, this.Filter, this.StartPath);
+                    DialogHelper.ChooseFile(this.TextBox, this.Filter, this.StartPath);
                 }
                 // If browsing for a directory
                 else if (BrowseType == BrowseTypeEnum.Folder)
                 {
                     // Browse for a directory
-                    // DialogHelper.ChooseFolder(this.TextBox, this.SelectedPath);
+                    DialogHelper.ChooseFolder(this.TextBox, this.SelectedPath);
                 }
                 else if ((BrowseType == BrowseTypeEnum.CustomOpen ) && (HasOpenCallback))
                 {
@@ -175,12 +177,11 @@ namespace DataJuggler.Win.Controls
                 // Default to enabled
                 this.Enabled = true;
                 
-                // Default Colors
-                this.Theme = ThemeEnum.Dark;
-                
                 this.Font = new Font("Verdana", 12);
                 this.LabelFont = new Font("Verdana", 12, FontStyle.Bold);
                 BackColor = Color.Transparent;
+                this.LabelColor = Color.Black;
+                this.LabelWidth = 80;
                 this.TextBoxFont = this.Font;
                 
                 // Handle which controls are enabled or disabled and change the colors accordingly
@@ -306,6 +307,41 @@ namespace DataJuggler.Win.Controls
                     
                     // return value
                     return cp;
+                }
+            }
+            #endregion
+            
+            #region DarkMode
+            /// <summary>
+            /// This property gets or sets the value for 'DarkMode'.
+            /// </summary>
+            public bool DarkMode
+            {
+                get { return darkMode; }
+                set 
+                { 
+                    // set the value
+                    darkMode = value;
+
+                    // if darkMode 
+                    if (darkMode)
+                    {
+                        // use lemonchiffon
+                        this.LabelColor = Color.LemonChiffon;
+
+                        // Set the Enable and Disabled colors in case Enabled changes
+                        this.EnabledLabelColor = Color.LemonChiffon;
+                        this.DisabledLabelColor = Color.LightGray;
+                    }
+                    else
+                    {
+                        // use Black (Default)
+                        this.LabelColor = Color.Black;
+
+                        // Use Black
+                        this.EnabledLabelColor = Color.Black;
+                        this.DisabledLabelColor = Color.DarkGray;
+                    }
                 }
             }
             #endregion
@@ -944,23 +980,19 @@ namespace DataJuggler.Win.Controls
                     theme = value;
 
                     // if using the Blue Theme
-                    if (theme == ThemeEnum.Blue)
+                    if (theme == ThemeEnum.Wood)
                     {
                         // use Dark Theme
-                        this.LabelColor = Color.Black;
                         this.ButtonImage = Properties.Resources.WoodButtonWidth640;
-                        this.EnabledLabelColor = Color.Black;
-                        this.DisabledLabelColor = Color.DarkGray;
+                       
                     }
-                    else
+                    else if (theme == ThemeEnum.Dark)
                     {
                         // use Dark Theme
                         this.LabelColor = Color.LemonChiffon;
-                        this.ButtonImage = Properties.Resources.WoodButtonWidth640Disabled;
+                        this.ButtonImage = Properties.Resources.BlackButton;
 
-                        // Set the Enable and Disabled colors in case Enabled changes
-                        this.EnabledLabelColor = Color.LemonChiffon;
-                        this.DisabledLabelColor = Color.LightGray;
+                    
                     }
 
                     // Refresh the UI

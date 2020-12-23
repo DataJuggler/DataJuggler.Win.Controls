@@ -54,6 +54,7 @@ namespace DataJuggler.Win.Controls
             /// </summary>
             private void InitializeComponent()
             {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(LabelTextBoxBrowserControl));
             this.BrowseButton = new System.Windows.Forms.Button();
             this.TextBoxTopMarginPanel = new System.Windows.Forms.Panel();
             this.TextBoxBottomMarginPanel = new System.Windows.Forms.Panel();
@@ -69,14 +70,14 @@ namespace DataJuggler.Win.Controls
             // BrowseButton
             // 
             this.BrowseButton.BackColor = System.Drawing.Color.Transparent;
-            this.BrowseButton.BackgroundImage = global::DataJuggler.Win.Controls.Properties.Resources.WoodButtonWidth640;
+            this.BrowseButton.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("BrowseButton.BackgroundImage")));
             this.BrowseButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.BrowseButton.Dock = System.Windows.Forms.DockStyle.Right;
             this.BrowseButton.FlatAppearance.BorderSize = 0;
             this.BrowseButton.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
             this.BrowseButton.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
             this.BrowseButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.BrowseButton.Font = new System.Drawing.Font("Verdana", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.BrowseButton.Font = new System.Drawing.Font("Verdana", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.BrowseButton.ForeColor = System.Drawing.Color.LemonChiffon;
             this.BrowseButton.Location = new System.Drawing.Point(352, 0);
             this.BrowseButton.MaximumSize = new System.Drawing.Size(48, 32);
@@ -121,7 +122,7 @@ namespace DataJuggler.Win.Controls
             // Label
             // 
             this.Label.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.Label.Font = new System.Drawing.Font("Verdana", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Label.Font = new System.Drawing.Font("Verdana", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.Label.Location = new System.Drawing.Point(0, 0);
             this.Label.Name = "Label";
             this.Label.Size = new System.Drawing.Size(158, 32);
@@ -156,7 +157,7 @@ namespace DataJuggler.Win.Controls
             // TextBox
             // 
             this.TextBox.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.TextBox.Font = new System.Drawing.Font("Verdana", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.TextBox.Font = new System.Drawing.Font("Verdana", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.TextBox.Location = new System.Drawing.Point(160, 0);
             this.TextBox.Name = "TextBox";
             this.TextBox.Size = new System.Drawing.Size(192, 31);

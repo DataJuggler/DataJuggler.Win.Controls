@@ -44,7 +44,7 @@ namespace DataJuggler.Win.Controls.Enumerations
     public enum ThemeEnum : int
     {
         Dark = 0,
-        Blue = 1
+        Wood = 1
     }
     #endregion
 

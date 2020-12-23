@@ -1,10 +1,10 @@
-﻿<Project Sdk="Microsoft.NET.Sdk.WindowsDesktop">
+﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
     <OutputType>Library</OutputType>
     <TargetFramework>net5.0-windows</TargetFramework>
     <UseWindowsForms>true</UseWindowsForms>
-    <Version>5.7.2</Version>
+    <Version>5.7.4</Version>
     <Authors>Corby Nichols / DataJuggler</Authors>
     <Company>Corby Nichols / DataJuggler</Company>
     <Description>This package contains a series of controls such as a LabelTextBoxControl, LabelComboBoxControl, 
@@ -17,7 +17,10 @@ It should all work, but we shall see.</Description>
     <RepositoryUrl>https://github.com/DataJuggler/DataJuggler.Win.Controls</RepositoryUrl>
     <RepositoryType>Git/GitHub</RepositoryType>
     <PackageTags>WindowsForms,Desktop,Controls</PackageTags>
-    <PackageReleaseNotes>Update 11.29.2020: Version 5.7.2 was released to include an update for DataJuggler.UltimateHelper.
+    <PackageReleaseNotes>Update 11.29.2020: Version 5.7.3: I discovered that the project SDK has been updated so that WindowsDesktop is no longer needed, only Microsoft.NET.Sdk. If I don't take this out, projects gets updated when this
+library is added.
+
+Update 11.29.2020: Version 5.7.2 was released to include an update for DataJuggler.UltimateHelper.
 
 Note: This library used to be either DataJuggler.Net.UltimateHelper or DataJuggler.Core.UltimateHelper, which have both been archived. All new work on this library will be in the .Net 5 version.
 
@@ -27,8 +30,8 @@ This is the first release for .Net 5. Nothing has been tested yet for .Net 5, at
 
 The code itself has worked for 10 or more years, but new platform, new ball game.</PackageReleaseNotes>
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
-    <AssemblyVersion>5.7.2.0</AssemblyVersion>
-    <FileVersion>5.7.2.0</FileVersion>
+    <AssemblyVersion>5.7.3.0</AssemblyVersion>
+    <FileVersion>5.7.3.0</FileVersion>
   </PropertyGroup>
 
   <ItemGroup>
