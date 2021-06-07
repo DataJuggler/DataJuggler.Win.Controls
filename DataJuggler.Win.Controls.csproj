@@ -4,20 +4,30 @@
     <OutputType>Library</OutputType>
     <TargetFramework>net5.0-windows</TargetFramework>
     <UseWindowsForms>true</UseWindowsForms>
-    <Version>5.7.4</Version>
+    <Version>5.7.9</Version>
     <Authors>Corby Nichols / DataJuggler</Authors>
     <Company>Corby Nichols / DataJuggler</Company>
     <Description>This package contains a series of controls such as a LabelTextBoxControl, LabelComboBoxControl, 
-LabelCheckBox, etc. This package was originally for .Net Framework, but I just ported it to .Net 5.
-It should all work, but we shall see.</Description>
-    <Copyright>DataJuggler 2010 - 2020 - Open Source For Any Use - As Is - Do What You Want - Give Me Credit If You Like It</Copyright>
+LabelCheckBox, etc. This package was originally for .Net Framework, but has been ported to .Net 5.
+All new development is on .Net 5 until .Net 6 comes out.</Description>
+    <Copyright>DataJuggler 2010 - 2021 - Open Source For Any Use - As Is - Do What You Want - Give Me Credit If You Like It</Copyright>
     <PackageLicenseFile>License.txt</PackageLicenseFile>
     <PackageProjectUrl>https://github.com/DataJuggler/DataJuggler.Win.Controls</PackageProjectUrl>
     <PackageIcon>DataJuggler.png</PackageIcon>
     <RepositoryUrl>https://github.com/DataJuggler/DataJuggler.Win.Controls</RepositoryUrl>
     <RepositoryType>Git/GitHub</RepositoryType>
     <PackageTags>WindowsForms,Desktop,Controls</PackageTags>
-    <PackageReleaseNotes>Update 11.29.2020: Version 5.7.3: I discovered that the project SDK has been updated so that WindowsDesktop is no longer needed, only Microsoft.NET.Sdk. If I don't take this out, projects gets updated when this
+    <PackageReleaseNotes>Update 6.7.2021: Version 5.7.9: I fixed the issue of the Background not changing for Theme Dark for the new Button. It was caused by Programmer Stupidity in the chair I sit in. The button seems to work now, I think.
+
+Update 6.7.2021: Version 5.7.8: I changed Text to ButtonText so the property showed up in the property dialog. More testing is needed, so use the button at your own risk.
+
+Update 6.7.2021: Version 5.7.7: I added a Text property to the Button control. More testing is needed, so use the button at your own risk.
+
+Update 6.7.2021: Version 5.7.6: I added some events for FontChanged, EnabledChanged and updated Theme to change the Fonts. Now to start testing.
+
+Update 6.7.2021: Version 5.7.5: I added a Button class that I am just now testing.
+
+Update 11.29.2020: Version 5.7.3: I discovered that the project SDK has been updated so that WindowsDesktop is no longer needed, only Microsoft.NET.Sdk. If I don't take this out, projects gets updated when this
 library is added.
 
 Update 11.29.2020: Version 5.7.2 was released to include an update for DataJuggler.UltimateHelper.
@@ -30,8 +40,8 @@ This is the first release for .Net 5. Nothing has been tested yet for .Net 5, at
 
 The code itself has worked for 10 or more years, but new platform, new ball game.</PackageReleaseNotes>
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
-    <AssemblyVersion>5.7.3.0</AssemblyVersion>
-    <FileVersion>5.7.3.0</FileVersion>
+    <AssemblyVersion>5.7.9.0</AssemblyVersion>
+    <FileVersion>5.7.9.0</FileVersion>
   </PropertyGroup>
 
   <ItemGroup>
@@ -41,7 +51,7 @@ The code itself has worked for 10 or more years, but new platform, new ball game
   </ItemGroup>
 
   <ItemGroup>
-    <PackageReference Include="DataJuggler.UltimateHelper" Version="1.5.1" />
+    <PackageReference Include="DataJuggler.UltimateHelper" Version="1.5.5" />
   </ItemGroup>
 
   <ItemGroup>

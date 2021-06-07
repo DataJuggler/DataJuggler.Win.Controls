@@ -6,6 +6,7 @@ using System.Windows.Forms;
 using System.Drawing;
 using DataJuggler.UltimateHelper;
 using DataJuggler.Win.Controls.Interfaces;
+using DataJuggler.Win.Controls.Enumerations;
 using System.ComponentModel;
 using System;
 
@@ -41,6 +42,7 @@ namespace DataJuggler.Win.Controls
         private int textBoxBottomMargin;
         private ITextChanged onTextChangedListener;
         private int bottomMargin;
+        private ThemeEnum theme;
         #endregion
 
         #region Constructor
@@ -837,6 +839,36 @@ namespace DataJuggler.Win.Controls
                         // set the height
                         this.TextBoxTopMarginPanel.Height = value;
                     }
+                }
+            }
+            #endregion
+
+            #region Theme
+            /// <summary>
+            /// This property gets or sets the value for 'Theme'.
+            /// </summary>
+            public ThemeEnum Theme
+            {
+                get { return theme; }
+                set 
+                { 
+                    // set the value
+                    theme = value;
+
+                    // if using the Blue Theme
+                    if (theme == ThemeEnum.Wood)
+                    {
+                        // use Black Label
+                        this.LabelColor = Color.Black;
+                    }
+                    else if (theme == ThemeEnum.Dark)
+                    {
+                        // use a light yellow
+                        this.LabelColor = Color.LemonChiffon;
+                    }
+
+                    // Refresh the UI
+                    this.Refresh();
                 }
             }
             #endregion
