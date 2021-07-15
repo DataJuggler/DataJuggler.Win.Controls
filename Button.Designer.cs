@@ -41,6 +41,7 @@ namespace DataJuggler.Win.Controls
             this.InnerButton.FlatAppearance.BorderSize = 0;
             this.InnerButton.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
             this.InnerButton.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
+            this.InnerButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.InnerButton.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.InnerButton.Location = new System.Drawing.Point(0, 0);
             this.InnerButton.Name = "InnerButton";
@@ -48,6 +49,7 @@ namespace DataJuggler.Win.Controls
             this.InnerButton.TabIndex = 0;
             this.InnerButton.Text = "Click Me";
             this.InnerButton.UseVisualStyleBackColor = false;
+            this.InnerButton.Click += new System.EventHandler(this.InnerButton_Click);
             this.InnerButton.MouseEnter += new System.EventHandler(this.Button_Enter);
             this.InnerButton.MouseLeave += new System.EventHandler(this.Button_Leave);
             // 

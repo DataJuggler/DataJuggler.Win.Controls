@@ -4,7 +4,7 @@
     <OutputType>Library</OutputType>
     <TargetFramework>net5.0-windows</TargetFramework>
     <UseWindowsForms>true</UseWindowsForms>
-    <Version>5.7.9</Version>
+    <Version>5.7.15</Version>
     <Authors>Corby Nichols / DataJuggler</Authors>
     <Company>Corby Nichols / DataJuggler</Company>
     <Description>This package contains a series of controls such as a LabelTextBoxControl, LabelComboBoxControl, 
@@ -17,7 +17,13 @@ All new development is on .Net 5 until .Net 6 comes out.</Description>
     <RepositoryUrl>https://github.com/DataJuggler/DataJuggler.Win.Controls</RepositoryUrl>
     <RepositoryType>Git/GitHub</RepositoryType>
     <PackageTags>WindowsForms,Desktop,Controls</PackageTags>
-    <PackageReleaseNotes>Update 6.7.2021: Version 5.7.9: I fixed the issue of the Background not changing for Theme Dark for the new Button. It was caused by Programmer Stupidity in the chair I sit in. The button seems to work now, I think.
+    <PackageReleaseNotes>Update 6.15.2021 B: I fixed the FlatStyle. I had to add this.OnClick to the Button.InnerButton to make it fire (hopefully this works).
+
+Update 6.15.2021: Set FlatStyle to Flat and still didn't work. Trying again.
+
+Update 6.14.2021: I added a Button recently, but I didn't set the FlatStyle to Flat. Oops.
+
+Update 6.7.2021: Version 5.7.9: I fixed the issue of the Background not changing for Theme Dark for the new Button. It was caused by Programmer Stupidity in the chair I sit in. The button seems to work now, I think.
 
 Update 6.7.2021: Version 5.7.8: I changed Text to ButtonText so the property showed up in the property dialog. More testing is needed, so use the button at your own risk.
 
@@ -40,8 +46,8 @@ This is the first release for .Net 5. Nothing has been tested yet for .Net 5, at
 
 The code itself has worked for 10 or more years, but new platform, new ball game.</PackageReleaseNotes>
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
-    <AssemblyVersion>5.7.9.0</AssemblyVersion>
-    <FileVersion>5.7.9.0</FileVersion>
+    <AssemblyVersion>5.7.15.0</AssemblyVersion>
+    <FileVersion>5.7.15.0</FileVersion>
   </PropertyGroup>
 
   <ItemGroup>

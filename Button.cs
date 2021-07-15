@@ -28,6 +28,7 @@ namespace DataJuggler.Win.Controls
         #region Private Variables
         private ThemeEnum theme;
         private string buttonText;
+        private FlatStyle flatStyle;
         #endregion
         
         #region Constructor
@@ -42,6 +43,9 @@ namespace DataJuggler.Win.Controls
             // Default to Wood theme
             this.Theme = ThemeEnum.Wood;
             this.ButtonText = "Click Me";
+            this.BackColor = Color.Transparent;
+            this.InnerButton.BackColor = Color.Transparent;
+            this.FlatStyle = FlatStyle.Flat;
         }
         #endregion
         
@@ -105,6 +109,17 @@ namespace DataJuggler.Win.Controls
             }
         #endregion
 
+            #region InnerButton_Click(object sender, EventArgs e)
+            /// <summary>
+            /// event is fired when the 'InnerButton' is clicked.
+            /// </summary>
+            private void InnerButton_Click(object sender, EventArgs e)
+            {
+                // Simulate the Click event
+                this.OnClick(EventArgs.Empty);
+            }
+            #endregion
+            
         #endregion
 
         #region Methods
@@ -137,6 +152,10 @@ namespace DataJuggler.Win.Controls
                         InnerButton.BackgroundImage = Properties.Resources.WoodButtonWidth640Disabled;
                     }
                 }
+
+                // Ensure Transparent BackColor
+                this.InnerButton.BackColor = Color.Transparent;
+                this.BackColor = Color.Transparent;
             }
             #endregion
             
@@ -181,7 +200,7 @@ namespace DataJuggler.Win.Controls
         #endregion
 
         #region Properties
-
+    
             #region ButtonText
             /// <summary>
             /// This property gets or sets the value for 'ButtonText'.
@@ -196,6 +215,37 @@ namespace DataJuggler.Win.Controls
 
                     // Set the value
                     InnerButton.Text = buttonText;
+                }
+            }
+            #endregion
+            
+            #region FlatStyle
+            /// <summary>
+            /// This property gets or sets the value for 'FlatStyle'.
+            /// </summary>
+            public FlatStyle FlatStyle
+            {
+                get 
+                { 
+                    // initial value
+                    FlatStyle flat = FlatStyle.Flat;
+
+                    // if the InnerButton exists
+                    if (InnerButton != null)
+                    {
+                        // set the return value
+                        flat = InnerButton.FlatStyle;
+                    }
+
+                    // return value
+                    return flat;
+                }
+                set 
+                { 
+                    flatStyle = value;
+
+                    // Set the value
+                    this.InnerButton.FlatStyle = value;
                 }
             }
             #endregion
@@ -222,7 +272,6 @@ namespace DataJuggler.Win.Controls
         #endregion
 
         #endregion
-
     }
     #endregion
 
