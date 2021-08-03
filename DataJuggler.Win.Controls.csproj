@@ -4,7 +4,7 @@
     <OutputType>Library</OutputType>
     <TargetFramework>net5.0-windows</TargetFramework>
     <UseWindowsForms>true</UseWindowsForms>
-    <Version>5.7.15</Version>
+    <Version>5.8.1</Version>
     <Authors>Corby Nichols / DataJuggler</Authors>
     <Company>Corby Nichols / DataJuggler</Company>
     <Description>This package contains a series of controls such as a LabelTextBoxControl, LabelComboBoxControl, 
@@ -17,7 +17,15 @@ All new development is on .Net 5 until .Net 6 comes out.</Description>
     <RepositoryUrl>https://github.com/DataJuggler/DataJuggler.Win.Controls</RepositoryUrl>
     <RepositoryType>Git/GitHub</RepositoryType>
     <PackageTags>WindowsForms,Desktop,Controls</PackageTags>
-    <PackageReleaseNotes>Update 6.15.2021 B: I fixed the FlatStyle. I had to add this.OnClick to the Button.InnerButton to make it fire (hopefully this works).
+    <PackageReleaseNotes>Update 8.2.2021 C: I updated DataJuggler.UltimateHelper, and this removed WordParser, so i bebuilt this library.
+
+Update: 8.2.2021 B: After testing this for one second, I realized I needed an ITextLinesLoadedListener interface, so I added one. New video coming soon for this and documentation.
+
+
+
+Update: 8.2.2021: I added a Windows Form called FileBrowserWithButtonForm, that contains a LabelTextBoxControl, and a button.
+
+Update 6.15.2021 B: I fixed the FlatStyle. I had to add this.OnClick to the Button.InnerButton to make it fire (hopefully this works).
 
 Update 6.15.2021: Set FlatStyle to Flat and still didn't work. Trying again.
 
@@ -46,8 +54,8 @@ This is the first release for .Net 5. Nothing has been tested yet for .Net 5, at
 
 The code itself has worked for 10 or more years, but new platform, new ball game.</PackageReleaseNotes>
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
-    <AssemblyVersion>5.7.15.0</AssemblyVersion>
-    <FileVersion>5.7.15.0</FileVersion>
+    <AssemblyVersion>5.8.1.0</AssemblyVersion>
+    <FileVersion>5.8.1.0</FileVersion>
   </PropertyGroup>
 
   <ItemGroup>
@@ -57,7 +65,7 @@ The code itself has worked for 10 or more years, but new platform, new ball game
   </ItemGroup>
 
   <ItemGroup>
-    <PackageReference Include="DataJuggler.UltimateHelper" Version="1.5.5" />
+    <PackageReference Include="DataJuggler.UltimateHelper" Version="1.5.6" />
   </ItemGroup>
 
   <ItemGroup>
