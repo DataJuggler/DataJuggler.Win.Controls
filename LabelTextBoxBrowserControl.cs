@@ -175,14 +175,15 @@ namespace DataJuggler.Win.Controls
             public void Init()
             {
                 // Default to enabled
-                this.Enabled = true;
+                Enabled = true;
+                Editable = true;
                 
-                this.Font = new Font("Verdana", 12);
-                this.LabelFont = new Font("Verdana", 12, FontStyle.Bold);
+                Font = new Font("Verdana", 12);
+                LabelFont = new Font("Verdana", 12, FontStyle.Bold);
                 BackColor = Color.Transparent;
-                this.LabelColor = Color.Black;
-                this.LabelWidth = 80;
-                this.TextBoxFont = this.Font;
+                LabelColor = Color.Black;
+                LabelWidth = 80;
+                TextBoxFont = this.Font;
                 
                 // Handle which controls are enabled or disabled and change the colors accordingly
                 UIControl(this.Enabled);

@@ -4,7 +4,7 @@
     <OutputType>Library</OutputType>
     <TargetFramework>net5.0-windows</TargetFramework>
     <UseWindowsForms>true</UseWindowsForms>
-    <Version>5.8.1</Version>
+    <Version>5.8.2</Version>
     <Authors>Corby Nichols / DataJuggler</Authors>
     <Company>Corby Nichols / DataJuggler</Company>
     <Description>This package contains a series of controls such as a LabelTextBoxControl, LabelComboBoxControl, 
@@ -65,7 +65,7 @@ The code itself has worked for 10 or more years, but new platform, new ball game
   </ItemGroup>
 
   <ItemGroup>
-    <PackageReference Include="DataJuggler.UltimateHelper" Version="1.5.6" />
+    <PackageReference Include="DataJuggler.UltimateHelper" Version="1.5.7" />
   </ItemGroup>
 
   <ItemGroup>
