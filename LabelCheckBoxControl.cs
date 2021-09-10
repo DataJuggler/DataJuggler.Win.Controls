@@ -99,6 +99,10 @@ namespace DataJuggler.Win.Controls
                 this.LabelWidth = 140;
                 this.Width = 280;
 
+                // Start off enabled
+                this.Enabled = true;
+                this.Editable = true;
+
                 // Initialize both to zero
                 this.CheckBoxHorizontalOffSet = 0;
                 this.CheckBoxVerticalOffSet = 0;
