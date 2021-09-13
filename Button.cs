@@ -124,6 +124,17 @@ namespace DataJuggler.Win.Controls
 
         #region Methods
 
+            #region Init()
+            /// <summary>
+            /// This method performs initializations for this object.
+            /// </summary>
+            public void Init()
+            {
+                // Default to dark
+                Theme = ThemeEnum.Dark;   
+            }
+            #endregion
+            
             #region SetButtonBackgroundImage()
             /// <summary>
             /// This method Set Button Background Image
@@ -272,6 +283,7 @@ namespace DataJuggler.Win.Controls
         #endregion
 
         #endregion
+
     }
     #endregion
 

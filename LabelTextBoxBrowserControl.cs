@@ -184,6 +184,9 @@ namespace DataJuggler.Win.Controls
                 LabelColor = Color.Black;
                 LabelWidth = 80;
                 TextBoxFont = this.Font;
+
+                // Set to Dark
+                Theme = ThemeEnum.Dark;
                 
                 // Handle which controls are enabled or disabled and change the colors accordingly
                 UIControl(this.Enabled);
@@ -235,6 +238,39 @@ namespace DataJuggler.Win.Controls
             {
                 get { return browseType; }
                 set { browseType = value; }
+            }
+            #endregion
+
+            #region ButtonColor
+            /// <summary>
+            /// This property gets or sets the value for 'ButtonColor'.
+            /// </summary>
+            public Color ButtonColor
+            {
+                get
+                {
+                    // initial value
+                    Color color = Color.Black;
+                    
+                    // if the control exists
+                    if (BrowseButton != null)
+                    {
+                        // set the return value
+                        color = (Color) BrowseButton.ForeColor;
+                    }
+                    
+                    // return value
+                    return color;
+                }
+                set
+                {
+                    // if the control exists
+                    if (BrowseButton != null)
+                    {
+                        // set the value
+                        BrowseButton.ForeColor = value;
+                    }
+                }
             }
             #endregion
             
@@ -985,15 +1021,16 @@ namespace DataJuggler.Win.Controls
                     {
                         // use Dark Theme
                         this.ButtonImage = Properties.Resources.WoodButtonWidth640;
+                        this.LabelColor = Color.Black;
+                        this.ButtonColor = Color.Black;
                        
                     }
                     else if (theme == ThemeEnum.Dark)
                     {
                         // use Dark Theme
                         this.LabelColor = Color.LemonChiffon;
-                        this.ButtonImage = Properties.Resources.BlackButton;
-
-                    
+                        this.ButtonImage = Properties.Resources.BlackButton;                    
+                        this.ButtonColor = Color.LemonChiffon;
                     }
 
                     // Refresh the UI

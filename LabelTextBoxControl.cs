@@ -157,6 +157,9 @@ namespace DataJuggler.Win.Controls
                 this.TextBoxFont = new Font("Verdana", fontSize);
                 this.LabelFont = new Font("Verdana", fontSize, FontStyle.Bold);
 
+                // Set to dark
+                Theme = ThemeEnum.Dark;
+
                 // Default to Editable
                 this.Editable = true;
             }
