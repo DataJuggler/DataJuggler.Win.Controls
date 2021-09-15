@@ -283,7 +283,7 @@ namespace DataJuggler.Win.Controls
         #endregion
 
         #endregion
-
+        
     }
     #endregion
 

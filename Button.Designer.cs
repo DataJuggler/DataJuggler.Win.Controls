@@ -64,6 +64,8 @@ namespace DataJuggler.Win.Controls
             this.EnabledChanged += new System.EventHandler(this.Button_EnabledChanged);
             this.FontChanged += new System.EventHandler(this.Button_FontChanged);
             this.ForeColorChanged += new System.EventHandler(this.Button_ForeColorChanged);
+            this.MouseEnter += new System.EventHandler(this.Button_Enter);
+            this.MouseLeave += new System.EventHandler(this.Button_Leave);
             this.ResumeLayout(false);
 
         }
