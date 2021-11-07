@@ -4,7 +4,7 @@
     <OutputType>Library</OutputType>
     <TargetFramework>net5.0-windows</TargetFramework>
     <UseWindowsForms>true</UseWindowsForms>
-    <Version>5.8.9</Version>
+    <Version>5.8.10</Version>
     <Authors>DataJuggler</Authors>
     <Company>DataJuggler</Company>
     <Description>This package contains a series of controls such as a LabelTextBoxControl, LabelComboBoxControl, 
@@ -17,7 +17,10 @@ All new development is on .Net 5 until .Net 6 comes out.</Description>
     <RepositoryUrl>https://github.com/DataJuggler/DataJuggler.Win.Controls</RepositoryUrl>
     <RepositoryType>Git/GitHub</RepositoryType>
     <PackageTags>WindowsForms,Desktop,Controls</PackageTags>
-    <PackageReleaseNotes>Update 10.31.2021
+    <PackageReleaseNotes>Update 11.7.2021
+Version 5.8.10: I updated DataJuggler.UltimateHelper Nuget package.
+
+Update 10.31.2021
 Version 5.8.9: DataJuggler.UltimateHelper had a new release.
 
 Update 9.15.2021: I had a Button_MouseEnter and Button_MouseLeave event, but it was applied to the Inner
@@ -82,7 +85,7 @@ The code itself has worked for 10 or more years, but new platform, new ball game
   </ItemGroup>
 
   <ItemGroup>
-    <PackageReference Include="DataJuggler.UltimateHelper" Version="1.6.8" />
+    <PackageReference Include="DataJuggler.UltimateHelper" Version="1.6.9" />
   </ItemGroup>
 
   <ItemGroup>
