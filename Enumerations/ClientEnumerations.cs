@@ -36,6 +36,19 @@ namespace DataJuggler.Win.Controls.Enumerations
     }
     #endregion
 
+    #region TimerStatusEnum : int
+    /// <summary>
+    /// This enum is used with the display timer to signal what state the timed event is.
+    /// </summary>
+    public enum TimerStatusEnum : int
+    {
+        NotStarted = 0,
+        Started = 1,
+        Paused = 2,
+        Finished = 3
+    }
+    #endregion
+
     #region ThemeEnum
     /// <summary>
     /// This enumeration is for the type of theme to use.

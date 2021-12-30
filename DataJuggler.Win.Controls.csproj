@@ -4,7 +4,7 @@
     <OutputType>Library</OutputType>
     <TargetFramework>net6.0-windows</TargetFramework>
     <UseWindowsForms>true</UseWindowsForms>
-    <Version>6.0.0</Version>
+    <Version>6.1.0</Version>
     <Authors>DataJuggler</Authors>
     <Company>DataJuggler</Company>
     <Description>This package contains a series of controls such as a LabelTextBoxControl, LabelComboBoxControl, 
@@ -18,6 +18,12 @@ All new development is on .Net 5 until .Net 6 comes out.</Description>
     <RepositoryType>Git/GitHub</RepositoryType>
     <PackageTags>WindowsForms,Desktop,Controls</PackageTags>
     <PackageReleaseNotes>
+		Update 12.29:2021
+		Version 6.1.0: I added a new TimerDisplay control. Add the control to your form, call the Start and Stop methods
+		to control the timer display. I added a state for Pause, although Pause is not handled yet. Pause is a little more 
+		complicated than Start and Stop when it comes to ElapsedTime. I would have to keep track of all the Start and Stops
+		so put off the Pause until I need it.
+		
 		Update 12.11.2021: I updated this project to Net 6.0, use an older version for .Net 5.
 		
 		Update 11.7.2021
