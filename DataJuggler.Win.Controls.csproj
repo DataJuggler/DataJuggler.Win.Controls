@@ -2,9 +2,10 @@
 
   <PropertyGroup>
     <OutputType>Library</OutputType>
-    <TargetFramework>net6.0-windows</TargetFramework>
+	<TargetFrameworks>net5.0-windows;net6.0-windows;</TargetFrameworks>
     <UseWindowsForms>true</UseWindowsForms>
-    <Version>6.1.0</Version>
+    <Version>6.1.2</Version>
+	<FileVersion>6.1.2</FileVersion>
     <Authors>DataJuggler</Authors>
     <Company>DataJuggler</Company>
     <Description>This package contains a series of controls such as a LabelTextBoxControl, LabelComboBoxControl, 
@@ -18,6 +19,11 @@ All new development is on .Net 5 until .Net 6 comes out.</Description>
     <RepositoryType>Git/GitHub</RepositoryType>
     <PackageTags>WindowsForms,Desktop,Controls</PackageTags>
     <PackageReleaseNotes>
+		
+		
+		Update 12.31.2021:
+		6.1.0: No code changes, but I realized the file version was not updating.
+		
 		Update 12.29:2021
 		Version 6.1.0: I added a new TimerDisplay control. Add the control to your form, call the Start and Stop methods
 		to control the timer display. I added a state for Pause, although Pause is not handled yet. Pause is a little more 
@@ -82,19 +88,13 @@ This app was just converted to .Net 5. Everything should work, famous last words
 This is the first release for .Net 5. Nothing has been tested yet for .Net 5, at all. Use at your own risk.
 
 The code itself has worked for 10 or more years, but new platform, new ball game.</PackageReleaseNotes>
-    <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
-    <AssemblyVersion>5.8.9.0</AssemblyVersion>
-    <FileVersion>5.8.9.0</FileVersion>
+    <GeneratePackageOnBuild>true</GeneratePackageOnBuild>       
   </PropertyGroup>
 
   <ItemGroup>
     <Compile Remove="packages\DataJuggler.Core.UltimateHelper.1.3.1\**" />
     <EmbeddedResource Remove="packages\DataJuggler.Core.UltimateHelper.1.3.1\**" />
     <None Remove="packages\DataJuggler.Core.UltimateHelper.1.3.1\**" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <PackageReference Include="DataJuggler.UltimateHelper" Version="6.0.0" />
   </ItemGroup>
 
   <ItemGroup>
@@ -125,6 +125,10 @@ The code itself has worked for 10 or more years, but new platform, new ball game
 
   <ItemGroup>
     <Folder Include="packages\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="DataJuggler.UltimateHelper" Version="6.0.1" />
   </ItemGroup>
 
 </Project>

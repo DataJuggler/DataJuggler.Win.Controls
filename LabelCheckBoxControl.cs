@@ -5,6 +5,7 @@
 using System.Windows.Forms;
 using System.ComponentModel;
 using System.Drawing;
+using DataJuggler.Win.Controls.Enumerations;
 using DataJuggler.Win.Controls.Interfaces;
 
 #endregion
@@ -27,6 +28,7 @@ namespace DataJuggler.Win.Controls
         private Font labelFont;
         private int checkBoxVerticalOffSet;
         private int checkBoxHorizontalOffSet;
+        private ThemeEnum theme;
         private ICheckChangedListener checkChangedListener;
         #endregion
 
@@ -106,6 +108,9 @@ namespace DataJuggler.Win.Controls
                 // Initialize both to zero
                 this.CheckBoxHorizontalOffSet = 0;
                 this.CheckBoxVerticalOffSet = 0;
+
+                // Default to Wood Theme
+                Theme = ThemeEnum.Dark;
             }
             #endregion
 
@@ -430,6 +435,36 @@ namespace DataJuggler.Win.Controls
                         // set the label width
                         this.Label.Width = value;
                     }
+                }
+            }
+            #endregion
+
+            #region Theme
+            /// <summary>
+            /// This property gets or sets the value for 'Theme'.
+            /// </summary>
+            public ThemeEnum Theme
+            {
+                get { return theme; }
+                set 
+                { 
+                    // set the value
+                    theme = value;
+
+                    // if using the Blue Theme
+                    if (theme == ThemeEnum.Wood)
+                    {
+                        // use Black Label
+                        this.LabelColor = Color.Black;
+                    }
+                    else if (theme == ThemeEnum.Dark)
+                    {
+                        // use a light yellow
+                        this.LabelColor = Color.LemonChiffon;
+                    }
+
+                    // Refresh the UI
+                    this.Refresh();
                 }
             }
             #endregion

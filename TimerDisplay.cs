@@ -29,7 +29,10 @@ namespace DataJuggler.Win.Controls
         private DateTime startTime;
         private DateTime endTime;
         private int lastSecond;  
+        private bool reverse;
+        private DateTime startAtTime;
         private TimerStatusEnum status;
+        private bool stopAtZero;
         #endregion
         
         #region Constructor
@@ -63,20 +66,37 @@ namespace DataJuggler.Win.Controls
                 // get the current second
                 int second = now.Second;
 
+                // locals
+                TimeSpan elapsed;
+                double hours = 0;
+                int minutes = 0;
+                int seconds = 0;
+                string minutesText = "";
+                string secondsText = "";
+
                 // if the second changed
                 if (second != LastSecond)
                 {
-                    // Get the elapsed
-                    TimeSpan elapsed = now - StartTime;
+                    // if the value for Reverse is true
+                    if (Reverse)
+                    {
+                        // get the elapsed
+                        elapsed = StartAtTime - now;
+                    }
+                    else
+                    {
+                        // Get the elapsed
+                        elapsed = now - StartTime;
+                    }
 
                     // now format the display
-                    double hours = Math.Floor(elapsed.TotalHours);
-                    int minutes = elapsed.Minutes;
-                    int seconds = elapsed.Seconds;
+                    hours = Math.Floor(elapsed.TotalHours);
+                    minutes = elapsed.Minutes;
+                    seconds = elapsed.Seconds;
 
                     // Ensure minutes and seconds start with a 0
-                    string minutesText = minutes.ToString("00");
-                    string secondsText = seconds.ToString("00");
+                    minutesText = minutes.ToString("00");
+                    secondsText = seconds.ToString("00");
 
                     // Set the text
                     this.TimerLabel.Text = hours + ":" + minutesText + ":" + secondsText;
@@ -238,6 +258,28 @@ namespace DataJuggler.Win.Controls
             }
             #endregion
             
+            #region Reverse
+            /// <summary>
+            /// This property gets or sets the value for 'Reverse'.
+            /// </summary>
+            public bool Reverse
+            {
+                get { return reverse; }
+                set { reverse = value; }
+            }
+            #endregion
+            
+            #region StartAtTime
+            /// <summary>
+            /// This property gets or sets the value for 'StartAtTime'.
+            /// </summary>
+            public DateTime StartAtTime
+            {
+                get { return startAtTime; }
+                set { startAtTime = value; }
+            }
+            #endregion
+            
             #region StartTime
             /// <summary>
             /// This property gets or sets the value for 'StartTime'.
@@ -257,6 +299,18 @@ namespace DataJuggler.Win.Controls
             {
                 get { return status; }
                 set { status = value; }
+            }
+            #endregion
+            
+            #region StopAtZero
+            /// <summary>
+            /// This property gets or sets the value for 'StopAtZero'.
+            /// This only applies when Reverse is true.
+            /// </summary>
+            public bool StopAtZero
+            {
+                get { return stopAtZero; }
+                set { stopAtZero = value; }
             }
             #endregion
             
