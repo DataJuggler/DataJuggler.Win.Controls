@@ -91,7 +91,7 @@ namespace DataJuggler.Win.Controls
             // Label
             // 
             this.Label.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.Label.Font = new System.Drawing.Font("Verdana", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Label.Font = new System.Drawing.Font("Verdana", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.Label.Location = new System.Drawing.Point(0, 0);
             this.Label.Name = "Label";
             this.Label.Size = new System.Drawing.Size(158, 30);
@@ -126,7 +126,7 @@ namespace DataJuggler.Win.Controls
             // TextBox
             // 
             this.TextBox.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.TextBox.Font = new System.Drawing.Font("Verdana", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.TextBox.Font = new System.Drawing.Font("Verdana", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.TextBox.Location = new System.Drawing.Point(160, 1);
             this.TextBox.Name = "TextBox";
             this.TextBox.Size = new System.Drawing.Size(200, 31);
@@ -143,9 +143,10 @@ namespace DataJuggler.Win.Controls
             this.Controls.Add(this.TextBoxBottomMarginPanel);
             this.Controls.Add(this.TextBoxTopMarginPanel);
             this.DoubleBuffered = true;
-            this.Font = new System.Drawing.Font("Verdana", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Font = new System.Drawing.Font("Verdana", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.Name = "LabelTextBoxControl";
             this.Size = new System.Drawing.Size(360, 32);
+            this.EnabledChanged += new System.EventHandler(this.LabelTextBoxControl_EnabledChanged);
             this.LeftPanel.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();

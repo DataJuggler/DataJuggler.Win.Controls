@@ -61,6 +61,17 @@ namespace DataJuggler.Win.Controls
         
         #region Events
         
+            #region LabelTextBoxControl_EnabledChanged(object sender, EventArgs e)
+            /// <summary>
+            /// event is fired when Label Text Box Control _ Enabled Changed
+            /// </summary>
+            private void LabelTextBoxControl_EnabledChanged(object sender, EventArgs e)
+            {
+                // Update the state of this control
+                UIControl();
+            }
+            #endregion
+            
             #region TextBox_Resize(object sender, System.EventArgs e)
             /// <summary>
             /// This event fired when this control resized
@@ -197,10 +208,7 @@ namespace DataJuggler.Win.Controls
             /// </summary>
             private void UIControl()
             {
-                // enabled or not
-                bool enabled = this.Editable;
-
-                // if Editable
+               // if Editable
                if (this.Editable)
                {
                     // set the editable color
@@ -213,7 +221,7 @@ namespace DataJuggler.Win.Controls
                }
                 
                 // enable the text box if enabled
-                this.TextBox.Enabled = enabled;
+                this.TextBox.Enabled = this.Editable;
             }  
             #endregion
 
@@ -874,10 +882,9 @@ namespace DataJuggler.Win.Controls
                     this.Refresh();
                 }
             }
-            #endregion
-            
         #endregion
 
+        #endregion
     } 
     #endregion
 

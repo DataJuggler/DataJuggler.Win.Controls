@@ -129,6 +129,17 @@ namespace DataJuggler.Win.Controls
             }
             #endregion
             
+            #region LabelTextBoxBrowserControl_EnabledChanged(object sender, EventArgs e)
+            /// <summary>
+            /// event is fired when Label Text Box Browser Control _ Enabled Changed
+            /// </summary>
+            private void LabelTextBoxBrowserControl_EnabledChanged(object sender, EventArgs e)
+            {
+                // Enabled has changed, so we need to update the controls
+                UIControl(Enabled);
+            }
+            #endregion
+            
             #region TextBox_TextChanged(object sender, EventArgs e)
             /// <summary>
             /// This event is fired when Text Box _ Text Changed
@@ -209,19 +220,39 @@ namespace DataJuggler.Win.Controls
             /// This method UI Control
             /// </summary>
             public void UIControl(bool enable)
-            {
+            {  
                 // If the value for the property this.Enabled is true
                 if (enable)
                 {
                     // Use LemonChiffon if enable
-                    this.Label.ForeColor = EnabledLabelColor;
-                    this.BrowseButton.BackgroundImage = Properties.Resources.WoodButtonWidth640;
+                    Label.ForeColor = EnabledLabelColor;
+
+                    // set the editable color
+                    TextBox.BackColor = this.TextBoxEditableColor;
+
+                    if (Theme == ThemeEnum.Wood)
+                    {
+                        BrowseButton.BackgroundImage = Properties.Resources.WoodButtonWidth640;
+                    }
+                    else
+                    {
+                        BrowseButton.BackgroundImage = Properties.Resources.BlackButton;
+                    }
                 }
                 else 
                 {
                     // Use DarkGray if disabled
-                    this.Label.ForeColor = DisabledLabelColor;
-                    this.BrowseButton.BackgroundImage = Properties.Resources.WoodButtonWidth640Disabled;
+                    Label.ForeColor = DisabledLabelColor;                    
+                    TextBox.BackColor = this.TextBoxDisabledColor;
+                   
+                     if (Theme == ThemeEnum.Wood)
+                    {
+                        BrowseButton.BackgroundImage = Properties.Resources.WoodButtonWidth640Disabled;
+                    }
+                    else
+                    {
+                        BrowseButton.BackgroundImage = Properties.Resources.BlackButtonDisabled;
+                    }
                 }
             }
             #endregion
@@ -405,6 +436,9 @@ namespace DataJuggler.Win.Controls
                 { 
                     // set the value
                     editable = value;
+                    
+                    // enable controls based upon this value
+                    UIControl(value); 
                 }
             } 
             #endregion
@@ -1037,10 +1071,9 @@ namespace DataJuggler.Win.Controls
                     this.Refresh();
                 }
             }
-            #endregion
-            
         #endregion
-        
+
+        #endregion
     }
     #endregion
 

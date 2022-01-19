@@ -73,6 +73,16 @@ namespace DataJuggler.Win.Controls.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap BlackButtonDisabled {
+            get {
+                object obj = ResourceManager.GetObject("BlackButtonDisabled", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap Deep_Black {
             get {
                 object obj = ResourceManager.GetObject("Deep Black", resourceCulture);

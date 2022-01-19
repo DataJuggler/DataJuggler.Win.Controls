@@ -54,7 +54,6 @@ namespace DataJuggler.Win.Controls
             /// </summary>
             private void InitializeComponent()
             {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(LabelTextBoxBrowserControl));
             this.BrowseButton = new System.Windows.Forms.Button();
             this.TextBoxTopMarginPanel = new System.Windows.Forms.Panel();
             this.TextBoxBottomMarginPanel = new System.Windows.Forms.Panel();
@@ -70,7 +69,7 @@ namespace DataJuggler.Win.Controls
             // BrowseButton
             // 
             this.BrowseButton.BackColor = System.Drawing.Color.Transparent;
-            this.BrowseButton.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("BrowseButton.BackgroundImage")));
+            this.BrowseButton.BackgroundImage = global::DataJuggler.Win.Controls.Properties.Resources.BlackButtonDisabled;
             this.BrowseButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.BrowseButton.Dock = System.Windows.Forms.DockStyle.Right;
             this.BrowseButton.FlatAppearance.BorderSize = 0;
@@ -96,7 +95,7 @@ namespace DataJuggler.Win.Controls
             this.TextBoxTopMarginPanel.Dock = System.Windows.Forms.DockStyle.Top;
             this.TextBoxTopMarginPanel.Location = new System.Drawing.Point(0, 0);
             this.TextBoxTopMarginPanel.Name = "TextBoxTopMarginPanel";
-            this.TextBoxTopMarginPanel.Size = new System.Drawing.Size(352, 0);
+            this.TextBoxTopMarginPanel.Size = new System.Drawing.Size(400, 0);
             this.TextBoxTopMarginPanel.TabIndex = 20;
             // 
             // TextBoxBottomMarginPanel
@@ -104,7 +103,7 @@ namespace DataJuggler.Win.Controls
             this.TextBoxBottomMarginPanel.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.TextBoxBottomMarginPanel.Location = new System.Drawing.Point(0, 32);
             this.TextBoxBottomMarginPanel.Name = "TextBoxBottomMarginPanel";
-            this.TextBoxBottomMarginPanel.Size = new System.Drawing.Size(352, 0);
+            this.TextBoxBottomMarginPanel.Size = new System.Drawing.Size(400, 0);
             this.TextBoxBottomMarginPanel.TabIndex = 21;
             // 
             // LeftPanel
@@ -160,20 +159,21 @@ namespace DataJuggler.Win.Controls
             this.TextBox.Font = new System.Drawing.Font("Verdana", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.TextBox.Location = new System.Drawing.Point(160, 0);
             this.TextBox.Name = "TextBox";
-            this.TextBox.Size = new System.Drawing.Size(192, 31);
+            this.TextBox.Size = new System.Drawing.Size(240, 31);
             this.TextBox.TabIndex = 24;
             this.TextBox.TextChanged += new System.EventHandler(this.TextBox_TextChanged);
             // 
             // LabelTextBoxBrowserControl
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
+            this.Controls.Add(this.BrowseButton);
             this.Controls.Add(this.TextBox);
             this.Controls.Add(this.LeftPanel);
             this.Controls.Add(this.TextBoxBottomMarginPanel);
             this.Controls.Add(this.TextBoxTopMarginPanel);
-            this.Controls.Add(this.BrowseButton);
             this.Name = "LabelTextBoxBrowserControl";
             this.Size = new System.Drawing.Size(400, 32);
+            this.EnabledChanged += new System.EventHandler(this.LabelTextBoxBrowserControl_EnabledChanged);
             this.LeftPanel.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
