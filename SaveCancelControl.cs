@@ -6,6 +6,7 @@ using DataJuggler.UltimateHelper;
 using System.ComponentModel;
 using System;
 using System.Windows.Forms;
+using DataJuggler.Win.Controls.Enumerations;
 using DataJuggler.Win.Controls.Interfaces;
 using System.Drawing;
 
@@ -27,13 +28,12 @@ namespace DataJuggler.Win.Controls
         private bool showSaveButton;
         private bool enableSaveAndCloseButton;
         private bool enableSaveButton;
+        private bool enableCancelSaveButton;
         private int saveAndCloseButtonWidth;
         private int saveButtonWidth;
         private int cancelButtonWidth;
-        private Color disabledForeColor;
-        private ContentAlignment saveButtonTextAlign;
-        private ContentAlignment saveAndCloseButtonTextAlign;
-        private ContentAlignment cancelButtonTextAlign;
+        private Color disabledForeColor;                
+        private ThemeEnum theme;
         #endregion
 
         #region Constructor
@@ -63,19 +63,41 @@ namespace DataJuggler.Win.Controls
 
                 // If the button object exists
                 if (NullHelper.Exists(button))
-                {
-                    // if enabled
-                    if (button.Enabled)
+                {  
+                    // if DarkTheme
+                    if (Theme == ThemeEnum.Dark)
                     {
-                        // Use the enabled background image
-                        button.BackgroundImage = Properties.Resources.WoodButtonWidth640;
-                        button.ForeColor = Color.Black;
+                        // if enabled
+                        if (button.Enabled)
+                        {
+                            // Use the enabled background image
+                            button.BackgroundImage = Properties.Resources.BlackButton;
+                            button.ForeColor = Color.Black;
+                        }
+                        else
+                        {
+                            // Use the enabled background image
+                            button.BackgroundImage = Properties.Resources.BlackButtonDisabled;
+                            button.ForeColor = DisabledForeColor;
+                        }
                     }
                     else
                     {
-                        // Use the enabled background image
-                        button.BackgroundImage = Properties.Resources.WoodButtonWidth640Disabled;
-                        button.ForeColor = DisabledForeColor;
+                        // Wood Theme
+
+                        // if enabled
+                        if (button.Enabled)
+                        {
+                            // Use the enabled background image
+                            button.BackgroundImage = Properties.Resources.WoodButtonWidth640;
+                            button.ForeColor = Color.Black;
+                        }
+                        else
+                        {
+                            // Use the enabled background image
+                            button.BackgroundImage = Properties.Resources.WoodButtonWidth640Disabled;
+                            button.ForeColor = DisabledForeColor;
+                        }
                     }
                 }
             }
@@ -112,10 +134,10 @@ namespace DataJuggler.Win.Controls
             private void CancelSave_Click(object sender, EventArgs e)
             {
                 // if the parent host exists
-                if (this.HasParentHost)
+                if (HasParentHost)
                 {
                     // notify the parent hoste to cancel
-                    this.ParentHost.OnCancel();
+                    ParentHost.OnCancel();
                 }
             }
             #endregion
@@ -129,10 +151,10 @@ namespace DataJuggler.Win.Controls
             private void SaveAndCloseButton_Click(object sender, EventArgs e)
             {
                 // if the parent host exists
-                if (this.HasParentHost)
+                if (HasParentHost)
                 {
                     // notify the parent hoste to save
-                    this.ParentHost.OnSave(true);
+                    ParentHost.OnSave(true);
                 }
             } 
             #endregion
@@ -146,10 +168,10 @@ namespace DataJuggler.Win.Controls
             private void SaveButton_Click(object sender, EventArgs e)
             {
                 // if the parent host exists
-                if (this.HasParentHost)
+                if (HasParentHost)
                 {
                     // notify the parent hoste to save
-                    this.ParentHost.OnSave(false);
+                    ParentHost.OnSave(false);
                 }
             }
             #endregion
@@ -169,10 +191,10 @@ namespace DataJuggler.Win.Controls
                 ISaveCancelHost parentHost = null;
                 
                 // try the test
-                parentHost = this.Parent as ISaveCancelHost;
+                parentHost = Parent as ISaveCancelHost;
                 
                 // get the control 
-                Control control = this.Parent as Control;
+                Control control = Parent as Control;
                 
                 // if the parentHost has not been found yet
                 if (parentHost == null)
@@ -216,16 +238,21 @@ namespace DataJuggler.Win.Controls
             public void Init()
             {
                 // default to not a border style
-                this.BorderStyle = BorderStyle.None;
-                this.CancelSave.Enabled = true;
-                this.CancelSave.TextAlign = ContentAlignment.MiddleCenter;
-                this.DisabledForeColor = Color.DarkGray;
-                this.Dock = DockStyle.Bottom;
-                this.ShowSaveAndCloseButton = false;
-                this.Height = 52;
-                this.SaveAndCloseButton.TextAlign = ContentAlignment.MiddleCenter;
-                this.SaveButton.TextAlign = ContentAlignment.MiddleCenter;
-                this.CancelSave.TextAlign = ContentAlignment.MiddleCenter;
+                BorderStyle = BorderStyle.None;
+                CancelSaveButton.Enabled = true;                
+                DisabledForeColor = Color.DarkGray;
+                Dock = DockStyle.Bottom;
+                ShowSaveAndCloseButton = false;
+                ShowSaveButton = true;                
+                SaveAndCloseButton.TextAlign = ContentAlignment.MiddleCenter;
+                SaveButton.TextAlign = ContentAlignment.MiddleCenter;
+                CancelSaveButton.TextAlign = ContentAlignment.MiddleCenter;
+                CancelButtonWidth = 88;
+                SaveButtonWidth = 88;                
+                SaveAndCloseButtonWidth = 140;
+
+                // Setup the buttons
+                UIEnable();
             }
             #endregion
 
@@ -238,10 +265,10 @@ namespace DataJuggler.Win.Controls
             public void SetupSaveButton(string buttonText, int width, bool visible = true, bool enabled = true)
             {
                 // Setup the SaveButton
-                this.SaveButton.Text = buttonText;
-                this.SaveButton.Width = width;
-                this.SaveButton.Visible = visible;
-                this.SaveButton.Enabled = enabled;
+                SaveButton.Text = buttonText;
+                SaveButton.Width = width;
+                SaveButton.Visible = visible;
+                SaveButton.Enabled = enabled;
 
                 // Enable controls now that these properties have been set
                 UIEnable();
@@ -257,10 +284,10 @@ namespace DataJuggler.Win.Controls
             public void SetupCancelButton(string buttonText, int width, bool visible = true, bool enabled = true)
             {
                 // Setup the CancelButton
-                this.CancelSave.Text = buttonText;
-                this.CancelSave.Width = width;
-                this.CancelSave.Visible = visible;
-                this.CancelSave.Enabled = enabled;
+                CancelSaveButton.Text = buttonText;
+                CancelSaveButton.Width = width;
+                CancelSaveButton.Visible = visible;
+                CancelSaveButton.Enabled = enabled;
 
                 // Enable controls now that these properties have been set
                 UIEnable();
@@ -288,7 +315,7 @@ namespace DataJuggler.Win.Controls
                 }
 
                 // Handle the Cancel / Done Button
-                Button_EnabledChanged(CancelSave, new EventArgs());
+                Button_EnabledChanged(CancelSaveButton, new EventArgs());
             }
             #endregion
             
@@ -310,10 +337,10 @@ namespace DataJuggler.Win.Controls
                     ContentAlignment cancelButtonTextAlign = ContentAlignment.MiddleCenter;
 
                     // if the CancelSave button exists
-                    if (CancelSave != null)
+                    if (CancelSaveButton != null)
                     {
                         // set the return value
-                        cancelButtonTextAlign = CancelSave.TextAlign;
+                        cancelButtonTextAlign = CancelSaveButton.TextAlign;
                     }
 
                     // return value
@@ -321,14 +348,11 @@ namespace DataJuggler.Win.Controls
                 }
                 set 
                 { 
-                    // set the value
-                    cancelButtonTextAlign = value;
-
                     // verify the button exists
-                    if (CancelSave != null)
+                    if (CancelSaveButton != null)
                     {
                         // Set the value
-                        CancelSave.TextAlign = value;
+                        CancelSaveButton.TextAlign = value;
                     }
                 }
             }
@@ -347,7 +371,7 @@ namespace DataJuggler.Win.Controls
                     cancelButtonWidth = value; 
 
                     // size the button
-                    this.CancelSave.Width = value;
+                    CancelSaveButton.Width = value;
                 }
             }
             #endregion
@@ -386,20 +410,41 @@ namespace DataJuggler.Win.Controls
                     if (doneMode)
                     {
                         // set to Cancel
-                        this.CancelSave.Text = "Done";
-                        this.CancelSave.Image = null;
-                        this.CancelSave.TextAlign = ContentAlignment.MiddleCenter;
+                        CancelSaveButton.Text = "Done";                        
+                        CancelSaveButton.TextAlign = ContentAlignment.MiddleCenter;
                     }
                     else
                     {
                         // set to Cancel
-                        this.CancelSave.Text = "Cancel";
+                        CancelSaveButton.Text = "Cancel";
 
                         // Move to the right for the presence of the image
-                        this.CancelSave.TextAlign = ContentAlignment.MiddleRight;
+                        CancelSaveButton.TextAlign = ContentAlignment.MiddleRight;
                     }
                 }
             } 
+            #endregion
+
+            #region EnableCancelSaveButton
+            /// <summary>
+            /// This property gets or sets the value for 'EnableCancelSaveButton'.
+            /// </summary>
+            public bool EnableCancelSaveButton
+            {
+                get { return enableCancelSaveButton; }
+                set 
+                { 
+                    // set the value
+                    enableCancelSaveButton = value;
+
+                    // if the cancel button exists
+                    if (NullHelper.Exists(CancelSaveButton))
+                    {
+                        // Set the value
+                        CancelSaveButton.Enabled = value;
+                    }
+                }
+            }
             #endregion
             
             #region EnableSaveAndCloseButton
@@ -454,7 +499,7 @@ namespace DataJuggler.Win.Controls
                 get
                 {
                     // initial value
-                    bool hasParentHost = (this.ParentHost != null);
+                    bool hasParentHost = (ParentHost != null);
 
                     // return value
                     return hasParentHost;
@@ -503,10 +548,7 @@ namespace DataJuggler.Win.Controls
                     return saveAndcloseButtonTextAlign;
                 }
                 set 
-                { 
-                    // set the value
-                    saveAndCloseButtonTextAlign = value;
-
+                {
                     // verify the button exists
                     if (SaveAndCloseButton != null)
                     {
@@ -530,7 +572,7 @@ namespace DataJuggler.Win.Controls
                     saveAndCloseButtonWidth = value; 
 
                     // size the butotn
-                    this.SaveAndCloseButton.Width = value;
+                    SaveAndCloseButton.Width = value;
                 }
             }
             #endregion
@@ -559,10 +601,7 @@ namespace DataJuggler.Win.Controls
                     return saveButtonTextAlign;
                 }
                 set 
-                { 
-                    // set the value
-                    saveButtonTextAlign = value;
-
+                {
                     // verify the button exists
                     if (SaveButton != null)
                     {
@@ -586,7 +625,7 @@ namespace DataJuggler.Win.Controls
                     saveButtonWidth = value;
 
                     // set the width
-                    this.SaveButton.Width = value;
+                    SaveButton.Width = value;
                 }
             }
             #endregion
@@ -604,7 +643,7 @@ namespace DataJuggler.Win.Controls
                     showSaveAndCloseButton = value;
 
                     // Show the button if true
-                    this.SaveAndCloseButton.Visible = value;
+                    SaveAndCloseButton.Visible = value;
                 }
             }
             #endregion
@@ -622,8 +661,28 @@ namespace DataJuggler.Win.Controls
                     showSaveButton = value; 
 
                     // show the button if true
-                    this.SaveButton.Visible = value;
+                    SaveButton.Visible = value;
                 }
+            }
+        #endregion
+
+            #region Theme
+            /// <summary>
+            /// This property gets or sets the value for 'Theme'.
+            /// </summary>
+            public ThemeEnum Theme
+            {
+                get { return theme; }
+                set 
+                { 
+                    // set the value
+                    theme = value;
+
+                    // setup the buttons
+
+                    // Enable controls
+                    UIEnable();
+                }                
             }
         #endregion
 

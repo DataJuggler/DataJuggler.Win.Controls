@@ -43,6 +43,7 @@ namespace DataJuggler.Win.Controls
         private ITextChanged onTextChangedListener;
         private int bottomMargin;
         private ThemeEnum theme;
+        private bool inititialized;
         #endregion
 
         #region Constructor
@@ -85,12 +86,12 @@ namespace DataJuggler.Win.Controls
                 this.Refresh();
             }
             #endregion
-            
+
             #region TextBox_TextChanged(object sender, EventArgs e)
             /// <summary>
             /// This event is fired when Text Box _ Text Changed
             /// </summary>
-            private void TextBox_TextChanged(object sender, EventArgs e)
+            internal void TextBox_TextChanged(object sender, EventArgs e)
             {
                 // if the text starts with default VS named text
                 if (TextBox.Text.StartsWith("labelTextBoxControl"))
@@ -155,24 +156,42 @@ namespace DataJuggler.Win.Controls
             /// </summary>
             private void Init()
             {
-                // set the LabelTextAlign and Width
-                this.LabelTextAlign = ContentAlignment.MiddleRight;
-                this.LabelWidth = 160;
+                // if the value for Inititialized is false
+                if (!Inititialized)
+                {
+                    // if the value for MultiLine is true
+                    if (MultiLine)
+                    {
+                        // set the LabelTextAlign and Width
+                        this.LabelTextAlign = ContentAlignment.TopRight;
+                    }
+                    else
+                    {   
+                        // set the LabelTextAlign and Width
+                        this.LabelTextAlign = ContentAlignment.MiddleRight;
+                    }
 
-                // Set Default Colors
-                this.TextBoxEditableColor = Color.White;
-                this.TextBoxDisabledColor = Color.LightGray;
+                    // Set DefaultWidth
+                    this.LabelWidth = 120;
 
-                // create the fonts
-                float fontSize = 12;
-                this.TextBoxFont = new Font("Verdana", fontSize);
-                this.LabelFont = new Font("Verdana", fontSize, FontStyle.Bold);
+                    // Set Default Colors
+                    this.TextBoxEditableColor = Color.White;
+                    this.TextBoxDisabledColor = Color.LightGray;
 
-                // Set to dark
-                Theme = ThemeEnum.Dark;
+                    // create the fonts
+                    float fontSize = 12;
+                    this.TextBoxFont = new Font("Verdana", fontSize);
+                    this.LabelFont = new Font("Verdana", fontSize, FontStyle.Bold);
 
-                // Default to Editable
-                this.Editable = true;
+                    // Set to dark
+                    Theme = ThemeEnum.Dark;
+
+                    // Default to Editable
+                    this.Editable = true;
+
+                    // Control values were getting reset when this is called
+                    Inititialized = true;
+                }
             }
             #endregion
 
@@ -383,6 +402,17 @@ namespace DataJuggler.Win.Controls
             }
             #endregion
 
+            #region Inititialized
+            /// <summary>
+            /// This property gets or sets the value for 'Inititialized'.
+            /// </summary>
+            public bool Inititialized
+            {
+                get { return inititialized; }
+                set { inititialized = value; }
+            }
+            #endregion
+            
             #region IntValue
             /// <summary>
             /// This read only properety returns the value of this control cast as an Integer.
@@ -601,6 +631,22 @@ namespace DataJuggler.Win.Controls
                     {
                         // set the value for the LabelTextBox
                         this.TextBox.Multiline = multiLine;
+                    }
+
+                    // if the Label exists
+                    if (Label != null)
+                    {
+                        // if multiline
+                        if (value)
+                        {
+                            // use top right
+                            Label.TextAlign = ContentAlignment.TopRight;
+                        }
+                        else
+                        {
+                            // use middle right
+                            Label.TextAlign = ContentAlignment.MiddleRight;
+                        }
                     }
                 }
             } 
@@ -885,6 +931,7 @@ namespace DataJuggler.Win.Controls
         #endregion
 
         #endregion
+
     } 
     #endregion
 

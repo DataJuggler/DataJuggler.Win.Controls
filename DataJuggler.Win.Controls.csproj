@@ -2,9 +2,9 @@
 
   <PropertyGroup>
     <OutputType>Library</OutputType>
-	<TargetFramework>net6.0-windows</TargetFramework>
+	<TargetFramework>net6.0-windows7.0</TargetFramework>
     <UseWindowsForms>true</UseWindowsForms>
-    <Version>6.1.4</Version>
+    <Version>6.2.0</Version>
 	<FileVersion>6.1.2</FileVersion>
     <Authors>DataJuggler</Authors>
     <Company>DataJuggler</Company>
@@ -19,6 +19,8 @@ All new development is on .Net 5 until .Net 6 comes out.</Description>
     <RepositoryType>Git/GitHub</RepositoryType>
     <PackageTags>WindowsForms,Desktop,Controls</PackageTags>
     <PackageReleaseNotes>
+		Update 4.5.2022: I built a new sample project called RemindMe, and I updated the ListEditor and SaveCancelControls.
+		
 		Update 1.24.2022: I updated UltimateHelper, so I published a new release.
 		This release is now .NET6 only.
 		
@@ -90,7 +92,16 @@ This is the first release for .Net 5. Nothing has been tested yet for .Net 5, at
 
 The code itself has worked for 10 or more years, but new platform, new ball game.</PackageReleaseNotes>
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
-    <Nullable>disable</Nullable>       
+    <Nullable>disable</Nullable>
+    <SupportedOSPlatformVersion>7.0</SupportedOSPlatformVersion>       
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
+    <NoWarn>1701;1702;IDE0059;IDE0019;</NoWarn>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
+    <NoWarn>1701;1702;IDE0059;IDE0019;</NoWarn>
   </PropertyGroup>
 
   <ItemGroup>

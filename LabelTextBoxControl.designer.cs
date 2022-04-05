@@ -1,25 +1,37 @@
 ﻿
 
+#region using statements
+
+
+#endregion
+
 namespace DataJuggler.Win.Controls
 {
 
-    #region class LabelTextBoxControl (Designer)
+    #region class LabelTextBoxControl
     /// <summary>
     /// This class is used to display a Label and a LabelTextBox for editing.
     /// </summary>
     partial class LabelTextBoxControl
     {
-
-        #region Components
-
-        /// Required designer variable.
-        private System.ComponentModel.IContainer components = null;
+        
+        #region Private Variables
+        internal System.ComponentModel.IContainer components = null;
+        internal System.Windows.Forms.Panel TextBoxTopMarginPanel;
+        internal System.Windows.Forms.Panel TextBoxBottomMarginPanel;
+        internal System.Windows.Forms.Panel BottomMarginPanel;
+        internal System.Windows.Forms.Panel LeftPanel;
+        internal System.Windows.Forms.Label Label;
+        internal System.Windows.Forms.Panel LabelRightMargin;
+        internal System.Windows.Forms.Panel LabelTopMarginPanel;
+        internal System.Windows.Forms.Panel LabelBottomMarginPanel;
+        internal System.Windows.Forms.TextBox TextBox;
         #endregion
-
-        #region Component Designer generated code
-
+        
+        #region Methods
+            
             #region Dispose(bool disposing)
-            /// <summary> 
+            /// <summary>
             /// Clean up any resources being used.
             /// </summary>
             /// <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
@@ -32,10 +44,10 @@ namespace DataJuggler.Win.Controls
                 base.Dispose(disposing);
             }
             #endregion
-
+            
             #region InitializeComponent()
-            /// <summary> 
-            /// Required method for Designer support - do not modify 
+            /// <summary>
+            /// Required method for Designer support - do not modify
             /// the contents of this method with the code editor.
             /// </summary>
             private void InitializeComponent()
@@ -153,21 +165,10 @@ namespace DataJuggler.Win.Controls
 
             }
             #endregion
-
-
+            
         #endregion
-
-            private System.Windows.Forms.Panel TextBoxTopMarginPanel;
-            private System.Windows.Forms.Panel TextBoxBottomMarginPanel;
-            private System.Windows.Forms.Panel BottomMarginPanel;
-            private System.Windows.Forms.Panel LeftPanel;
-            private System.Windows.Forms.Label Label;
-            private System.Windows.Forms.Panel LabelRightMargin;
-            private System.Windows.Forms.Panel LabelTopMarginPanel;
-            private System.Windows.Forms.Panel LabelBottomMarginPanel;
-            private System.Windows.Forms.TextBox TextBox;
-
-    } 
+        
+    }
     #endregion
-    
+
 }

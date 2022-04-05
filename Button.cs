@@ -29,6 +29,7 @@ namespace DataJuggler.Win.Controls
         private ThemeEnum theme;
         private string buttonText;
         private FlatStyle flatStyle;
+        private ContentAlignment textAlign;
         #endregion
         
         #region Constructor
@@ -257,6 +258,23 @@ namespace DataJuggler.Win.Controls
 
                     // Set the value
                     this.InnerButton.FlatStyle = value;
+                }
+            }
+            #endregion
+            
+            #region TextAlign
+            /// <summary>
+            /// This property gets or sets the value for 'TextAlign'.
+            /// </summary>
+            public ContentAlignment TextAlign
+            {
+                get { return textAlign; }
+                set 
+                { 
+                    textAlign = value;
+
+                    // Set the value
+                    InnerButton.TextAlign = value;
                 }
             }
             #endregion

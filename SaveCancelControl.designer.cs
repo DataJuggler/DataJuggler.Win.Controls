@@ -28,15 +28,14 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(SaveCancelControl));
             this.TopPanel = new System.Windows.Forms.Panel();
             this.BottomPanel = new System.Windows.Forms.Panel();
             this.RightMarginPanel = new System.Windows.Forms.Panel();
-            this.CancelSave = new System.Windows.Forms.Button();
+            this.CancelSaveButton = new DataJuggler.Win.Controls.Button();
             this.FillerPanel = new System.Windows.Forms.Panel();
-            this.SaveButton = new System.Windows.Forms.Button();
+            this.SaveButton = new DataJuggler.Win.Controls.Button();
             this.FillerPanel2 = new System.Windows.Forms.Panel();
-            this.SaveAndCloseButton = new System.Windows.Forms.Button();
+            this.SaveAndCloseButton = new DataJuggler.Win.Controls.Button();
             this.SuspendLayout();
             // 
             // TopPanel
@@ -63,87 +62,74 @@
             this.RightMarginPanel.Size = new System.Drawing.Size(8, 36);
             this.RightMarginPanel.TabIndex = 2;
             // 
-            // CancelSave
+            // CancelSaveButton
             // 
-            this.CancelSave.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("CancelSave.BackgroundImage")));
-            this.CancelSave.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.CancelSave.Dock = System.Windows.Forms.DockStyle.Right;
-            this.CancelSave.FlatAppearance.BorderSize = 0;
-            this.CancelSave.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
-            this.CancelSave.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
-            this.CancelSave.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.CancelSave.Font = new System.Drawing.Font("Verdana", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.CancelSave.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.CancelSave.Location = new System.Drawing.Point(402, 8);
-            this.CancelSave.Name = "CancelSave";
-            this.CancelSave.Size = new System.Drawing.Size(84, 36);
-            this.CancelSave.TabIndex = 3;
-            this.CancelSave.Text = "Cancel";
-            this.CancelSave.UseVisualStyleBackColor = true;
-            this.CancelSave.Click += new System.EventHandler(this.CancelSave_Click);
-            this.CancelSave.MouseEnter += new System.EventHandler(this.Button_Enter);
-            this.CancelSave.MouseLeave += new System.EventHandler(this.Button_Leave);
+            this.CancelSaveButton.BackColor = System.Drawing.Color.Transparent;
+            this.CancelSaveButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.CancelSaveButton.ButtonText = "Cancel";
+            this.CancelSaveButton.Dock = System.Windows.Forms.DockStyle.Right;
+            this.CancelSaveButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.CancelSaveButton.Font = new System.Drawing.Font("Verdana", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.CancelSaveButton.ForeColor = System.Drawing.Color.Black;
+            this.CancelSaveButton.Location = new System.Drawing.Point(389, 8);
+            this.CancelSaveButton.Margin = new System.Windows.Forms.Padding(14, 7, 14, 7);
+            this.CancelSaveButton.Name = "CancelSaveButton";
+            this.CancelSaveButton.Size = new System.Drawing.Size(97, 36);
+            this.CancelSaveButton.TabIndex = 12;
+            this.CancelSaveButton.Theme = DataJuggler.Win.Controls.Enumerations.ThemeEnum.Wood;
+            this.CancelSaveButton.EnabledChanged += new System.EventHandler(this.Button_EnabledChanged);
+            this.CancelSaveButton.Click += new System.EventHandler(this.CancelSave_Click);
             // 
             // FillerPanel
             // 
             this.FillerPanel.Dock = System.Windows.Forms.DockStyle.Right;
-            this.FillerPanel.Location = new System.Drawing.Point(394, 8);
+            this.FillerPanel.Location = new System.Drawing.Point(381, 8);
             this.FillerPanel.Name = "FillerPanel";
             this.FillerPanel.Size = new System.Drawing.Size(8, 36);
-            this.FillerPanel.TabIndex = 4;
+            this.FillerPanel.TabIndex = 13;
             // 
             // SaveButton
             // 
-            this.SaveButton.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("SaveButton.BackgroundImage")));
+            this.SaveButton.BackColor = System.Drawing.Color.Transparent;
             this.SaveButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.SaveButton.ButtonText = "Save";
             this.SaveButton.Dock = System.Windows.Forms.DockStyle.Right;
-            this.SaveButton.Enabled = false;
-            this.SaveButton.FlatAppearance.BorderSize = 0;
-            this.SaveButton.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
-            this.SaveButton.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
             this.SaveButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.SaveButton.Font = new System.Drawing.Font("Verdana", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.SaveButton.Location = new System.Drawing.Point(310, 8);
+            this.SaveButton.ForeColor = System.Drawing.Color.Black;
+            this.SaveButton.Location = new System.Drawing.Point(293, 8);
+            this.SaveButton.Margin = new System.Windows.Forms.Padding(4);
             this.SaveButton.Name = "SaveButton";
-            this.SaveButton.Size = new System.Drawing.Size(84, 36);
-            this.SaveButton.TabIndex = 5;
-            this.SaveButton.Text = "Save";
-            this.SaveButton.UseVisualStyleBackColor = true;
+            this.SaveButton.Size = new System.Drawing.Size(88, 36);
+            this.SaveButton.TabIndex = 17;
+            this.SaveButton.Theme = DataJuggler.Win.Controls.Enumerations.ThemeEnum.Wood;
             this.SaveButton.EnabledChanged += new System.EventHandler(this.Button_EnabledChanged);
             this.SaveButton.Click += new System.EventHandler(this.SaveButton_Click);
-            this.SaveButton.MouseEnter += new System.EventHandler(this.Button_Enter);
-            this.SaveButton.MouseLeave += new System.EventHandler(this.Button_Leave);
             // 
             // FillerPanel2
             // 
             this.FillerPanel2.Dock = System.Windows.Forms.DockStyle.Right;
-            this.FillerPanel2.Location = new System.Drawing.Point(302, 8);
+            this.FillerPanel2.Location = new System.Drawing.Point(285, 8);
             this.FillerPanel2.Name = "FillerPanel2";
             this.FillerPanel2.Size = new System.Drawing.Size(8, 36);
-            this.FillerPanel2.TabIndex = 6;
+            this.FillerPanel2.TabIndex = 19;
             // 
             // SaveAndCloseButton
             // 
-            this.SaveAndCloseButton.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("SaveAndCloseButton.BackgroundImage")));
+            this.SaveAndCloseButton.BackColor = System.Drawing.Color.Transparent;
             this.SaveAndCloseButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.SaveAndCloseButton.ButtonText = "Save && Close";
             this.SaveAndCloseButton.Dock = System.Windows.Forms.DockStyle.Right;
-            this.SaveAndCloseButton.Enabled = false;
-            this.SaveAndCloseButton.FlatAppearance.BorderSize = 0;
-            this.SaveAndCloseButton.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
-            this.SaveAndCloseButton.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
             this.SaveAndCloseButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.SaveAndCloseButton.Font = new System.Drawing.Font("Verdana", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.SaveAndCloseButton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.SaveAndCloseButton.Location = new System.Drawing.Point(154, 8);
+            this.SaveAndCloseButton.ForeColor = System.Drawing.Color.Black;
+            this.SaveAndCloseButton.Location = new System.Drawing.Point(145, 8);
+            this.SaveAndCloseButton.Margin = new System.Windows.Forms.Padding(4);
             this.SaveAndCloseButton.Name = "SaveAndCloseButton";
-            this.SaveAndCloseButton.Size = new System.Drawing.Size(148, 36);
-            this.SaveAndCloseButton.TabIndex = 7;
-            this.SaveAndCloseButton.Text = "Save && Close";
-            this.SaveAndCloseButton.UseVisualStyleBackColor = true;
-            this.SaveAndCloseButton.EnabledChanged += new System.EventHandler(this.Button_EnabledChanged);
+            this.SaveAndCloseButton.Size = new System.Drawing.Size(140, 36);
+            this.SaveAndCloseButton.TabIndex = 20;
+            this.SaveAndCloseButton.Theme = DataJuggler.Win.Controls.Enumerations.ThemeEnum.Wood;
             this.SaveAndCloseButton.Click += new System.EventHandler(this.SaveAndCloseButton_Click);
-            this.SaveAndCloseButton.MouseEnter += new System.EventHandler(this.Button_Enter);
-            this.SaveAndCloseButton.MouseLeave += new System.EventHandler(this.Button_Leave);
             // 
             // SaveCancelControl
             // 
@@ -154,7 +140,7 @@
             this.Controls.Add(this.FillerPanel2);
             this.Controls.Add(this.SaveButton);
             this.Controls.Add(this.FillerPanel);
-            this.Controls.Add(this.CancelSave);
+            this.Controls.Add(this.CancelSaveButton);
             this.Controls.Add(this.RightMarginPanel);
             this.Controls.Add(this.BottomPanel);
             this.Controls.Add(this.TopPanel);
@@ -171,10 +157,10 @@
         private System.Windows.Forms.Panel TopPanel;
         private System.Windows.Forms.Panel BottomPanel;
         private System.Windows.Forms.Panel RightMarginPanel;
-        private System.Windows.Forms.Button CancelSave;
+        private Button CancelSaveButton;
         private System.Windows.Forms.Panel FillerPanel;
-        private System.Windows.Forms.Button SaveButton;
+        private Button SaveButton;
         private System.Windows.Forms.Panel FillerPanel2;
-        private System.Windows.Forms.Button SaveAndCloseButton;
+        private Button SaveAndCloseButton;
     }
 }

@@ -24,6 +24,18 @@ namespace DataJuggler.Win.Controls.Enumerations
     }
     #endregion
 
+    #region CalendarSelectionModeEnum : int
+    /// <summary>
+    /// This enum is what options are available in the LabelCalendarControl.
+    /// </summary>
+    public enum CalendarSelectionModeEnum : int
+    {
+        SelectionAndText = 0,
+        SelectionOnly = 1,
+        TextOnly = 2
+    }
+    #endregion
+
     #region EditModeEnum
     /// <summary>
     /// This mode is used to determine what type of an Edit is taking place.

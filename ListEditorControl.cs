@@ -241,6 +241,9 @@ namespace DataJuggler.Win.Controls
             /// </summary>
             public void DisplayList()
             {
+                // Clear the list
+                ListBox.Items.Clear();
+
                 // If the List collection exists and has one or more items
                 if (ListHelper.HasOneOrMoreItems(List))
                 {
@@ -342,9 +345,6 @@ namespace DataJuggler.Win.Controls
                 // Default Widths
                 ListEditorWidth = 320;
                 WidthFullControl = 720;
-
-                // Set the value so the Background (again) so whatever is stored in InitializeComponent isn't permanent
-                this.ShowBackgroundImage = this.ShowBackgroundImage;
 
                 // Enable or disable controls based upon if there is a SelectedItem or not
                 UIEnable();

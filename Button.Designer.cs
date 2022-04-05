@@ -45,7 +45,7 @@ namespace DataJuggler.Win.Controls
             this.InnerButton.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.InnerButton.Location = new System.Drawing.Point(0, 0);
             this.InnerButton.Name = "InnerButton";
-            this.InnerButton.Size = new System.Drawing.Size(180, 64);
+            this.InnerButton.Size = new System.Drawing.Size(120, 44);
             this.InnerButton.TabIndex = 0;
             this.InnerButton.Text = "Click Me";
             this.InnerButton.UseVisualStyleBackColor = false;
@@ -60,7 +60,7 @@ namespace DataJuggler.Win.Controls
             this.BackColor = System.Drawing.Color.Transparent;
             this.Controls.Add(this.InnerButton);
             this.Name = "Button";
-            this.Size = new System.Drawing.Size(180, 64);
+            this.Size = new System.Drawing.Size(120, 44);
             this.EnabledChanged += new System.EventHandler(this.Button_EnabledChanged);
             this.FontChanged += new System.EventHandler(this.Button_FontChanged);
             this.ForeColorChanged += new System.EventHandler(this.Button_ForeColorChanged);
