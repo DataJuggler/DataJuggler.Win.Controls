@@ -98,8 +98,11 @@ namespace DataJuggler.Win.Controls
                 this.LabelTextAlign = ContentAlignment.MiddleRight;
 
                 // Set Default height & width
-                this.LabelWidth = 140;
-                this.Width = 280;
+                this.LabelWidth = 120;
+                this.Width = 160;
+
+                // Set default font
+                this.LabelFont = new Font("Verdana", 12, FontStyle.Bold);
 
                 // Start off enabled
                 this.Enabled = true;

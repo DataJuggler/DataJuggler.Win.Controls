@@ -410,13 +410,14 @@ namespace DataJuggler.Win.Controls
                     if (doneMode)
                     {
                         // set to Cancel
-                        CancelSaveButton.Text = "Done";                        
+                        CancelSaveButton.ButtonText = "Done";    
+                        CancelSaveButton.Enabled = true;
                         CancelSaveButton.TextAlign = ContentAlignment.MiddleCenter;
                     }
                     else
                     {
                         // set to Cancel
-                        CancelSaveButton.Text = "Cancel";
+                        CancelSaveButton.ButtonText = "Cancel";
 
                         // Move to the right for the presence of the image
                         CancelSaveButton.TextAlign = ContentAlignment.MiddleRight;

@@ -200,8 +200,14 @@ namespace DataJuggler.Win.Controls
                 this.Sorted = true;
                 
                 // set the default label width
-                this.LabelWidth = 80;
+                this.LabelWidth = 120;
                 
+                // Create the Font
+                this.Font = new Font("Verdana", 12);
+
+                // Default label font
+                this.LabelFont = new Font("Verdana", 12, FontStyle.Bold);
+
                 // default to editable
                 this.Editable = true;
                 

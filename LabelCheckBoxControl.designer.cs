@@ -50,7 +50,7 @@ namespace DataJuggler.Win.Controls
             // Label
             // 
             this.Label.Dock = System.Windows.Forms.DockStyle.Left;
-            this.Label.Font = new System.Drawing.Font("Verdana", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Label.Font = new System.Drawing.Font("Verdana", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.Label.Location = new System.Drawing.Point(0, 0);
             this.Label.Name = "Label";
             this.Label.Size = new System.Drawing.Size(160, 28);
@@ -94,7 +94,7 @@ namespace DataJuggler.Win.Controls
             this.Controls.Add(this.CheckBoxTopMarginPanel);
             this.Controls.Add(this.Label);
             this.DoubleBuffered = true;
-            this.Font = new System.Drawing.Font("Verdana", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Font = new System.Drawing.Font("Verdana", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.Name = "LabelCheckBoxControl";
             this.Size = new System.Drawing.Size(236, 28);
             this.ResumeLayout(false);

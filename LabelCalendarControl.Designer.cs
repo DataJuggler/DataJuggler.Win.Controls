@@ -29,7 +29,6 @@
         private void InitializeComponent()
         {
             this.SelectionButton = new DataJuggler.Win.Controls.Button();
-            this.Calendar = new System.Windows.Forms.MonthCalendar();
             this.SuspendLayout();
             // 
             // SelectionButton
@@ -48,24 +47,14 @@
             this.SelectionButton.Theme = DataJuggler.Win.Controls.Enumerations.ThemeEnum.Dark;
             this.SelectionButton.Click += new System.EventHandler(this.SelectionButton_Click);
             // 
-            // Calendar
-            // 
-            this.Calendar.Location = new System.Drawing.Point(640, 40);
-            this.Calendar.Name = "Calendar";
-            this.Calendar.TabIndex = 20;
-            this.Calendar.Visible = false;
-            this.Calendar.DateSelected += new System.Windows.Forms.DateRangeEventHandler(this.Calendar_DateSelected);
-            // 
             // LabelCalendarControl
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 23F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.Controls.Add(this.Calendar);
             this.Controls.Add(this.SelectionButton);
             this.Name = "LabelCalendarControl";
             this.Size = new System.Drawing.Size(867, 214);
             this.Controls.SetChildIndex(this.SelectionButton, 0);
-            this.Controls.SetChildIndex(this.Calendar, 0);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -74,6 +63,5 @@
         #endregion
 
         private Button SelectionButton;
-        private System.Windows.Forms.MonthCalendar Calendar;
     }
 }

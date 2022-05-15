@@ -30,7 +30,8 @@ namespace DataJuggler.Win.Controls
         #region Private Variables
         private DateTime date;
         private bool userCancelled;        
-        private CalendarSelectionModeEnum selectionMode;        
+        private CalendarSelectionModeEnum selectionMode;
+        private MonthCalendar calendar;
         #endregion
         
         #region Constructor
@@ -49,6 +50,17 @@ namespace DataJuggler.Win.Controls
 
         #region Events
 
+            #region Calendar_DateChanged(object sender, DateRangeEventArgs e)
+            /// <summary>
+            /// event is fired when Calendar _ Date Changed
+            /// </summary>
+            private void Calendar_DateChanged(object sender, DateRangeEventArgs e)
+            {
+                // Set the date
+                date = e.Start;
+            }
+            #endregion
+            
             #region Calendar_DateSelected(object sender, DateRangeEventArgs e)
             /// <summary>
             /// event is fired when Calendar _ Date Selected
@@ -89,11 +101,15 @@ namespace DataJuggler.Win.Controls
             /// event is fired when the 'SelectionButton' is clicked.
             /// </summary>
             private void SelectionButton_Click(object sender, EventArgs e)
-            {
-                //// Set the Location                               
-                Calendar.Visible = true;                
-                Height = 212;
-                Calendar.SelectionStart = DateTime.Now;
+            { 
+                // if the Calandar exists
+                if (HasCalendar)
+                {
+                    // Toggle visible or cancel with the same button
+                    Calendar.Visible = !Calendar.Visible;                
+                    Height = 212;
+                    Calendar.SelectionStart = DateTime.Now;
+                }
             }
             #endregion
 
@@ -163,16 +179,56 @@ namespace DataJuggler.Win.Controls
 
         #region Properties
 
-        #region Date
-        /// <summary>
-        /// This property gets or sets the value for 'Date'.
-        /// </summary>
-        [Browsable(true)]
+            #region Calendar
+            /// <summary>
+            /// This property gets or sets the value for 'Calendar'.
+            /// </summary>
+            [Browsable(true)]
             [DesignerSerializationVisibility(DesignerSerializationVisibility.Hidden)] 
-            public DateTime Date
+            public MonthCalendar Calendar
             {
-                get { return date; }
-                set { date = value; }
+                get { return calendar; }
+                set 
+                { 
+                    calendar = value;
+
+                    // if the calandar exists
+                    if (HasCalendar)
+                    {
+                        // Setup the event
+                        calendar.DateChanged += Calendar_DateChanged;
+                    }
+                }
+            }
+            #endregion
+
+            #region Date
+            /// <summary>
+            /// This property gets or sets the value for 'Date'.
+            /// </summary>
+            [Browsable(true)]
+                [DesignerSerializationVisibility(DesignerSerializationVisibility.Hidden)] 
+                public DateTime Date
+                {
+                    get { return date; }
+                    set { date = value; }
+                }
+                #endregion
+            
+            #region HasCalendar
+            /// <summary>
+            /// This property returns true if this object has a 'Calendar'.
+            /// </summary>
+            public bool HasCalendar
+            {
+                get
+                {
+                    // initial value
+                    bool hasCalendar = (this.Calendar != null);
+                    
+                    // return value
+                    return hasCalendar;
+                }
             }
             #endregion
             

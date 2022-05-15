@@ -193,7 +193,7 @@ namespace DataJuggler.Win.Controls
                 LabelFont = new Font("Verdana", 12, FontStyle.Bold);
                 BackColor = Color.Transparent;
                 LabelColor = Color.Black;
-                LabelWidth = 80;
+                LabelWidth = 120;
                 TextBoxFont = this.Font;
 
                 // Set to Dark
@@ -1074,6 +1074,7 @@ namespace DataJuggler.Win.Controls
         #endregion
 
         #endregion
+
     }
     #endregion
 

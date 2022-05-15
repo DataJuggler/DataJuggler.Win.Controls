@@ -4,7 +4,7 @@
     <OutputType>Library</OutputType>
 	<TargetFramework>net6.0-windows7.0</TargetFramework>
     <UseWindowsForms>true</UseWindowsForms>
-    <Version>6.2.0</Version>
+    <Version>6.2.1</Version>
 	<FileVersion>6.1.2</FileVersion>
     <Authors>DataJuggler</Authors>
     <Company>DataJuggler</Company>
@@ -18,7 +18,10 @@ All new development is on .Net 5 until .Net 6 comes out.</Description>
     <RepositoryUrl>https://github.com/DataJuggler/DataJuggler.Win.Controls</RepositoryUrl>
     <RepositoryType>Git/GitHub</RepositoryType>
     <PackageTags>WindowsForms,Desktop,Controls</PackageTags>
-    <PackageReleaseNotes>
+    <PackageReleaseNotes>Update 5.14.2022
+Version 6.2.1: Made some consistency among start up Init methods for Label Size and Font defaults.
+
+
 		Update 4.5.2022: I built a new sample project called RemindMe, and I updated the ListEditor and SaveCancelControls.
 		
 		Update 1.24.2022: I updated UltimateHelper, so I published a new release.

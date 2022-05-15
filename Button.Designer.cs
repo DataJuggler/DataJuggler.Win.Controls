@@ -48,7 +48,7 @@ namespace DataJuggler.Win.Controls
             this.InnerButton.Size = new System.Drawing.Size(120, 44);
             this.InnerButton.TabIndex = 0;
             this.InnerButton.Text = "Click Me";
-            this.InnerButton.UseVisualStyleBackColor = false;
+            this.InnerButton.UseVisualStyleBackColor = false;            
             this.InnerButton.Click += new System.EventHandler(this.InnerButton_Click);
             this.InnerButton.MouseEnter += new System.EventHandler(this.Button_Enter);
             this.InnerButton.MouseLeave += new System.EventHandler(this.Button_Leave);
