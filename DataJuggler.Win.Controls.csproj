@@ -4,7 +4,7 @@
     <OutputType>Library</OutputType>
 	<TargetFramework>net6.0-windows7.0</TargetFramework>
     <UseWindowsForms>true</UseWindowsForms>
-    <Version>6.2.1</Version>
+    <Version>6.2.2</Version>
 	<FileVersion>6.1.2</FileVersion>
     <Authors>DataJuggler</Authors>
     <Company>DataJuggler</Company>
@@ -19,6 +19,7 @@ All new development is on .Net 5 until .Net 6 comes out.</Description>
     <RepositoryType>Git/GitHub</RepositoryType>
     <PackageTags>WindowsForms,Desktop,Controls</PackageTags>
     <PackageReleaseNotes>Update 5.14.2022
+Version 6.2.2: Updated DataJuggler.UltimateHelper Nuget package.
 Version 6.2.1: Made some consistency among start up Init methods for Label Size and Font defaults.
 
 
@@ -144,7 +145,7 @@ The code itself has worked for 10 or more years, but new platform, new ball game
   </ItemGroup>
 
   <ItemGroup>
-    <PackageReference Include="DataJuggler.UltimateHelper" Version="6.0.2" />
+    <PackageReference Include="DataJuggler.UltimateHelper" Version="6.0.4" />
   </ItemGroup>
 
 </Project>
