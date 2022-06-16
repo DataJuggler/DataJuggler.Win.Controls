@@ -5,6 +5,7 @@
 using DataJuggler.Win.Controls.Interfaces;
 using DataJuggler.Win.Controls.Objects;
 using DataJuggler.Win.Controls.Util;
+using DataJuggler.Win.Controls.Enumerations;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -40,6 +41,7 @@ namespace DataJuggler.Win.Controls
         private int labelBottomMargin;
         private int comboBoxLeftMargin;
         private bool hideLabel;
+        private ThemeEnum theme;
         #endregion
 
         #region Constructor
@@ -216,6 +218,9 @@ namespace DataJuggler.Win.Controls
 
                 // set to 1
                 this.ComboBoxLeftMargin = 1;
+
+                // Default Theme
+                Theme = ThemeEnum.Dark;
             }
             #endregion
 
@@ -937,6 +942,36 @@ namespace DataJuggler.Win.Controls
                 get { return source; }
                 set { source = value; }
             } 
+            #endregion
+
+            #region Theme
+            /// <summary>
+            /// This property gets or sets the value for 'Theme'.
+            /// </summary>
+            public ThemeEnum Theme
+            {
+                get { return theme; }
+                set 
+                { 
+                    // set the value
+                    theme = value;
+
+                    // if using the Blue Theme
+                    if (theme == ThemeEnum.Wood)
+                    {
+                        // use Black Label
+                        this.LabelColor = Color.Black;
+                    }
+                    else if (theme == ThemeEnum.Dark)
+                    {
+                        // use a light yellow
+                        this.LabelColor = Color.LemonChiffon;
+                    }
+
+                    // Refresh the UI
+                    this.Refresh();
+                }
+            }
             #endregion
 
         #endregion
