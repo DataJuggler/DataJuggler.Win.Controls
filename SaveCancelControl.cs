@@ -246,9 +246,9 @@ namespace DataJuggler.Win.Controls
                 ShowSaveButton = true;                
                 SaveAndCloseButton.TextAlign = ContentAlignment.MiddleCenter;
                 SaveButton.TextAlign = ContentAlignment.MiddleCenter;
-                CancelSaveButton.TextAlign = ContentAlignment.MiddleCenter;
-                CancelButtonWidth = 88;
-                SaveButtonWidth = 88;                
+                CancelSaveButton.TextAlign = ContentAlignment.MiddleCenter;                
+                CancelButtonWidth = 96;
+                SaveButtonWidth = 96;                
                 SaveAndCloseButtonWidth = 140;
 
                 // Setup the buttons

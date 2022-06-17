@@ -145,7 +145,7 @@ The code itself has worked for 10 or more years, but new platform, new ball game
   </ItemGroup>
 
   <ItemGroup>
-    <PackageReference Include="DataJuggler.UltimateHelper" Version="6.0.4" />
+    <PackageReference Include="DataJuggler.UltimateHelper" Version="6.0.6" />
   </ItemGroup>
 
 </Project>
