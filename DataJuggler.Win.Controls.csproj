@@ -2,9 +2,9 @@
 
   <PropertyGroup>
     <OutputType>Library</OutputType>
-	<TargetFramework>net6.0-windows7.0</TargetFramework>
+	<TargetFramework>net7.0-windows</TargetFramework>
     <UseWindowsForms>true</UseWindowsForms>
-    <Version>6.2.4</Version>
+    <Version>7.0.0</Version>
 	<FileVersion>6.1.2</FileVersion>
     <Authors>DataJuggler</Authors>
     <Company>DataJuggler</Company>
@@ -99,8 +99,7 @@ This is the first release for .Net 5. Nothing has been tested yet for .Net 5, at
 
 The code itself has worked for 10 or more years, but new platform, new ball game.</PackageReleaseNotes>
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
-    <Nullable>disable</Nullable>
-    <SupportedOSPlatformVersion>7.0</SupportedOSPlatformVersion>       
+    <Nullable>disable</Nullable>       
   </PropertyGroup>
 
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
@@ -148,7 +147,7 @@ The code itself has worked for 10 or more years, but new platform, new ball game
   </ItemGroup>
 
   <ItemGroup>
-    <PackageReference Include="DataJuggler.UltimateHelper" Version="6.0.6" />
+    <PackageReference Include="DataJuggler.UltimateHelper" Version="7.0.0" />
   </ItemGroup>
 
 </Project>
