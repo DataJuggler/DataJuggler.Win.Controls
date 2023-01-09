@@ -4,13 +4,14 @@
     <OutputType>Library</OutputType>
 	<TargetFramework>net7.0-windows</TargetFramework>
     <UseWindowsForms>true</UseWindowsForms>
-    <Version>7.0.0</Version>
+    <Version>7.0.1</Version>
 	<FileVersion>6.1.2</FileVersion>
     <Authors>DataJuggler</Authors>
     <Company>DataJuggler</Company>
     <Description>This package contains a series of controls such as a LabelTextBoxControl, LabelComboBoxControl, 
-LabelCheckBox, etc. This package was originally for .Net Framework, but has been ported to .Net 5.
-All new development is on .Net 5 until .Net 6 comes out.</Description>
+LabelCheckBox, etc. This package was originally for .Net Framework, but has been ported to .Net 7.
+Use a 6.x version for .NET 6, a 5.x for .NET 5, etc.
+</Description>
     <Copyright>DataJuggler 2010 - 2022 - Open Source For Any Use - As Is - Do What You Want - Give Me Credit If You Like It</Copyright>
     <PackageLicenseFile>License.txt</PackageLicenseFile>
     <PackageProjectUrl>https://github.com/DataJuggler/DataJuggler.Win.Controls</PackageProjectUrl>
