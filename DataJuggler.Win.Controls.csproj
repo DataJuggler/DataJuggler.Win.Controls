@@ -4,7 +4,7 @@
     <OutputType>Library</OutputType>
 	<TargetFramework>net7.0-windows</TargetFramework>
     <UseWindowsForms>true</UseWindowsForms>
-    <Version>7.1.0</Version>
+    <Version>7.1.1</Version>
 	<FileVersion>6.1.2</FileVersion>
     <Authors>DataJuggler</Authors>
     <Company>DataJuggler</Company>
@@ -148,7 +148,7 @@ The code itself has worked for 10 or more years, but new platform, new ball game
   </ItemGroup>
 
   <ItemGroup>
-    <PackageReference Include="DataJuggler.UltimateHelper" Version="7.1.0" />
+    <PackageReference Include="DataJuggler.UltimateHelper" Version="7.1.1" />
   </ItemGroup>
 
 </Project>
