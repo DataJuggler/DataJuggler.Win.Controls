@@ -318,28 +318,6 @@ namespace DataJuggler.Win.Controls
             }
             #endregion
 
-            #region SelectItemByValue(string itemValue)
-            /// <summary>
-            /// This method searches all of the items in the ComboBox
-            /// and if the value matches that item is selected
-            /// </summary>
-            internal void SelectItemByValue(string itemValue)
-            {
-                // local
-                int indexToSelect = -1;
-
-                // if the combo box has one or more items
-                if (this.ComboBox.Items.Count > 0)
-                {
-                    // find the index of the item to select
-                    indexToSelect = FindItemIndexByValue(itemValue);
-
-                    // set the SelectedIndex
-                    this.ComboBox.SelectedIndex = indexToSelect;
-                }
-            }
-            #endregion
-
             #region LoadItems(List<Item> items)
             /// <summary>
             /// This method loads the combobox with the list of items
@@ -378,6 +356,28 @@ namespace DataJuggler.Win.Controls
             {
                 // Set Focus to the ComboBox
                 this.ComboBox.Focus();
+            }
+            #endregion
+
+            #region SelectItemByValue(string itemValue)
+            /// <summary>
+            /// This method searches all of the items in the ComboBox
+            /// and if the value matches that item is selected
+            /// </summary>
+            internal void SelectItemByValue(string itemValue)
+            {
+                // local
+                int indexToSelect = -1;
+
+                // if the combo box has one or more items
+                if (this.ComboBox.Items.Count > 0)
+                {
+                    // find the index of the item to select
+                    indexToSelect = FindItemIndexByValue(itemValue);
+
+                    // set the SelectedIndex
+                    this.ComboBox.SelectedIndex = indexToSelect;
+                }
             }
             #endregion
             
