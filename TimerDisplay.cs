@@ -7,6 +7,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -60,49 +61,67 @@ namespace DataJuggler.Win.Controls
             /// </summary>
             private void DisplayTimer_Tick(object sender, EventArgs e)
             {
-                // Get the current second
-                DateTime now = DateTime.Now;
-                
-                // get the current second
-                int second = now.Second;
-
-                // locals
-                TimeSpan elapsed;
-                double hours = 0;
-                int minutes = 0;
-                int seconds = 0;
-                string minutesText = "";
-                string secondsText = "";
-
-                // if the second changed
-                if (second != LastSecond)
+                try
                 {
-                    // if the value for Reverse is true
-                    if (Reverse)
+                    // Get the current second
+                    DateTime now = DateTime.Now;
+                    
+                    // if we have passed the EndTime
+                    if (now > EndTime)
                     {
-                        // get the elapsed
-                        elapsed = StartAtTime - now;
+                        // Stop the timer
+                        DisplayTimer.Stop();
                     }
-                    else
+                
+                    // get the current second
+                    int second = now.Second;
+
+                    // locals
+                    TimeSpan elapsed;
+                    double hours = 0;
+                    int minutes = 0;
+                    int seconds = 0;
+                    string minutesText = "";
+                    string secondsText = "";
+
+                    // if the second changed
+                    if (second != LastSecond)
                     {
-                        // Get the elapsed
-                        elapsed = now - StartTime;
+                        // if the value for Reverse is true
+                        if (Reverse)
+                        {
+                            // get the elapsed
+                            elapsed = StartAtTime - now;
+                        }
+                        else
+                        {
+                            // Get the elapsed
+                            elapsed = now - StartTime;
+                        }
+
+                        // now format the display
+                        hours = Math.Floor(elapsed.TotalHours);
+                        minutes = elapsed.Minutes;
+                        seconds = elapsed.Seconds;
+
+                        // Ensure minutes and seconds start with a 0
+                        minutesText = minutes.ToString("00");
+                        secondsText = seconds.ToString("00");
+
+                        // Set the text
+                        this.TimerLabel.Text = hours + ":" + minutesText + ":" + secondsText;
+
+                        // Store the last second
+                        LastSecond = second;
                     }
+                }
+                catch (Exception error)
+                {
+                    // for debugging
+                    DebugHelper.WriteDebugError("DisplayTimer_Tick", "TimerDisplay", error);
 
-                    // now format the display
-                    hours = Math.Floor(elapsed.TotalHours);
-                    minutes = elapsed.Minutes;
-                    seconds = elapsed.Seconds;
-
-                    // Ensure minutes and seconds start with a 0
-                    minutesText = minutes.ToString("00");
-                    secondsText = seconds.ToString("00");
-
-                    // Set the text
-                    this.TimerLabel.Text = hours + ":" + minutesText + ":" + secondsText;
-
-                    // Store the last second
-                    LastSecond = second;
+                    string filePath = Path.Combine(Environment.CurrentDirectory, "log.txt");
+                    File.AppendAllText(filePath, error.ToString());
                 }
             }
             #endregion
@@ -179,6 +198,9 @@ namespace DataJuggler.Win.Controls
 
                 // initial value
                 StartTime = DateTime.Now;
+
+                // Set the interval to 500
+                DisplayTimer.Interval = 500;
 
                 // Start the timer
                 DisplayTimer.Start();                

@@ -1,4 +1,8 @@
-﻿# DataJuggler.Win.Controls
+﻿# News
+
+8.13.2023: DataJuggler.UltimateHelper was updated.
+
+# DataJuggler.Win.Controls
 
 DataJuggler.Win.Controls is a collection of C# WinForms user controls that make it simple
 to build user interfaces.

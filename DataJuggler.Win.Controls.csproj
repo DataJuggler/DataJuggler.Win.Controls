@@ -4,15 +4,15 @@
     <OutputType>Library</OutputType>
 	<TargetFramework>net7.0-windows</TargetFramework>
     <UseWindowsForms>true</UseWindowsForms>
-    <Version>7.1.3</Version>
-	<FileVersion>6.1.2</FileVersion>
+    <Version>7.1.8</Version>
+	<FileVersion>7.1.8</FileVersion>
     <Authors>DataJuggler</Authors>
     <Company>DataJuggler</Company>
     <Description>This package contains a series of controls such as a LabelTextBoxControl, LabelComboBoxControl, 
 LabelCheckBox, etc. This package was originally for .Net Framework, but has been ported to .Net 7.
 Use a 6.x version for .NET 6, a 5.x for .NET 5, etc.
 </Description>
-    <Copyright>DataJuggler 2010 - 2022 - Open Source For Any Use - As Is - Do What You Want - Give Me Credit If You Like It</Copyright>
+    <Copyright>DataJuggler 2010 - 2023 - Open Source For Any Use - As Is - Do What You Want - Give Me Credit If You Like It</Copyright>
     <PackageLicenseFile>License.txt</PackageLicenseFile>
     <PackageProjectUrl>https://github.com/DataJuggler/DataJuggler.Win.Controls</PackageProjectUrl>
     <PackageIcon>DataJuggler.png</PackageIcon>
@@ -20,99 +20,102 @@ Use a 6.x version for .NET 6, a 5.x for .NET 5, etc.
     <RepositoryType>Git/GitHub</RepositoryType>
     <PackageTags>WindowsForms,Desktop,Controls</PackageTags>
     <PackageReleaseNotes>
+		8.13.2023: DataJuggler.UltimateHelper was updated.
+
+		Update 7.14.2023: Working on the TimerDisplayControl. Hoping to have it fixed.
+
 		Update 6.21.2023: I updated DataJuggler.UltimateHelper package.
-		
+
 		Update 6.17.2022
-Version 6.2.4: I updated DataJuggler.UltimateHelper plus SaveCancelControl button widths.
+		Version 6.2.4: I updated DataJuggler.UltimateHelper plus SaveCancelControl button widths.
 
-Update 5.14.2022
-Version 6.2.2: Updated DataJuggler.UltimateHelper Nuget package.
-Version 6.2.1: Made some consistency among start up Init methods for Label Size and Font defaults.
-
+		Update 5.14.2022
+		Version 6.2.2: Updated DataJuggler.UltimateHelper Nuget package.
+		Version 6.2.1: Made some consistency among start up Init methods for Label Size and Font defaults.
 
 		Update 4.5.2022: I built a new sample project called RemindMe, and I updated the ListEditor and SaveCancelControls.
-		
+
 		Update 1.24.2022: I updated UltimateHelper, so I published a new release.
 		This release is now .NET6 only.
-		
+
 		Update 12.31.2021:
 		6.1.0: No code changes, but I realized the file version was not updating.
-		
+
 		Update 12.29:2021
 		Version 6.1.0: I added a new TimerDisplay control. Add the control to your form, call the Start and Stop methods
-		to control the timer display. I added a state for Pause, although Pause is not handled yet. Pause is a little more 
+		to control the timer display. I added a state for Pause, although Pause is not handled yet. Pause is a little more
 		complicated than Start and Stop when it comes to ElapsedTime. I would have to keep track of all the Start and Stops
 		so put off the Pause until I need it.
-		
+
 		Update 12.11.2021: I updated this project to Net 6.0, use an older version for .Net 5.
-		
+
 		Update 11.7.2021
-Version 5.8.10: I updated DataJuggler.UltimateHelper Nuget package.
+		Version 5.8.10: I updated DataJuggler.UltimateHelper Nuget package.
 
-Update 10.31.2021
-Version 5.8.9: DataJuggler.UltimateHelper had a new release.
+		Update 10.31.2021
+		Version 5.8.9: DataJuggler.UltimateHelper had a new release.
 
-Update 9.15.2021: I had a Button_MouseEnter and Button_MouseLeave event, but it was applied to the Inner
-Button, not the Button user control. 
+		Update 9.15.2021: I had a Button_MouseEnter and Button_MouseLeave event, but it was applied to the Inner
+		Button, not the Button user control.
 
-Update 9.13.2021: Version 5.8.7: I fixed the Theme's a little.
+		Update 9.13.2021: Version 5.8.7: I fixed the Theme's a little.
 
-Update 9.10.2021 B: I fixed a bug where the LabelCheckBoxControl is not Editable at start. 
+		Update 9.10.2021 B: I fixed a bug where the LabelCheckBoxControl is not Editable at start.
 
-Update 9.10.2021: I updated I updated DataJuggler.UltimateHelper again, and Nuget behaves better if this stays updated.
+		Update 9.10.2021: I updated I updated DataJuggler.UltimateHelper again, and Nuget behaves better if this stays updated.
 
-Update 9.9.2021: I updated DataJuggler.UltimateHelper, so Nuget behaves better if this stays updated.
+		Update 9.9.2021: I updated DataJuggler.UltimateHelper, so Nuget behaves better if this stays updated.
 
-Update 9.5.2021
-Version 5.8.3: I upgraded DataJuggler.UltimateHelper to 1.6.4. Having a 1.6 version and a 1.5x version caused a conflict of this package.
+		Update 9.5.2021
+		Version 5.8.3: I upgraded DataJuggler.UltimateHelper to 1.6.4. Having a 1.6 version and a 1.5x version caused a conflict of this package.
 
-Update 8.2.2021 C: I updated DataJuggler.UltimateHelper, and this removed WordParser, so i bebuilt this library.
+		Update 8.2.2021 C: I updated DataJuggler.UltimateHelper, and this removed WordParser, so i bebuilt this library.
 
-Update: 8.2.2021 B: After testing this for one second, I realized I needed an ITextLinesLoadedListener interface, so I added one. New video coming soon for this and documentation.
+		Update: 8.2.2021 B: After testing this for one second, I realized I needed an ITextLinesLoadedListener interface, so I added one. New video coming soon for this and documentation.
 
 
 
-Update: 8.2.2021: I added a Windows Form called FileBrowserWithButtonForm, that contains a LabelTextBoxControl, and a button.
+		Update: 8.2.2021: I added a Windows Form called FileBrowserWithButtonForm, that contains a LabelTextBoxControl, and a button.
 
-Update 6.15.2021 B: I fixed the FlatStyle. I had to add this.OnClick to the Button.InnerButton to make it fire (hopefully this works).
+		Update 6.15.2021 B: I fixed the FlatStyle. I had to add this.OnClick to the Button.InnerButton to make it fire (hopefully this works).
 
-Update 6.15.2021: Set FlatStyle to Flat and still didn't work. Trying again.
+		Update 6.15.2021: Set FlatStyle to Flat and still didn't work. Trying again.
 
-Update 6.14.2021: I added a Button recently, but I didn't set the FlatStyle to Flat. Oops.
+		Update 6.14.2021: I added a Button recently, but I didn't set the FlatStyle to Flat. Oops.
 
-Update 6.7.2021: Version 5.7.9: I fixed the issue of the Background not changing for Theme Dark for the new Button. It was caused by Programmer Stupidity in the chair I sit in. The button seems to work now, I think.
+		Update 6.7.2021: Version 5.7.9: I fixed the issue of the Background not changing for Theme Dark for the new Button. It was caused by Programmer Stupidity in the chair I sit in. The button seems to work now, I think.
 
-Update 6.7.2021: Version 5.7.8: I changed Text to ButtonText so the property showed up in the property dialog. More testing is needed, so use the button at your own risk.
+		Update 6.7.2021: Version 5.7.8: I changed Text to ButtonText so the property showed up in the property dialog. More testing is needed, so use the button at your own risk.
 
-Update 6.7.2021: Version 5.7.7: I added a Text property to the Button control. More testing is needed, so use the button at your own risk.
+		Update 6.7.2021: Version 5.7.7: I added a Text property to the Button control. More testing is needed, so use the button at your own risk.
 
-Update 6.7.2021: Version 5.7.6: I added some events for FontChanged, EnabledChanged and updated Theme to change the Fonts. Now to start testing.
+		Update 6.7.2021: Version 5.7.6: I added some events for FontChanged, EnabledChanged and updated Theme to change the Fonts. Now to start testing.
 
-Update 6.7.2021: Version 5.7.5: I added a Button class that I am just now testing.
+		Update 6.7.2021: Version 5.7.5: I added a Button class that I am just now testing.
 
-Update 11.29.2020: Version 5.7.3: I discovered that the project SDK has been updated so that WindowsDesktop is no longer needed, only Microsoft.NET.Sdk. If I don't take this out, projects gets updated when this
-library is added.
+		Update 11.29.2020: Version 5.7.3: I discovered that the project SDK has been updated so that WindowsDesktop is no longer needed, only Microsoft.NET.Sdk. If I don't take this out, projects gets updated when this
+		library is added.
 
-Update 11.29.2020: Version 5.7.2 was released to include an update for DataJuggler.UltimateHelper.
+		Update 11.29.2020: Version 5.7.2 was released to include an update for DataJuggler.UltimateHelper.
 
-Note: This library used to be either DataJuggler.Net.UltimateHelper or DataJuggler.Core.UltimateHelper, which have both been archived. All new work on this library will be in the .Net 5 version.
+		Note: This library used to be either DataJuggler.Net.UltimateHelper or DataJuggler.Core.UltimateHelper, which have both been archived. All new work on this library will be in the .Net 5 version.
 
-This app was just converted to .Net 5. Everything should work, famous last words.
+		This app was just converted to .Net 5. Everything should work, famous last words.
 
-This is the first release for .Net 5. Nothing has been tested yet for .Net 5, at all. Use at your own risk.
+		This is the first release for .Net 5. Nothing has been tested yet for .Net 5, at all. Use at your own risk.
 
-The code itself has worked for 10 or more years, but new platform, new ball game.</PackageReleaseNotes>
+		The code itself has worked for 10 or more years, but new platform, new ball game.</PackageReleaseNotes>
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
     <Nullable>disable</Nullable>
-    <PackageReadmeFile>README.md</PackageReadmeFile>       
+    <PackageReadmeFile>ReadMe.md</PackageReadmeFile>       
   </PropertyGroup>
 
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
-    <NoWarn>1701;1702;IDE0059;IDE0019;</NoWarn>
+    <NoWarn>1701;1702;IDE0059;IDE0019;IDE0063;IDE0090;</NoWarn>
   </PropertyGroup>
 
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
-    <NoWarn>1701;1702;IDE0059;IDE0019;</NoWarn>
+    <NoWarn>1701;1702;IDE0059;IDE0019;IDE0063;IDE0090;</NoWarn>
   </PropertyGroup>
 
   <ItemGroup>
@@ -137,10 +140,6 @@ The code itself has worked for 10 or more years, but new platform, new ball game
   </ItemGroup>
 
   <ItemGroup>
-    <None Include="..\UltimateHelper\README.md">
-      <Pack>True</Pack>
-      <PackagePath>\</PackagePath>
-    </None>
     <None Include="License\License.txt">
       <Pack>True</Pack>
       <PackagePath></PackagePath>
@@ -156,7 +155,14 @@ The code itself has worked for 10 or more years, but new platform, new ball game
   </ItemGroup>
 
   <ItemGroup>
-    <PackageReference Include="DataJuggler.UltimateHelper" Version="7.1.3" />
+    <PackageReference Include="DataJuggler.UltimateHelper" Version="7.2.1" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Update="ReadMe.md">
+      <Pack>True</Pack>
+      <PackagePath>\</PackagePath>
+    </None>
   </ItemGroup>
 
 </Project>
