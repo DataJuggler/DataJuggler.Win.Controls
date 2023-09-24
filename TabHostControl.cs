@@ -53,11 +53,11 @@ namespace DataJuggler.Win.Controls
         
         #region Methods
 
-            #region AddTabButton(int buttonNumber, string buttonText, int width, bool selected = false)
+            #region AddTabButton(int buttonNumber, string buttonText, int width, Color buttonLabelColor, bool selected = false)
             /// <summary>
             /// This method returns the Tab Button
             /// </summary>
-            public TabButton AddTabButton(int buttonNumber, string buttonText, int width, bool selected = false)
+            public TabButton AddTabButton(int buttonNumber, string buttonText, int width, Color buttonLabelColor, bool selected = false)
             {
                 // initial value
                 TabButton tabButton = new TabButton();
@@ -66,6 +66,7 @@ namespace DataJuggler.Win.Controls
                 tabButton.ButtonNumber = buttonNumber;
                 tabButton.ButtonText = buttonText;
                 tabButton.Width = width;
+                tabButton.ButtonLabelColor = buttonLabelColor;
                 
                 // Set the Dock to left
                 tabButton.Dock = DockStyle.Left;

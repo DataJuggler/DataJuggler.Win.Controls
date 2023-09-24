@@ -29,6 +29,7 @@ namespace DataJuggler.Win.Controls
         private bool selected;
         private int buttonNumber;
         private string buttonText;
+        private Color buttonColor;
         #endregion
         
         #region Constructor
@@ -112,6 +113,25 @@ namespace DataJuggler.Win.Controls
 
         #region Properties
 
+            #region ButtonLabelColor
+            /// <summary>
+            /// This property gets or sets the value for 'ButtonLabelColor', which the setter will set
+            /// the Label forecolor.
+            /// </summary>
+            public Color ButtonLabelColor
+            {
+                get { return buttonColor; }
+                set 
+                {
+                    // set the value
+                    buttonColor = value;
+
+                    // Set the LabelColor
+                    Label.ForeColor = buttonColor;
+                }
+            }
+            #endregion
+            
             #region ButtonNumber
             /// <summary>
             /// This property gets or sets the value for 'ButtonNumber'.

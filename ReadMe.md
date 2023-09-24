@@ -1,5 +1,8 @@
 ﻿# News
 
+9.24.2023: The TabHostControl now has a ButtonLabelColor property must be passed in to the
+AddTabButton method.
+
 8.13.2023: DataJuggler.UltimateHelper was updated.
 
 # DataJuggler.Win.Controls
