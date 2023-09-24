@@ -56,7 +56,68 @@ Divide the interface up into Tabs, and use this button to change tabs.
 
 # TabHostControl
 
-Used with the TabButton to create tabbed layouts.
+Instructions for use
+
+Add NuGet package DataJuggler.Win.Controls to your project, and using statements to your form for:
+
+    using DataJuggler.Win.Controls;
+	using DataJuggler.Win.Controls.Interfaces;
+
+Next, have your form implement ITabHostParent interface. To see a working example, visit this project:
+
+Random USD (a work in progress, but the TabHostControl works).
+https://github.com/DataJuggler/RandomUSD
+
+After you add the interface for ITabHostParent to your project, right click and select 'Implement Interface', and
+two events will be added to your project. Make sure to add your buttons in reverse order, as the way Dock.Left works
+your buttons will display last first.
+
+	private void TabHostControl_Load(object sender, EventArgs e)
+    {
+        // Setup the TabHostControl
+        TabHostControl.AddTabButton(3, "Materials", 200, Color.Black, false);
+        TabHostControl.AddTabButton(2, "Props", 200, Color.Black, false);
+        TabHostControl.AddTabButton(1, "Scenes", 200, Color.Black, true);
+        TabHostControl.TopMargin = 16;
+        TabHostControl.LeftMargin = 8;
+
+        // Setup the Parent
+        TabHostControl.TabHostParent = this;
+    }
+
+	public void TabSelected(TabButton selectedButton)
+    {
+		// If the selectedButton object exists
+        if (NullHelper.Exists(selectedButton))
+        {
+            switch (selectedButton.ButtonNumber)
+            {
+                case 1:
+
+                    // setup for Scenes
+                    UIVisibility(ScreenTypeEnum.Scenes);
+
+                    // required
+                    break;
+
+                case 2:
+
+                    // setup for Props
+                    UIVisibility(ScreenTypeEnum.Props);
+
+                    // required
+                    break;
+
+                case 3:
+				
+					// setup for Materials
+                    UIVisibility(ScreenTypeEnum.Materials);
+
+                    // required
+                    break;
+            }
+        }
+    }
 
 # TabImagesControl (Needs to be updated probably)
 
