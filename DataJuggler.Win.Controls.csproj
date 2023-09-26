@@ -4,7 +4,7 @@
     <OutputType>Library</OutputType>
 	<TargetFramework>net7.0-windows</TargetFramework>
     <UseWindowsForms>true</UseWindowsForms>
-    <Version>7.2.0</Version>
+    <Version>7.2.1</Version>
 	<FileVersion>7.1.8</FileVersion>
     <Authors>DataJuggler</Authors>
     <Company>DataJuggler</Company>

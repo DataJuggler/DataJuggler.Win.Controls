@@ -56,6 +56,11 @@ Divide the interface up into Tabs, and use this button to change tabs.
 
 # TabHostControl
 
+9.25.2023: I made a short video on how to setup and use the TabHostControl
+
+C# How to use the Tab Control of DataJuggler Win Controls
+https://youtu.be/WFQcAlYt2F4
+
 Instructions for use
 
 Add NuGet package DataJuggler.Win.Controls to your project, and using statements to your form for:
