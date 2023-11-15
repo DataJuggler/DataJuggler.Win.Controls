@@ -2,15 +2,15 @@
 
   <PropertyGroup>
     <OutputType>Library</OutputType>
-	<TargetFramework>net7.0-windows</TargetFramework>
+	<TargetFramework>net8.0-windows7.0</TargetFramework>
     <UseWindowsForms>true</UseWindowsForms>
-    <Version>7.2.1</Version>
+    <Version>8.0.0</Version>
 	<FileVersion>7.1.8</FileVersion>
     <Authors>DataJuggler</Authors>
     <Company>DataJuggler</Company>
     <Description>This package contains a series of controls such as a LabelTextBoxControl, LabelComboBoxControl, 
-LabelCheckBox, etc. This package was originally for .Net Framework, but has been ported to .Net 7.
-Use a 6.x version for .NET 6, a 5.x for .NET 5, etc.
+LabelCheckBox, etc. This package was originally for .Net Framework, but has been ported to .Net 8. Use a 7.x version for .NET 7,
+Use a 6.x version for .NET 6, a 5.x for .NET 5.
 </Description>
     <Copyright>DataJuggler 2010 - 2023 - Open Source For Any Use - As Is - Do What You Want - Give Me Credit If You Like It</Copyright>
     <PackageLicenseFile>License.txt</PackageLicenseFile>
@@ -19,7 +19,10 @@ Use a 6.x version for .NET 6, a 5.x for .NET 5, etc.
     <RepositoryUrl>https://github.com/DataJuggler/DataJuggler.Win.Controls</RepositoryUrl>
     <RepositoryType>Git/GitHub</RepositoryType>
     <PackageTags>WindowsForms,Desktop,Controls</PackageTags>
-    <PackageReleaseNotes>9.24.2023: I broke the TabHostControl by adding a LabelForeColor must now be passed
+    <PackageReleaseNotes>
+		11.15.2023: This project has been updated to .NET8.
+		
+		9.24.2023: I broke the TabHostControl by adding a LabelForeColor must now be passed
 in to the AddTabButton method. Also the TabButton now has a ButtonLabelColor.
 
 8.13.2023: DataJuggler.UltimateHelper was updated.
@@ -155,7 +158,7 @@ The code itself has worked for 10 or more years, but new platform, new ball game
   </ItemGroup>
 
   <ItemGroup>
-    <PackageReference Include="DataJuggler.UltimateHelper" Version="7.2.4" />
+    <PackageReference Include="DataJuggler.UltimateHelper" Version="8.0.0" />
   </ItemGroup>
 
   <ItemGroup>

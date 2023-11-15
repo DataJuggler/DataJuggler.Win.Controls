@@ -1,5 +1,7 @@
 ﻿# News
 
+11.15.2023: This project has been updated to .NET8.
+
 9.24.2023: The TabHostControl now has a ButtonLabelColor property must be passed in to the
 AddTabButton method.
 

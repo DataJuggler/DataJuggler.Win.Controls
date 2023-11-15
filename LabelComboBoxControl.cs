@@ -11,6 +11,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Drawing;
 using System.Windows.Forms;
+using DataJuggler.UltimateHelper;
 
 #endregion
 
@@ -869,8 +870,11 @@ namespace DataJuggler.Win.Controls
                     // if the ComboBox exists
                     if (this.HasComboBoxControl)
                     {
-                        // set the value
-                        this.ComboBox.SelectedIndex = value;
+                        if (NumericHelper.IsInRange(value, -1, Items.Count - 1))
+                        {
+                            // set the value
+                            this.ComboBox.SelectedIndex = value;
+                        }
                     }
                 }
             }
