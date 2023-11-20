@@ -1,4 +1,5 @@
 ﻿# News
+11.20.2023: DataJuggler.UltimateHelper was updated.
 
 11.15.2023: This project has been updated to .NET8.
 
