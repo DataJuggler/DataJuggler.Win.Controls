@@ -66,11 +66,15 @@ namespace DataJuggler.Win.Controls
                     // Get the current second
                     DateTime now = DateTime.Now;
                     
-                    // if we have passed the EndTime
-                    if (now > EndTime)
+                    // needed for .NET8 Code
+                    if (EndTime.Year > 1900)
                     {
-                        // Stop the timer
-                        DisplayTimer.Stop();
+                        // if we have passed the EndTime
+                        if (now > EndTime)
+                        {
+                            // Stop the timer
+                            DisplayTimer.Stop();
+                        }
                     }
                 
                     // get the current second

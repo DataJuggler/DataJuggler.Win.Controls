@@ -1,4 +1,8 @@
 ﻿# News
+
+3.17.2024: Happy St. Paddy's Day - Fixed a bug in the Timer Display that seemed to come from .NET 8 and wasn't there in 
+.NET 7
+
 11.20.2023: DataJuggler.UltimateHelper was updated.
 
 11.15.2023: This project has been updated to .NET8.
