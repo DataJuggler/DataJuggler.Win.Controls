@@ -1,5 +1,7 @@
 ﻿# News
 
+7.24.2023: UltimateHelper was updated.
+
 3.17.2024: Happy St. Paddy's Day - Fixed a bug in the Timer Display that seemed to come from .NET 8 and wasn't there in 
 .NET 7
 
