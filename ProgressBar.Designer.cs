@@ -28,10 +28,31 @@
         /// </summary>
         private void InitializeComponent()
         {
-            components = new System.ComponentModel.Container();
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            ValuePanel = new Objects.PanelExtender();
+            SuspendLayout();
+            // 
+            // ValuePanel
+            // 
+            ValuePanel.Dock = System.Windows.Forms.DockStyle.Left;
+            ValuePanel.Location = new System.Drawing.Point(0, 0);
+            ValuePanel.Name = "ValuePanel";
+            ValuePanel.Size = new System.Drawing.Size(200, 22);
+            ValuePanel.TabIndex = 0;
+            // 
+            // ProgressBar
+            // 
+            AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
+            AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            Controls.Add(ValuePanel);
+            DoubleBuffered = true;
+            Name = "ProgressBar";
+            Size = new System.Drawing.Size(758, 22);
+            ResumeLayout(false);
         }
 
         #endregion
+
+        private Objects.PanelExtender ValuePanel;
     }
 }

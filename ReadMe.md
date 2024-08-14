@@ -1,5 +1,8 @@
 ﻿# News
 
+8.14.2024: I added a new ProgressBar control. This ProgressBar, unlike the Windows Forms
+ProgressBar, allows you to set a ForeColor that works.
+
 7.24.2023: UltimateHelper was updated.
 
 3.17.2024: Happy St. Paddy's Day - Fixed a bug in the Timer Display that seemed to come from .NET 8 and wasn't there in 
