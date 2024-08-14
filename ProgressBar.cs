@@ -129,7 +129,8 @@ namespace DataJuggler.Win.Controls
                 // Set the panel color
                 ValuePanel.BackColor = ForeColor;
 
-                // Initial value
+                // Initial values
+                Maximum = 100;
                 CurrentValue = 0;
 
                 // Set the Background Color
