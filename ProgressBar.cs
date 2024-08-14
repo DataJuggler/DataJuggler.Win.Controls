@@ -134,6 +134,7 @@ namespace DataJuggler.Win.Controls
                 CurrentValue = 0;
 
                 // Set the Background Color
+                BackColor = Color.DarkGray;
                 BackgroundColor = Color.DarkGray;
 
                 // This defaults to will not error on overflow
