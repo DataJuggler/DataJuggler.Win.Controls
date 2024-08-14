@@ -29,7 +29,7 @@ namespace DataJuggler.Win.Controls
         #region Private Variables
         private const int Mininum = 0;
         private int maximum;
-        private int currentValue;
+        private int _value;
         private Color backgroundColor;
         private bool setOverflowToMax;
         #endregion
@@ -105,7 +105,7 @@ namespace DataJuggler.Win.Controls
             /// </summary>
             public void DisplayProgress()
             {
-                int width = CalculateWidth(currentValue, maximum);
+                int width = CalculateWidth(Value, maximum);
                 ValuePanel.Width = width;
                 ValuePanel.ForeColor = this.ForeColor;
             }
@@ -131,7 +131,7 @@ namespace DataJuggler.Win.Controls
 
                 // Initial values
                 Maximum = 100;
-                CurrentValue = 0;
+                Value = 0;
 
                 // Set the Background Color
                 BackColor = Color.DarkGray;
@@ -157,43 +157,6 @@ namespace DataJuggler.Win.Controls
             {
                 get { return backgroundColor; }
                 set { backgroundColor = value; }
-            }
-            #endregion
-            
-            #region CurrentValue
-            public int CurrentValue
-            {
-                get { return currentValue; }
-                set
-                {
-                    int newValue = value;
-                    if (newValue < 0)
-                    {
-                        this.BackColor = Color.Tomato; // Indicate not valid value
-                        currentValue = 0;
-                    }
-                    else if (newValue > maximum)
-                    {
-                        if (setOverflowToMax)
-                        {
-                            currentValue = maximum;
-                        }
-                        else
-                        {
-                            this.BackColor = Color.Tomato; // Indicate not valid value
-                            currentValue = newValue;
-                        }
-                    }
-                    else
-                    {
-                        // Reset
-                        this.BackColor = BackgroundColor;
-                        currentValue = newValue;
-                    }
-                    
-                    // Redraw the control
-                    DisplayProgress();
-                }
             }
             #endregion
             
@@ -231,6 +194,45 @@ namespace DataJuggler.Win.Controls
             {
                 get { return setOverflowToMax; }
                 set { setOverflowToMax = value; }
+            }
+            #endregion
+            
+            #region Value
+            public int Value
+            {
+                get { return _value; }
+                set
+                {
+                    int newValue = value;
+
+                    if (newValue < 0)
+                    {
+                        this.BackColor = Color.Tomato; // Indicate not valid value
+                        _value = 0;
+                    }
+                    else if (newValue > maximum)
+                    {
+                        // if overflow should be set to max
+                        if (SetOverflowToMax)
+                        {
+                            _value = maximum;
+                        }
+                        else
+                        {
+                            this.BackColor = Color.Tomato; // Indicate not valid value
+                            _value = newValue;
+                        }
+                    }
+                    else
+                    {
+                        // Reset
+                        this.BackColor = BackgroundColor;
+                        _value = newValue;
+                    }
+                    
+                    // Redraw the control
+                    DisplayProgress();
+                }
             }
             #endregion
             
