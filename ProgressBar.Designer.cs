@@ -48,6 +48,7 @@
             DoubleBuffered = true;
             Name = "ProgressBar";
             Size = new System.Drawing.Size(758, 22);
+            BackColorChanged += ProgressBar_BackColorChanged;
             ForeColorChanged += ProgressBar_ForeColorChanged;
             ResumeLayout(false);
         }

@@ -50,17 +50,28 @@ namespace DataJuggler.Win.Controls
 
         #region Events
 
-            #region ProgressBar_ForeColorChanged(object sender, EventArgs e)
-            /// <summary>
-            /// event is fired when Progress Bar _ Fore Color Changed
-            /// </summary>
-            private void ProgressBar_ForeColorChanged(object sender, EventArgs e)
-            {
-                // Update the Color on the ValuePanel
-                ValuePanel.BackColor = ForeColor;
-            }
-            #endregion
+        #region ProgressBar_BackColorChanged(object sender, EventArgs e)
+        /// <summary>
+        /// event is fired when Progress Bar _ Back Color Changed
+        /// </summary>
+        private void ProgressBar_BackColorChanged(object sender, EventArgs e)
+        {
+            // Set the BackgroundColor
+            BackgroundColor = BackColor;
+        }
+        #endregion
             
+        #region ProgressBar_ForeColorChanged(object sender, EventArgs e)
+        /// <summary>
+        /// event is fired when Progress Bar _ Fore Color Changed
+        /// </summary>
+        private void ProgressBar_ForeColorChanged(object sender, EventArgs e)
+        {
+            // Update the Color on the ValuePanel
+            ValuePanel.BackColor = ForeColor;
+        }
+        #endregion
+
         #endregion
 
         #region Methods
@@ -171,7 +182,18 @@ namespace DataJuggler.Win.Controls
         public Color BackgroundColor
         {
             get { return backgroundColor; }
-            set { backgroundColor = value; }
+            set 
+            {
+                // set the value
+                backgroundColor = value;
+
+                // if BackColor
+                if (BackColor != backgroundColor)
+                {
+                    // Set the BackColor
+                    BackColor = value;
+                }
+            }
         }
         #endregion
 
