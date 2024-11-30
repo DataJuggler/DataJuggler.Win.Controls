@@ -1,5 +1,7 @@
 ﻿# News
 
+11.30.2024: This project has been udpated to .NET 9.
+
 8.16.2024: I created a video for the Progress Bar and some cool images using Flux
 https://youtu.be/7X4oCUjqBZI
 

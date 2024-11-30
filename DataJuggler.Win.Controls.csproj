@@ -2,17 +2,17 @@
 
   <PropertyGroup>
     <OutputType>Library</OutputType>
-	<TargetFramework>net8.0-windows7.0</TargetFramework>
+	<TargetFramework>net9.0-windows7.0</TargetFramework>
     <UseWindowsForms>true</UseWindowsForms>
-    <Version>8.1.6</Version>
+    <Version>9.0.0</Version>
 	<FileVersion>7.1.8</FileVersion>
     <Authors>DataJuggler</Authors>
     <Company>DataJuggler</Company>
     <Description>This package contains a series of controls such as a LabelTextBoxControl, LabelComboBoxControl, 
-LabelCheckBox, etc. This package was originally for .Net Framework, but has been ported to .Net 8. Use a 7.x version for .NET 7,
-Use a 6.x version for .NET 6, a 5.x for .NET 5.
+LabelCheckBox, etc. This package was originally for .Net Framework, but has been ported to .Net 9. Use an 8.x version for .NET 8,
+Use a 7.x version for .NET 7, etc.
 </Description>
-    <Copyright>DataJuggler 2010 - 2023 - Open Source For Any Use - As Is - Do What You Want - Give Me Credit If You Like It</Copyright>
+    <Copyright>DataJuggler 2010 - 2025 - Open Source For Any Use - As Is - Do What You Want - Give Me Credit If You Like It</Copyright>
     <PackageLicenseFile>License.txt</PackageLicenseFile>
     <PackageProjectUrl>https://github.com/DataJuggler/DataJuggler.Win.Controls</PackageProjectUrl>
     <PackageIcon>DataJuggler.png</PackageIcon>
@@ -116,11 +116,11 @@ Use a 6.x version for .NET 6, a 5.x for .NET 5.
   </PropertyGroup>
 
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
-    <NoWarn>1701;1702;IDE0059;IDE0019;IDE0063;IDE0090;</NoWarn>
+    <NoWarn>1701;1702;IDE0059;IDE0019;IDE0063;IDE0090;WFO1000;</NoWarn>
   </PropertyGroup>
 
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
-    <NoWarn>1701;1702;IDE0059;IDE0019;IDE0063;IDE0090;</NoWarn>
+    <NoWarn>1701;1702;IDE0059;IDE0019;IDE0063;IDE0090;WFO1000;</NoWarn>
   </PropertyGroup>
 
   <ItemGroup>
@@ -160,7 +160,7 @@ Use a 6.x version for .NET 6, a 5.x for .NET 5.
   </ItemGroup>
 
   <ItemGroup>
-    <PackageReference Include="DataJuggler.UltimateHelper" Version="8.1.3" />
+    <PackageReference Include="DataJuggler.UltimateHelper" Version="9.0.2" />
   </ItemGroup>
 
   <ItemGroup>
