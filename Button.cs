@@ -146,13 +146,11 @@ namespace DataJuggler.Win.Controls
                 if (this.Theme == ThemeEnum.Dark)
                 {
                     // Set to WoodButton
-                    InnerButton.BackgroundImage = Properties.Resources.BlackButton;
-                    ForeColor = Color.LemonChiffon;
+                    InnerButton.BackgroundImage = Properties.Resources.BlackButton;                    
                 }
                 else if (Theme == ThemeEnum.Glass)
                 {
-                    InnerButton.BackgroundImage = Properties.Resources.GlassButtonBlack;
-                    ForeColor = Color.GhostWhite;
+                    InnerButton.BackgroundImage = Properties.Resources.GlassButtonBlack;                    
                 }
                 else
                 { 
@@ -169,8 +167,6 @@ namespace DataJuggler.Win.Controls
                         // Set to WoodButton Gray
                         InnerButton.BackgroundImage = Properties.Resources.WoodButtonWidth640Disabled;
                     }
-
-                    ForeColor = Color.Black;
                 }
 
                 // Ensure Transparent BackColor
@@ -186,7 +182,7 @@ namespace DataJuggler.Win.Controls
             public void SetForeColor()
             {
                 // if Dark
-                if (theme == ThemeEnum.Dark)
+                if ((theme == ThemeEnum.Dark)|| (theme == ThemeEnum.Glass))
                 {
                     // if enabled
                     if (this.Enabled)
@@ -199,7 +195,7 @@ namespace DataJuggler.Win.Controls
                         // Set to Gray
                         this.ForeColor = Color.Gray;
                     }
-                }
+                }                
                 else
                 {
                     // if enabled
