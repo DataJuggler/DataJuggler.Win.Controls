@@ -1,5 +1,7 @@
 ﻿# News
 
+12.15.2024: I added a new GlassButton.
+
 11.30.2024: This project has been udpated to .NET 9.
 
 8.16.2024: I created a video for the Progress Bar and some cool images using Flux
