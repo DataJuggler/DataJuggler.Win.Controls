@@ -70,7 +70,8 @@ namespace DataJuggler.Win.Controls.Enumerations
     {
         Dark = 0,
         Wood = 1,
-        Black = 2
+        Black = 2,
+        Glass = 3
     }
     #endregion
 

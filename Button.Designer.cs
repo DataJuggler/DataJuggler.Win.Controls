@@ -29,45 +29,44 @@ namespace DataJuggler.Win.Controls
         /// </summary>
         private void InitializeComponent()
         {
-            this.InnerButton = new System.Windows.Forms.Button();
-            this.SuspendLayout();
+            InnerButton = new System.Windows.Forms.Button();
+            SuspendLayout();
             // 
             // InnerButton
             // 
-            this.InnerButton.BackColor = System.Drawing.Color.Transparent;
-            this.InnerButton.BackgroundImage = global::DataJuggler.Win.Controls.Properties.Resources.WoodButtonWidth640;
-            this.InnerButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.InnerButton.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.InnerButton.FlatAppearance.BorderSize = 0;
-            this.InnerButton.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
-            this.InnerButton.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
-            this.InnerButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.InnerButton.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.InnerButton.Location = new System.Drawing.Point(0, 0);
-            this.InnerButton.Name = "InnerButton";
-            this.InnerButton.Size = new System.Drawing.Size(120, 44);
-            this.InnerButton.TabIndex = 0;
-            this.InnerButton.Text = "Click Me";
-            this.InnerButton.UseVisualStyleBackColor = false;            
-            this.InnerButton.Click += new System.EventHandler(this.InnerButton_Click);
-            this.InnerButton.MouseEnter += new System.EventHandler(this.Button_Enter);
-            this.InnerButton.MouseLeave += new System.EventHandler(this.Button_Leave);
+            InnerButton.BackColor = System.Drawing.Color.Transparent;
+            InnerButton.BackgroundImage = Properties.Resources.GlassButtonBlack;
+            InnerButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            InnerButton.Dock = System.Windows.Forms.DockStyle.Fill;
+            InnerButton.FlatAppearance.BorderSize = 0;
+            InnerButton.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
+            InnerButton.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
+            InnerButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            InnerButton.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Bold);
+            InnerButton.Location = new System.Drawing.Point(0, 0);
+            InnerButton.Name = "InnerButton";
+            InnerButton.Size = new System.Drawing.Size(120, 44);
+            InnerButton.TabIndex = 0;
+            InnerButton.Text = "Click Me";
+            InnerButton.UseVisualStyleBackColor = false;
+            InnerButton.Click += InnerButton_Click;
+            InnerButton.MouseEnter += Button_Enter;
+            InnerButton.MouseLeave += Button_Leave;
             // 
             // Button
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.Transparent;
-            this.Controls.Add(this.InnerButton);
-            this.Name = "Button";
-            this.Size = new System.Drawing.Size(120, 44);
-            this.EnabledChanged += new System.EventHandler(this.Button_EnabledChanged);
-            this.FontChanged += new System.EventHandler(this.Button_FontChanged);
-            this.ForeColorChanged += new System.EventHandler(this.Button_ForeColorChanged);
-            this.MouseEnter += new System.EventHandler(this.Button_Enter);
-            this.MouseLeave += new System.EventHandler(this.Button_Leave);
-            this.ResumeLayout(false);
-
+            AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
+            AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            BackColor = System.Drawing.Color.Transparent;
+            Controls.Add(InnerButton);
+            Name = "Button";
+            Size = new System.Drawing.Size(120, 44);
+            EnabledChanged += Button_EnabledChanged;
+            FontChanged += Button_FontChanged;
+            ForeColorChanged += Button_ForeColorChanged;
+            MouseEnter += Button_Enter;
+            MouseLeave += Button_Leave;
+            ResumeLayout(false);
         }
 
         #endregion

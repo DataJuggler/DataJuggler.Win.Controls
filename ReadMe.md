@@ -1,6 +1,6 @@
 ﻿# News
 
-12.15.2024: I added a new GlassButton.
+12.15.2024: I added a new Theme to the Button called Glass
 
 11.30.2024: This project has been udpated to .NET 9.
 
