@@ -4,7 +4,7 @@
     <OutputType>Library</OutputType>
 	<TargetFramework>net9.0-windows7.0</TargetFramework>
     <UseWindowsForms>true</UseWindowsForms>
-    <Version>9.1.6</Version>
+    <Version>9.1.7</Version>
 	<FileVersion>7.1.8</FileVersion>
     <Authors>DataJuggler</Authors>
     <Company>DataJuggler</Company>
@@ -160,7 +160,7 @@ Use a 7.x version for .NET 7, etc.
   </ItemGroup>
 
   <ItemGroup>
-    <PackageReference Include="DataJuggler.UltimateHelper" Version="9.0.12" />
+    <PackageReference Include="DataJuggler.UltimateHelper" Version="9.0.14" />
   </ItemGroup>
 
   <ItemGroup>
