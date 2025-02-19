@@ -160,7 +160,7 @@ Use a 7.x version for .NET 7, etc.
   </ItemGroup>
 
   <ItemGroup>
-    <PackageReference Include="DataJuggler.UltimateHelper" Version="9.0.16" />
+    <PackageReference Include="DataJuggler.UltimateHelper" Version="9.0.18" />
   </ItemGroup>
 
   <ItemGroup>
