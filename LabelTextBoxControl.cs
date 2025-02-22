@@ -9,6 +9,7 @@ using DataJuggler.Win.Controls.Interfaces;
 using DataJuggler.Win.Controls.Enumerations;
 using System.ComponentModel;
 using System;
+using TextBox = System.Windows.Forms.TextBox;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
 #endregion
