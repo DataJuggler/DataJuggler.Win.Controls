@@ -43,131 +43,131 @@ namespace DataJuggler.Win.Controls
                 }
                 base.Dispose(disposing);
             }
-            #endregion
-            
-            #region InitializeComponent()
-            /// <summary>
-            /// Required method for Designer support - do not modify
-            /// the contents of this method with the code editor.
-            /// </summary>
-            private void InitializeComponent()
-            {
-            this.TextBoxTopMarginPanel = new System.Windows.Forms.Panel();
-            this.TextBoxBottomMarginPanel = new System.Windows.Forms.Panel();
-            this.BottomMarginPanel = new System.Windows.Forms.Panel();
-            this.LeftPanel = new System.Windows.Forms.Panel();
-            this.Label = new System.Windows.Forms.Label();
-            this.LabelRightMargin = new System.Windows.Forms.Panel();
-            this.LabelTopMarginPanel = new System.Windows.Forms.Panel();
-            this.LabelBottomMarginPanel = new System.Windows.Forms.Panel();
-            this.TextBox = new System.Windows.Forms.TextBox();
-            this.LeftPanel.SuspendLayout();
-            this.SuspendLayout();
+        #endregion
+
+        #region InitializeComponent()
+        /// <summary>
+        /// Required method for Designer support - do not modify
+        /// the contents of this method with the code editor.
+        /// </summary>
+        private void InitializeComponent()
+        {
+            TextBoxTopMarginPanel = new System.Windows.Forms.Panel();
+            TextBoxBottomMarginPanel = new System.Windows.Forms.Panel();
+            BottomMarginPanel = new System.Windows.Forms.Panel();
+            LeftPanel = new System.Windows.Forms.Panel();
+            Label = new System.Windows.Forms.Label();
+            LabelRightMargin = new System.Windows.Forms.Panel();
+            LabelTopMarginPanel = new System.Windows.Forms.Panel();
+            LabelBottomMarginPanel = new System.Windows.Forms.Panel();
+            TextBox = new System.Windows.Forms.TextBox();
+            LeftPanel.SuspendLayout();
+            SuspendLayout();
             // 
             // TextBoxTopMarginPanel
             // 
-            this.TextBoxTopMarginPanel.Dock = System.Windows.Forms.DockStyle.Top;
-            this.TextBoxTopMarginPanel.Location = new System.Drawing.Point(0, 0);
-            this.TextBoxTopMarginPanel.Name = "TextBoxTopMarginPanel";
-            this.TextBoxTopMarginPanel.Size = new System.Drawing.Size(360, 1);
-            this.TextBoxTopMarginPanel.TabIndex = 6;
+            TextBoxTopMarginPanel.Dock = System.Windows.Forms.DockStyle.Top;
+            TextBoxTopMarginPanel.Location = new System.Drawing.Point(0, 0);
+            TextBoxTopMarginPanel.Name = "TextBoxTopMarginPanel";
+            TextBoxTopMarginPanel.Size = new System.Drawing.Size(360, 1);
+            TextBoxTopMarginPanel.TabIndex = 6;
             // 
             // TextBoxBottomMarginPanel
             // 
-            this.TextBoxBottomMarginPanel.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.TextBoxBottomMarginPanel.Location = new System.Drawing.Point(0, 31);
-            this.TextBoxBottomMarginPanel.Name = "TextBoxBottomMarginPanel";
-            this.TextBoxBottomMarginPanel.Size = new System.Drawing.Size(360, 1);
-            this.TextBoxBottomMarginPanel.TabIndex = 8;
+            TextBoxBottomMarginPanel.Dock = System.Windows.Forms.DockStyle.Bottom;
+            TextBoxBottomMarginPanel.Location = new System.Drawing.Point(0, 31);
+            TextBoxBottomMarginPanel.Name = "TextBoxBottomMarginPanel";
+            TextBoxBottomMarginPanel.Size = new System.Drawing.Size(360, 1);
+            TextBoxBottomMarginPanel.TabIndex = 8;
             // 
             // BottomMarginPanel
             // 
-            this.BottomMarginPanel.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.BottomMarginPanel.Location = new System.Drawing.Point(0, 31);
-            this.BottomMarginPanel.Name = "BottomMarginPanel";
-            this.BottomMarginPanel.Size = new System.Drawing.Size(360, 0);
-            this.BottomMarginPanel.TabIndex = 14;
+            BottomMarginPanel.Dock = System.Windows.Forms.DockStyle.Bottom;
+            BottomMarginPanel.Location = new System.Drawing.Point(0, 31);
+            BottomMarginPanel.Name = "BottomMarginPanel";
+            BottomMarginPanel.Size = new System.Drawing.Size(360, 0);
+            BottomMarginPanel.TabIndex = 14;
             // 
             // LeftPanel
             // 
-            this.LeftPanel.Controls.Add(this.Label);
-            this.LeftPanel.Controls.Add(this.LabelRightMargin);
-            this.LeftPanel.Controls.Add(this.LabelTopMarginPanel);
-            this.LeftPanel.Controls.Add(this.LabelBottomMarginPanel);
-            this.LeftPanel.Dock = System.Windows.Forms.DockStyle.Left;
-            this.LeftPanel.Location = new System.Drawing.Point(0, 1);
-            this.LeftPanel.Name = "LeftPanel";
-            this.LeftPanel.Size = new System.Drawing.Size(160, 30);
-            this.LeftPanel.TabIndex = 17;
+            LeftPanel.Controls.Add(Label);
+            LeftPanel.Controls.Add(LabelRightMargin);
+            LeftPanel.Controls.Add(LabelTopMarginPanel);
+            LeftPanel.Controls.Add(LabelBottomMarginPanel);
+            LeftPanel.Dock = System.Windows.Forms.DockStyle.Left;
+            LeftPanel.Location = new System.Drawing.Point(0, 1);
+            LeftPanel.Name = "LeftPanel";
+            LeftPanel.Size = new System.Drawing.Size(160, 30);
+            LeftPanel.TabIndex = 17;
             // 
             // Label
             // 
-            this.Label.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.Label.Font = new System.Drawing.Font("Verdana", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.Label.Location = new System.Drawing.Point(0, 0);
-            this.Label.Name = "Label";
-            this.Label.Size = new System.Drawing.Size(158, 30);
-            this.Label.TabIndex = 18;
-            this.Label.Text = "[LabelText]";
-            this.Label.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            Label.Dock = System.Windows.Forms.DockStyle.Fill;
+            Label.Font = new System.Drawing.Font("Verdana", 12F, System.Drawing.FontStyle.Bold);
+            Label.Location = new System.Drawing.Point(0, 0);
+            Label.Name = "Label";
+            Label.Size = new System.Drawing.Size(158, 30);
+            Label.TabIndex = 18;
+            Label.Text = "[LabelText]";
+            Label.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // LabelRightMargin
             // 
-            this.LabelRightMargin.Dock = System.Windows.Forms.DockStyle.Right;
-            this.LabelRightMargin.Location = new System.Drawing.Point(158, 0);
-            this.LabelRightMargin.Name = "LabelRightMargin";
-            this.LabelRightMargin.Size = new System.Drawing.Size(2, 30);
-            this.LabelRightMargin.TabIndex = 17;
+            LabelRightMargin.Dock = System.Windows.Forms.DockStyle.Right;
+            LabelRightMargin.Location = new System.Drawing.Point(158, 0);
+            LabelRightMargin.Name = "LabelRightMargin";
+            LabelRightMargin.Size = new System.Drawing.Size(2, 30);
+            LabelRightMargin.TabIndex = 17;
             // 
             // LabelTopMarginPanel
             // 
-            this.LabelTopMarginPanel.Dock = System.Windows.Forms.DockStyle.Top;
-            this.LabelTopMarginPanel.Location = new System.Drawing.Point(0, 0);
-            this.LabelTopMarginPanel.Name = "LabelTopMarginPanel";
-            this.LabelTopMarginPanel.Size = new System.Drawing.Size(160, 0);
-            this.LabelTopMarginPanel.TabIndex = 7;
+            LabelTopMarginPanel.Dock = System.Windows.Forms.DockStyle.Top;
+            LabelTopMarginPanel.Location = new System.Drawing.Point(0, 0);
+            LabelTopMarginPanel.Name = "LabelTopMarginPanel";
+            LabelTopMarginPanel.Size = new System.Drawing.Size(160, 0);
+            LabelTopMarginPanel.TabIndex = 7;
             // 
             // LabelBottomMarginPanel
             // 
-            this.LabelBottomMarginPanel.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.LabelBottomMarginPanel.Location = new System.Drawing.Point(0, 30);
-            this.LabelBottomMarginPanel.Name = "LabelBottomMarginPanel";
-            this.LabelBottomMarginPanel.Size = new System.Drawing.Size(160, 0);
-            this.LabelBottomMarginPanel.TabIndex = 5;
+            LabelBottomMarginPanel.Dock = System.Windows.Forms.DockStyle.Bottom;
+            LabelBottomMarginPanel.Location = new System.Drawing.Point(0, 30);
+            LabelBottomMarginPanel.Name = "LabelBottomMarginPanel";
+            LabelBottomMarginPanel.Size = new System.Drawing.Size(160, 0);
+            LabelBottomMarginPanel.TabIndex = 5;
             // 
             // TextBox
             // 
-            this.TextBox.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.TextBox.Font = new System.Drawing.Font("Verdana", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.TextBox.Location = new System.Drawing.Point(160, 1);
-            this.TextBox.Name = "TextBox";
-            this.TextBox.Size = new System.Drawing.Size(200, 27);
-            this.TextBox.TabIndex = 18;
-            this.TextBox.TextChanged += new System.EventHandler(this.TextBox_TextChanged);
+            TextBox.Dock = System.Windows.Forms.DockStyle.Fill;
+            TextBox.Font = new System.Drawing.Font("Verdana", 12F);
+            TextBox.Location = new System.Drawing.Point(160, 1);
+            TextBox.Name = "TextBox";
+            TextBox.Size = new System.Drawing.Size(200, 27);
+            TextBox.TabIndex = 18;
+            TextBox.TextChanged += TextBox_TextChanged;
             // 
             // LabelTextBoxControl
             // 
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
-            this.BackColor = System.Drawing.Color.Transparent;
-            this.Controls.Add(this.TextBox);
-            this.Controls.Add(this.LeftPanel);
-            this.Controls.Add(this.BottomMarginPanel);
-            this.Controls.Add(this.TextBoxBottomMarginPanel);
-            this.Controls.Add(this.TextBoxTopMarginPanel);
-            this.DoubleBuffered = true;
-            this.Font = new System.Drawing.Font("Verdana", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.Name = "LabelTextBoxControl";
-            this.Size = new System.Drawing.Size(360, 32);
-            this.EnabledChanged += new System.EventHandler(this.LabelTextBoxControl_EnabledChanged);
-            this.LeftPanel.ResumeLayout(false);
-            this.ResumeLayout(false);
-            this.PerformLayout();
+            AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
+            BackColor = System.Drawing.Color.Transparent;
+            Controls.Add(TextBox);
+            Controls.Add(LeftPanel);
+            Controls.Add(BottomMarginPanel);
+            Controls.Add(TextBoxBottomMarginPanel);
+            Controls.Add(TextBoxTopMarginPanel);
+            DoubleBuffered = true;
+            Font = new System.Drawing.Font("Verdana", 12F, System.Drawing.FontStyle.Bold);
+            Name = "LabelTextBoxControl";
+            Size = new System.Drawing.Size(360, 32);
+            EnabledChanged += LabelTextBoxControl_EnabledChanged;
+            LeftPanel.ResumeLayout(false);
+            ResumeLayout(false);
+            PerformLayout();
 
-            }
-            #endregion
-            
+        }
         #endregion
-        
+
+        #endregion
+
     }
     #endregion
 

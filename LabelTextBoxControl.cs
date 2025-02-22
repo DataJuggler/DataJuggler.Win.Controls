@@ -9,6 +9,7 @@ using DataJuggler.Win.Controls.Interfaces;
 using DataJuggler.Win.Controls.Enumerations;
 using System.ComponentModel;
 using System;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
 #endregion
 
@@ -37,7 +38,7 @@ namespace DataJuggler.Win.Controls
         private Color textBoxEditableColor;
         private Color textBoxDisabledColor;
         private int labelTopMargin;
-        private int labelBottomMargin;
+        private int labelBottomMargin;       
         private int textBoxTopMargin;
         private int textBoxBottomMargin;
         private ITextChanged onTextChangedListener;
@@ -61,7 +62,14 @@ namespace DataJuggler.Win.Controls
         #endregion
         
         #region Events
-        
+
+            #region KeyDownOccurred
+            /// <summary>
+            /// Used to handle on Enter
+            /// </summary>            
+            public event KeyEventHandler KeyDownOccurred;
+            #endregion
+
             #region LabelTextBoxControl_EnabledChanged(object sender, EventArgs e)
             /// <summary>
             /// event is fired when Label Text Box Control _ Enabled Changed
@@ -70,6 +78,17 @@ namespace DataJuggler.Win.Controls
             {
                 // Update the state of this control
                 UIControl();
+            }
+            #endregion
+            
+            #region TextBox_KeyDown(object sender, KeyEventArgs e)
+            /// <summary>
+            /// event is fired when Text Box _ Key Down
+            /// </summary>
+            private void TextBox_KeyDown(object sender, KeyEventArgs e)
+            {
+                // Notify subscriber of the event
+                KeyDownOccurred?.Invoke(this, e);
             }
             #endregion
             
@@ -148,7 +167,8 @@ namespace DataJuggler.Win.Controls
                 // return the TextBox
                 return this.TextBox;
             }
-            #endregion
+
+        #endregion
 
             #region Init()
             /// <summary>
@@ -156,6 +176,9 @@ namespace DataJuggler.Win.Controls
             /// </summary>
             private void Init()
             {
+                // Setup the KeyDown
+                TextBox.KeyDown += TextBox_KeyDown;
+
                 // if the value for Inititialized is false
                 if (!Inititialized)
                 {
