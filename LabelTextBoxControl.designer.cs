@@ -103,7 +103,7 @@ namespace DataJuggler.Win.Controls
             // Label
             // 
             Label.Dock = System.Windows.Forms.DockStyle.Fill;
-            Label.Font = new System.Drawing.Font("Verdana", 12F, System.Drawing.FontStyle.Bold);
+            Label.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Bold);
             Label.Location = new System.Drawing.Point(0, 0);
             Label.Name = "Label";
             Label.Size = new System.Drawing.Size(158, 30);
@@ -138,7 +138,7 @@ namespace DataJuggler.Win.Controls
             // TextBox
             // 
             TextBox.Dock = System.Windows.Forms.DockStyle.Fill;
-            TextBox.Font = new System.Drawing.Font("Verdana", 12F);
+            TextBox.Font = new System.Drawing.Font("Calibri", 12F);
             TextBox.Location = new System.Drawing.Point(160, 1);
             TextBox.Name = "TextBox";
             TextBox.Size = new System.Drawing.Size(200, 27);
@@ -155,7 +155,7 @@ namespace DataJuggler.Win.Controls
             Controls.Add(TextBoxBottomMarginPanel);
             Controls.Add(TextBoxTopMarginPanel);
             DoubleBuffered = true;
-            Font = new System.Drawing.Font("Verdana", 12F, System.Drawing.FontStyle.Bold);
+            Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Bold);
             Name = "LabelTextBoxControl";
             Size = new System.Drawing.Size(360, 32);
             EnabledChanged += LabelTextBoxControl_EnabledChanged;

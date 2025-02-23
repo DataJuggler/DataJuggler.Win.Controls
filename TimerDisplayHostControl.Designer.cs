@@ -44,10 +44,10 @@
             this.SecondsControl.BottomMargin = 0;
             this.SecondsControl.Editable = true;
             this.SecondsControl.Encrypted = false;
-            this.SecondsControl.Font = new System.Drawing.Font("Verdana", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.SecondsControl.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.SecondsControl.LabelBottomMargin = 0;
             this.SecondsControl.LabelColor = System.Drawing.Color.Black;
-            this.SecondsControl.LabelFont = new System.Drawing.Font("Verdana", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.SecondsControl.LabelFont = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.SecondsControl.LabelText = "Seconds:";
             this.SecondsControl.LabelTopMargin = 0;
             this.SecondsControl.LabelWidth = 100;
@@ -62,7 +62,7 @@
             this.SecondsControl.TextBoxBottomMargin = 0;
             this.SecondsControl.TextBoxDisabledColor = System.Drawing.Color.LightGray;
             this.SecondsControl.TextBoxEditableColor = System.Drawing.Color.White;
-            this.SecondsControl.TextBoxFont = new System.Drawing.Font("Verdana", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.SecondsControl.TextBoxFont = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.SecondsControl.TextBoxTopMargin = 0;
             this.SecondsControl.Theme = DataJuggler.Win.Controls.Enumerations.ThemeEnum.Wood;
             this.SecondsControl.Visible = false;
@@ -73,10 +73,10 @@
             this.MinutesControl.BottomMargin = 0;
             this.MinutesControl.Editable = true;
             this.MinutesControl.Encrypted = false;
-            this.MinutesControl.Font = new System.Drawing.Font("Verdana", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.MinutesControl.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.MinutesControl.LabelBottomMargin = 0;
             this.MinutesControl.LabelColor = System.Drawing.Color.Black;
-            this.MinutesControl.LabelFont = new System.Drawing.Font("Verdana", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.MinutesControl.LabelFont = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.MinutesControl.LabelText = "Minutes:";
             this.MinutesControl.LabelTopMargin = 0;
             this.MinutesControl.LabelWidth = 100;
@@ -91,14 +91,14 @@
             this.MinutesControl.TextBoxBottomMargin = 0;
             this.MinutesControl.TextBoxDisabledColor = System.Drawing.Color.LightGray;
             this.MinutesControl.TextBoxEditableColor = System.Drawing.Color.White;
-            this.MinutesControl.TextBoxFont = new System.Drawing.Font("Verdana", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.MinutesControl.TextBoxFont = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.MinutesControl.TextBoxTopMargin = 0;
             this.MinutesControl.Theme = DataJuggler.Win.Controls.Enumerations.ThemeEnum.Wood;
             this.MinutesControl.Visible = false;
             // 
             // StartAtLabel
             // 
-            this.StartAtLabel.Font = new System.Drawing.Font("Verdana", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.StartAtLabel.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.StartAtLabel.ForeColor = System.Drawing.Color.Black;
             this.StartAtLabel.Location = new System.Drawing.Point(100, 124);
             this.StartAtLabel.Name = "StartAtLabel";
@@ -115,9 +115,9 @@
             this.ReverseCheckBox.CheckChangedListener = null;
             this.ReverseCheckBox.Checked = false;
             this.ReverseCheckBox.Editable = true;
-            this.ReverseCheckBox.Font = new System.Drawing.Font("Verdana", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.ReverseCheckBox.Font = new System.Drawing.Font("Calibri", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.ReverseCheckBox.LabelColor = System.Drawing.Color.Black;
-            this.ReverseCheckBox.LabelFont = new System.Drawing.Font("Verdana", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.ReverseCheckBox.LabelFont = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.ReverseCheckBox.LabelText = "Reverse:";
             this.ReverseCheckBox.LabelWidth = 100;
             this.ReverseCheckBox.Location = new System.Drawing.Point(32, 89);
@@ -132,10 +132,10 @@
             this.HoursControl.BottomMargin = 0;
             this.HoursControl.Editable = true;
             this.HoursControl.Encrypted = false;
-            this.HoursControl.Font = new System.Drawing.Font("Verdana", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.HoursControl.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.HoursControl.LabelBottomMargin = 0;
             this.HoursControl.LabelColor = System.Drawing.Color.Black;
-            this.HoursControl.LabelFont = new System.Drawing.Font("Verdana", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.HoursControl.LabelFont = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.HoursControl.LabelText = "Hour:";
             this.HoursControl.LabelTopMargin = 0;
             this.HoursControl.LabelWidth = 100;
@@ -150,7 +150,7 @@
             this.HoursControl.TextBoxBottomMargin = 0;
             this.HoursControl.TextBoxDisabledColor = System.Drawing.Color.LightGray;
             this.HoursControl.TextBoxEditableColor = System.Drawing.Color.White;
-            this.HoursControl.TextBoxFont = new System.Drawing.Font("Verdana", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.HoursControl.TextBoxFont = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.HoursControl.TextBoxTopMargin = 0;
             this.HoursControl.Theme = DataJuggler.Win.Controls.Enumerations.ThemeEnum.Wood;
             this.HoursControl.Visible = false;
@@ -160,7 +160,7 @@
             this.StopButton.BackColor = System.Drawing.Color.Transparent;
             this.StopButton.ButtonText = "Stop";
             this.StopButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.StopButton.Font = new System.Drawing.Font("Verdana", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.StopButton.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.StopButton.ForeColor = System.Drawing.Color.LemonChiffon;
             this.StopButton.Location = new System.Drawing.Point(397, 27);
             this.StopButton.Margin = new System.Windows.Forms.Padding(4);
@@ -175,7 +175,7 @@
             this.StartButton.BackColor = System.Drawing.Color.Transparent;
             this.StartButton.ButtonText = "Start";
             this.StartButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.StartButton.Font = new System.Drawing.Font("Verdana", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.StartButton.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.StartButton.ForeColor = System.Drawing.Color.LemonChiffon;
             this.StartButton.Location = new System.Drawing.Point(269, 27);
             this.StartButton.Margin = new System.Windows.Forms.Padding(4);
@@ -189,7 +189,7 @@
             // 
             this.DisplayTimer.BackColor = System.Drawing.Color.Black;
             this.DisplayTimer.EndTime = new System.DateTime(((long)(0)));
-            this.DisplayTimer.Font = new System.Drawing.Font("Verdana", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.DisplayTimer.Font = new System.Drawing.Font("Calibri", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.DisplayTimer.ForeColor = System.Drawing.Color.LemonChiffon;
             this.DisplayTimer.LastSecond = 0;
             this.DisplayTimer.Location = new System.Drawing.Point(30, 23);

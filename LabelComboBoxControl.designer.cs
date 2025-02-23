@@ -73,7 +73,7 @@ namespace DataJuggler.Win.Controls
             // Label
             // 
             this.Label.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.Label.Font = new System.Drawing.Font("Verdana", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Label.Font = new System.Drawing.Font("Calibri", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Label.Location = new System.Drawing.Point(0, 0);
             this.Label.Name = "Label";
             this.Label.Size = new System.Drawing.Size(160, 27);
@@ -127,7 +127,7 @@ namespace DataJuggler.Win.Controls
             this.Controls.Add(this.LeftPanel);
             this.Controls.Add(this.TextBoxMarginPanel);
             this.DoubleBuffered = true;
-            this.Font = new System.Drawing.Font("Verdana", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Font = new System.Drawing.Font("Calibri", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Name = "LabelComboBoxControl";
             this.Size = new System.Drawing.Size(360, 28);
             this.LeftPanel.ResumeLayout(false);

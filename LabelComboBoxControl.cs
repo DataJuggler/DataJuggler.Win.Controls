@@ -206,10 +206,10 @@ namespace DataJuggler.Win.Controls
                 this.LabelWidth = 120;
                 
                 // Create the Font
-                this.Font = new Font("Verdana", 12);
+                this.Font = new Font("Calibri", 12);
 
                 // Default label font
-                this.LabelFont = new Font("Verdana", 12, FontStyle.Bold);
+                this.LabelFont = new Font("Calibri", 12, FontStyle.Bold);
 
                 // default to editable
                 this.Editable = true;

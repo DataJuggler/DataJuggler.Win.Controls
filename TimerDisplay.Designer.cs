@@ -37,7 +37,7 @@
             // 
             this.TimerLabel.BackColor = System.Drawing.Color.Transparent;
             this.TimerLabel.Dock = System.Windows.Forms.DockStyle.Right;
-            this.TimerLabel.Font = new System.Drawing.Font("Verdana", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.TimerLabel.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.TimerLabel.Location = new System.Drawing.Point(0, 0);
             this.TimerLabel.Name = "TimerLabel";
             this.TimerLabel.Size = new System.Drawing.Size(240, 60);
@@ -56,7 +56,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Black;
             this.Controls.Add(this.TimerLabel);
-            this.Font = new System.Drawing.Font("Verdana", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.Font = new System.Drawing.Font("Calibri", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.ForeColor = System.Drawing.Color.LemonChiffon;
             this.Name = "TimerDisplay";
             this.Size = new System.Drawing.Size(240, 60);

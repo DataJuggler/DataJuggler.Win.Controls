@@ -73,7 +73,7 @@ namespace DataJuggler.Win.Controls
             // Label
             // 
             this.Label.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.Label.Font = new System.Drawing.Font("Verdana", 13F);
+            this.Label.Font = new System.Drawing.Font("Calibri", 13F);
             this.Label.Location = new System.Drawing.Point(0, 12);
             this.Label.Name = "Label";
             this.Label.Size = new System.Drawing.Size(200, 24);

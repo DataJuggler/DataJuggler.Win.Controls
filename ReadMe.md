@@ -1,5 +1,7 @@
 ﻿# News
 
+2.23.2025: I changed the default font to Calibri.
+
 2.22.2025: I added an event KeyDownOccurred to the LabelTextBoxControl.
 
 12.15.2024: I added a new Theme to the Button called Glass

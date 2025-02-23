@@ -204,8 +204,8 @@ namespace DataJuggler.Win.Controls
 
                     // create the fonts
                     float fontSize = 12;
-                    this.TextBoxFont = new Font("Verdana", fontSize);
-                    this.LabelFont = new Font("Verdana", fontSize, FontStyle.Bold);
+                    this.TextBoxFont = new Font("Calibri", fontSize);
+                    this.LabelFont = new Font("Calibri", fontSize, FontStyle.Bold);
 
                     // Set to dark
                     Theme = ThemeEnum.Dark;

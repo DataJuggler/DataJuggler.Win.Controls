@@ -69,7 +69,7 @@
             this.CancelSaveButton.ButtonText = "Cancel";
             this.CancelSaveButton.Dock = System.Windows.Forms.DockStyle.Right;
             this.CancelSaveButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.CancelSaveButton.Font = new System.Drawing.Font("Verdana", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.CancelSaveButton.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.CancelSaveButton.ForeColor = System.Drawing.Color.Black;
             this.CancelSaveButton.Location = new System.Drawing.Point(389, 8);
             this.CancelSaveButton.Margin = new System.Windows.Forms.Padding(14, 7, 14, 7);
@@ -95,7 +95,7 @@
             this.SaveButton.ButtonText = "Save";
             this.SaveButton.Dock = System.Windows.Forms.DockStyle.Right;
             this.SaveButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.SaveButton.Font = new System.Drawing.Font("Verdana", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.SaveButton.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.SaveButton.ForeColor = System.Drawing.Color.Black;
             this.SaveButton.Location = new System.Drawing.Point(293, 8);
             this.SaveButton.Margin = new System.Windows.Forms.Padding(4);
@@ -121,7 +121,7 @@
             this.SaveAndCloseButton.ButtonText = "Save && Close";
             this.SaveAndCloseButton.Dock = System.Windows.Forms.DockStyle.Right;
             this.SaveAndCloseButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.SaveAndCloseButton.Font = new System.Drawing.Font("Verdana", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.SaveAndCloseButton.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.SaveAndCloseButton.ForeColor = System.Drawing.Color.Black;
             this.SaveAndCloseButton.Location = new System.Drawing.Point(145, 8);
             this.SaveAndCloseButton.Margin = new System.Windows.Forms.Padding(4);
@@ -145,7 +145,7 @@
             this.Controls.Add(this.BottomPanel);
             this.Controls.Add(this.TopPanel);
             this.DoubleBuffered = true;
-            this.Font = new System.Drawing.Font("Verdana", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.Name = "SaveCancelControl";
             this.Size = new System.Drawing.Size(494, 52);
             this.ResumeLayout(false);

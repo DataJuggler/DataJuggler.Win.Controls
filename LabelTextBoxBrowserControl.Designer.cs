@@ -76,7 +76,7 @@ namespace DataJuggler.Win.Controls
             this.BrowseButton.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
             this.BrowseButton.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
             this.BrowseButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.BrowseButton.Font = new System.Drawing.Font("Verdana", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.BrowseButton.Font = new System.Drawing.Font("Calibri", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.BrowseButton.ForeColor = System.Drawing.Color.LemonChiffon;
             this.BrowseButton.Location = new System.Drawing.Point(352, 0);
             this.BrowseButton.MaximumSize = new System.Drawing.Size(48, 32);
@@ -121,7 +121,7 @@ namespace DataJuggler.Win.Controls
             // Label
             // 
             this.Label.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.Label.Font = new System.Drawing.Font("Verdana", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.Label.Font = new System.Drawing.Font("Calibri", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.Label.Location = new System.Drawing.Point(0, 0);
             this.Label.Name = "Label";
             this.Label.Size = new System.Drawing.Size(158, 32);
@@ -156,7 +156,7 @@ namespace DataJuggler.Win.Controls
             // TextBox
             // 
             this.TextBox.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.TextBox.Font = new System.Drawing.Font("Verdana", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.TextBox.Font = new System.Drawing.Font("Calibri", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.TextBox.Location = new System.Drawing.Point(160, 0);
             this.TextBox.Name = "TextBox";
             this.TextBox.Size = new System.Drawing.Size(240, 31);

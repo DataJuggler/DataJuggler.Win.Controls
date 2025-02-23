@@ -45,11 +45,11 @@ namespace DataJuggler.Win.Controls.Forms
             this.FileBrowserControl.Editable = true;
             this.FileBrowserControl.EnabledLabelColor = System.Drawing.Color.Empty;
             this.FileBrowserControl.Filter = null;
-            this.FileBrowserControl.Font = new System.Drawing.Font("Verdana", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.FileBrowserControl.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.FileBrowserControl.HideBrowseButton = false;
             this.FileBrowserControl.LabelBottomMargin = 0;
             this.FileBrowserControl.LabelColor = System.Drawing.Color.LemonChiffon;
-            this.FileBrowserControl.LabelFont = new System.Drawing.Font("Verdana", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.FileBrowserControl.LabelFont = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.FileBrowserControl.LabelText = "File Path:";
             this.FileBrowserControl.LabelTopMargin = 0;
             this.FileBrowserControl.LabelWidth = 112;
@@ -65,7 +65,7 @@ namespace DataJuggler.Win.Controls.Forms
             this.FileBrowserControl.TextBoxBottomMargin = 0;
             this.FileBrowserControl.TextBoxDisabledColor = System.Drawing.Color.Empty;
             this.FileBrowserControl.TextBoxEditableColor = System.Drawing.Color.Empty;
-            this.FileBrowserControl.TextBoxFont = new System.Drawing.Font("Verdana", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.FileBrowserControl.TextBoxFont = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.FileBrowserControl.TextBoxTopMargin = 0;
             this.FileBrowserControl.Theme = DataJuggler.Win.Controls.Enumerations.ThemeEnum.Dark;
             // 
@@ -74,7 +74,7 @@ namespace DataJuggler.Win.Controls.Forms
             this.ProcessFileButton.BackColor = System.Drawing.Color.Transparent;
             this.ProcessFileButton.ButtonText = "Start";
             this.ProcessFileButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.ProcessFileButton.Font = new System.Drawing.Font("Verdana", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.ProcessFileButton.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.ProcessFileButton.ForeColor = System.Drawing.Color.LemonChiffon;
             this.ProcessFileButton.Location = new System.Drawing.Point(618, 148);
             this.ProcessFileButton.Margin = new System.Windows.Forms.Padding(4);
@@ -92,7 +92,7 @@ namespace DataJuggler.Win.Controls.Forms
             this.Controls.Add(this.ProcessFileButton);
             this.Controls.Add(this.FileBrowserControl);
             this.Enabled = false;
-            this.Font = new System.Drawing.Font("Verdana", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "FileBrowserWithButtonForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;

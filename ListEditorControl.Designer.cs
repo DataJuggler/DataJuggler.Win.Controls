@@ -121,7 +121,7 @@
             DeleteButton.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
             DeleteButton.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
             DeleteButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            DeleteButton.Font = new System.Drawing.Font("Verdana", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            DeleteButton.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             DeleteButton.Location = new System.Drawing.Point(191, 9);
             DeleteButton.Name = "DeleteButton";
             DeleteButton.Size = new System.Drawing.Size(84, 36);
@@ -142,7 +142,7 @@
             EditButton.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
             EditButton.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
             EditButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            EditButton.Font = new System.Drawing.Font("Verdana", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            EditButton.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             EditButton.Location = new System.Drawing.Point(101, 9);
             EditButton.Name = "EditButton";
             EditButton.Size = new System.Drawing.Size(84, 36);
@@ -163,7 +163,7 @@
             AddButton.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
             AddButton.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
             AddButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            AddButton.Font = new System.Drawing.Font("Verdana", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            AddButton.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             AddButton.Location = new System.Drawing.Point(11, 9);
             AddButton.Name = "AddButton";
             AddButton.Size = new System.Drawing.Size(84, 36);
@@ -179,7 +179,7 @@
             // 
             AllItemsLabel.BackColor = System.Drawing.Color.Transparent;
             AllItemsLabel.Dock = System.Windows.Forms.DockStyle.Top;
-            AllItemsLabel.Font = new System.Drawing.Font("Verdana", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            AllItemsLabel.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             AllItemsLabel.ForeColor = System.Drawing.Color.LemonChiffon;
             AllItemsLabel.Location = new System.Drawing.Point(0, 0);
             AllItemsLabel.Name = "AllItemsLabel";
@@ -223,7 +223,7 @@
             // 
             SelectedItemLabel.BackColor = System.Drawing.Color.Transparent;
             SelectedItemLabel.Dock = System.Windows.Forms.DockStyle.Top;
-            SelectedItemLabel.Font = new System.Drawing.Font("Verdana", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            SelectedItemLabel.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             SelectedItemLabel.ForeColor = System.Drawing.Color.LemonChiffon;
             SelectedItemLabel.Location = new System.Drawing.Point(0, 0);
             SelectedItemLabel.Name = "SelectedItemLabel";
@@ -260,7 +260,7 @@
             Controls.Add(BottomMarginPanel);
             Controls.Add(TopMarginPanel);
             DoubleBuffered = true;
-            Font = new System.Drawing.Font("Verdana", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             Name = "ListEditorControl";
             Size = new System.Drawing.Size(320, 320);
             ListEditorPanel.ResumeLayout(false);

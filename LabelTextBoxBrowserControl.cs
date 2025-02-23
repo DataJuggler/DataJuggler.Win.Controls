@@ -189,8 +189,8 @@ namespace DataJuggler.Win.Controls
                 Enabled = true;
                 Editable = true;
                 
-                Font = new Font("Verdana", 12);
-                LabelFont = new Font("Verdana", 12, FontStyle.Bold);
+                Font = new Font("Calibri", 12);
+                LabelFont = new Font("Calibri", 12, FontStyle.Bold);
                 BackColor = Color.Transparent;
                 LabelColor = Color.Black;
                 LabelWidth = 120;
