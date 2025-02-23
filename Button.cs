@@ -29,7 +29,7 @@ namespace DataJuggler.Win.Controls
         private ThemeEnum theme;
         private string buttonText;
         private FlatStyle flatStyle;
-        private ContentAlignment textAlign;
+        private ContentAlignment textAlign;        
         #endregion
         
         #region Constructor
@@ -42,11 +42,12 @@ namespace DataJuggler.Win.Controls
             InitializeComponent();
             
             // Default to Wood theme
-            this.Theme = ThemeEnum.Wood;
-            this.ButtonText = "Click Me";
-            this.BackColor = Color.Transparent;
-            this.InnerButton.BackColor = Color.Transparent;
-            this.FlatStyle = FlatStyle.Flat;
+            Theme = ThemeEnum.Wood;
+            ButtonText = "Click Me";
+            BackColor = Color.Transparent;
+            InnerButton.BackColor = Color.Transparent;
+            FlatStyle = FlatStyle.Flat;
+            UseMnemonic = true;
         }
         #endregion
         
@@ -303,6 +304,37 @@ namespace DataJuggler.Win.Controls
                 }
             }
         #endregion
+
+            #region UseMnemonic
+            /// <summary>
+            /// This property gets or sets the value for 'UseMnemonic'.
+            /// </summary>
+            public bool UseMnemonic
+            {
+                get 
+                { 
+                    // Initial value
+                    bool useMnemonic = false;
+
+                    // Check if InnerButton is not null
+                    if (InnerButton != null) 
+                    {
+                        useMnemonic = InnerButton.UseMnemonic;
+                    }
+
+                    // Return value
+                    return useMnemonic;
+                }
+                set 
+                { 
+                    // Check if InnerButton is not null
+                    if (InnerButton != null) 
+                    {
+                        InnerButton.UseMnemonic = value;
+                    }
+                }
+            }
+            #endregion
 
         #endregion
 
