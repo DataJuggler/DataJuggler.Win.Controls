@@ -1,5 +1,7 @@
 ﻿# News
 
+7.11.2025: DataJuggler.UltimateHelper was updated
+
 2.23.2025: I changed the default font to Calibri.
 
 2.22.2025: I added an event KeyDownOccurred to the LabelTextBoxControl.
