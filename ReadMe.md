@@ -1,5 +1,7 @@
 ﻿# News
 
+11.21.2025: This project was updated to .NET 10.
+
 7.11.2025: DataJuggler.UltimateHelper was updated
 
 2.23.2025: I changed the default font to Calibri.
