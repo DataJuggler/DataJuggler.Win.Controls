@@ -153,6 +153,9 @@ namespace DataJuggler.Win.Controls
                 Size = new Size(360, 34);
                 Theme = ThemeEnum.Dark;
                 LabelTextAlign = ContentAlignment.TopRight;
+
+                // Fixing resizing bug            
+                this.AutoScaleMode = AutoScaleMode.None;
                 
                 // Wire up the listener
                 base.OnTextChangedListener = this;

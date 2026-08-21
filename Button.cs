@@ -41,6 +41,9 @@ namespace DataJuggler.Win.Controls
             // Create Controls
             InitializeComponent();
             
+            // Fixing resizing bug            
+            this.AutoScaleMode = AutoScaleMode.None;
+
             // Default to Wood theme
             Theme = ThemeEnum.Wood;
             ButtonText = "Click Me";

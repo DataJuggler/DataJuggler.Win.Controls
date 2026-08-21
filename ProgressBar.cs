@@ -143,6 +143,9 @@ namespace DataJuggler.Win.Controls
         /// </summary>
         public void Init()
         {
+            // Fixing resizing bug            
+            this.AutoScaleMode = AutoScaleMode.None;
+
             // Setup for drawiing
             DoubleBuffered = true;
             SetStyle(ControlStyles.OptimizedDoubleBuffer, true);

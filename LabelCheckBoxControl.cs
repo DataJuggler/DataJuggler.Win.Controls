@@ -97,6 +97,9 @@ namespace DataJuggler.Win.Controls
                 // set the LabelTextAligna
                 this.LabelTextAlign = ContentAlignment.MiddleRight;
 
+                // Fixing resizing bug            
+                this.AutoScaleMode = AutoScaleMode.None;
+
                 // Set Default height & width
                 this.LabelWidth = 120;
                 this.Width = 160;

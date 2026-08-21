@@ -343,6 +343,9 @@ namespace DataJuggler.Win.Controls
             // default to not show it
             ShowSelectedControlPanel = false;
 
+            // Fixing resizing bug            
+            this.AutoScaleMode = AutoScaleMode.None;
+
             // Default Widths
             ListEditorWidth = 320;
             WidthFullControl = 720;

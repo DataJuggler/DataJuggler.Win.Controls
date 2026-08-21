@@ -136,6 +136,9 @@ namespace DataJuggler.Win.Controls
 
                 // Set the location
                 StartAtLabel.Location = new Point(100, 124);
+
+                // Fixing resizing bug            
+                this.AutoScaleMode = AutoScaleMode.None;
             }
             #endregion
         

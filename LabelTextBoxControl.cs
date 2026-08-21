@@ -180,6 +180,9 @@ namespace DataJuggler.Win.Controls
                 // Setup the KeyDown
                 TextBox.KeyDown += TextBox_KeyDown;
 
+                // Fixing resizing bug            
+                this.AutoScaleMode = AutoScaleMode.None;
+
                 // if the value for Inititialized is false
                 if (!Inititialized)
                 {

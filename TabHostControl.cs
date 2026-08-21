@@ -142,7 +142,10 @@ namespace DataJuggler.Win.Controls
             public void Init()
             {
                 // Create the tabButtons
-                this.TabButtons = new List<TabButton>();                
+                this.TabButtons = new List<TabButton>();
+
+                // Fixing resizing bug            
+                this.AutoScaleMode = AutoScaleMode.None;
             }
             #endregion
             

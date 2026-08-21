@@ -204,6 +204,9 @@ namespace DataJuggler.Win.Controls
                 
                 // set the default label width
                 this.LabelWidth = 120;
+
+                // Fixing resizing bug            
+                this.AutoScaleMode = AutoScaleMode.None;
                 
                 // Create the Font
                 this.Font = new Font("Calibri", 12);

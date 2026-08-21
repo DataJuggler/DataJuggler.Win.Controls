@@ -44,6 +44,9 @@ namespace DataJuggler.Win.Controls
         {
             // Create Controls
             InitializeComponent();
+
+            // Fixing resizing bug            
+            this.AutoScaleMode = AutoScaleMode.None;
         }
         #endregion
 

@@ -1,5 +1,8 @@
 ﻿# News
 
+8.21.2026: I set AutoScaleMode to None for all the controls. This was causing a weird bug
+where the controls repositioned and reacted to a font change. 
+
 11.21.2025: This project was updated to .NET 10.
 
 7.11.2025: DataJuggler.UltimateHelper was updated

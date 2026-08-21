@@ -251,6 +251,9 @@ namespace DataJuggler.Win.Controls
                 SaveButtonWidth = 96;                
                 SaveAndCloseButtonWidth = 140;
 
+                // Fixing resizing bug            
+                this.AutoScaleMode = AutoScaleMode.None;
+
                 // Setup the buttons
                 UIEnable();
             }

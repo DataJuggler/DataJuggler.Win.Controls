@@ -198,6 +198,9 @@ namespace DataJuggler.Win.Controls
 
                 // Set to Dark
                 Theme = ThemeEnum.Dark;
+
+                // Fixing resizing bug            
+                this.AutoScaleMode = AutoScaleMode.None;
                 
                 // Handle which controls are enabled or disabled and change the colors accordingly
                 UIControl(this.Enabled);

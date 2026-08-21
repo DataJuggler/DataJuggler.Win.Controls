@@ -45,6 +45,9 @@ namespace DataJuggler.Win.Controls
             // Create Controls
             InitializeComponent();
 
+            // Fixing resizing bug            
+            this.AutoScaleMode = AutoScaleMode.None;
+
             // Set the initial text
             TimerLabel.Text = "0:00:00";
 
