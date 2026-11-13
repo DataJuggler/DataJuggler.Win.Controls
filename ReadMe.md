@@ -1,5 +1,7 @@
 ﻿# News
 
+11.13.2026: This project was upgraded to .NET 11 + DataJuggler.UltimateHelper was updated.
+
 10.11.2026: DataJuggler.UltimateHelper was updated.
 
 8.21.2026: I set AutoScaleMode to None for all the controls. This was causing a weird bug
